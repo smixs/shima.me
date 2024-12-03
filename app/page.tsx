@@ -84,8 +84,8 @@ export default function Home() {
         <div className="w-full px-4 py-12 md:py-20">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              Collaborate with brands and agencies<br className="hidden md:block" />
-              to create impactful results.
+              Сraft AI-driven creative solutions <br className="hidden md:block" />
+              that inspire and transform
             </h2>
           </div>
 
