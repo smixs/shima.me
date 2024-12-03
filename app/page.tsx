@@ -13,6 +13,8 @@ import { TimelineTab } from "@/components/tabs/TimelineTab";
 import { MusicTab } from "@/components/tabs/MusicTab";
 import { personalInfo, careerData, musicCareer, timelineData } from "@/lib/data";
 import Link from "next/link";
+import { CompanyLogo } from "@/components/CompanyLogo";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabValue>("personal");
@@ -50,8 +52,9 @@ export default function Home() {
         </div>
 
         {/* Hero Section */}
-        <div className="relative bg-white rounded-[32px] mb-8 md:mb-16">
-          <div className="w-full px-4 py-12 md:py-20 text-center">
+        <div className="relative bg-white rounded-[32px] mb-8 md:mb-16 overflow-hidden min-h-[400px]">
+          <AnimatedBackground />
+          <div className="relative w-full px-4 py-12 md:py-20 text-center">
             <div className="mb-8">
               <Avatar 
                 src="/avatar.png" 
@@ -63,8 +66,10 @@ export default function Home() {
               <p className="text-gray-600">Chief AI Officer @ TDI Group</p>
             </div>
             
-            <h2 className="text-2xl md:text-4xl font-bold mb-8">
-              Driving creativity and innovations with AI
+            <h2 className="text-2xl md:text-4xl font-bold mb-8 flex flex-col items-center leading-relaxed">
+              <span>Driving</span>
+              <span>creativity</span>
+              <span>with AI</span>
             </h2>
             
             <Button variant="default" size="lg" className="rounded-full px-8">
@@ -76,13 +81,13 @@ export default function Home() {
         {/* Logos Section */}
         <div className="relative bg-white rounded-[32px] mb-8 md:mb-16">
           <div className="w-full px-4 py-8 md:py-16">
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-50">
-              <img src="/logos/BNB.png" alt="BNB Bank" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-              <img src="/logos/Unilayer.png" alt="UniLayer" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-              <img src="/logos/kemliva.png" alt="Kemliva" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-              <img src="/logos/eurotorg.png" alt="Eurotorg" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-              <img src="/logos/aida.png" alt="AIDA" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-              <img src="/logos/bbdo.png" alt="BBDO" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
+              <CompanyLogo src="/logos/BNB.png" alt="BNB Bank" />
+              <CompanyLogo src="/logos/Unilayer.png" alt="UniLayer" />
+              <CompanyLogo src="/logos/kemliva.png" alt="Kemliva" />
+              <CompanyLogo src="/logos/eurotorg.png" alt="Eurotorg" />
+              <CompanyLogo src="/logos/aida.png" alt="AIDA" />
+              <CompanyLogo src="/logos/bbdo.png" alt="BBDO" />
             </div>
           </div>
         </div>
