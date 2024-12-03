@@ -8,6 +8,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  assetPrefix: '/shima.me/',
 }
 
 module.exports = nextConfig
