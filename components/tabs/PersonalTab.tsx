@@ -20,13 +20,12 @@ export function PersonalTab({ info }: PersonalTabProps) {
             transition={{ duration: 0.6 }}
             className="text-left"
           >
-            <h3 className="font-semibold mb-2">Background</h3>
-            <ul className="space-y-2 text-sm">
-              <li>Age: {info.age}</li>
-              <li>Originally from {info.origin.city}, {info.origin.country}</li>
-              <li>{info.personality.mbti} Personality Type</li>
-              <li>Languages: {info.languages.map(l => l.name).join(", ")}</li>
-            </ul>
+            <h3 className="font-semibold mb-3">Background</h3>
+            <p className="text-sm leading-relaxed text-gray-600">
+              41, born in Minsk, Belarus, now redefining creativity in Tashkent. 
+              An ENTP-A with a knack for turning chaos into genius. 
+              Fluent in Russian, English, and Belarusian.
+            </p>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -35,11 +34,10 @@ export function PersonalTab({ info }: PersonalTabProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-left"
           >
-            <h3 className="font-semibold mb-2">Education</h3>
-            <p className="text-sm">
-              {info.education.degree}<br />
-              {info.education.university}<br />
-              {info.education.period}
+            <h3 className="font-semibold mb-3">Education</h3>
+            <p className="text-sm leading-relaxed text-gray-600">
+              History and English graduate from Belarusian State Pedagogical 
+              University (2000–2005). I studied the past to shape the future
             </p>
           </motion.div>
         </div>

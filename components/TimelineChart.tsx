@@ -29,14 +29,20 @@ export function TimelineChart({ data }: TimelineChartProps) {
             domain={[0, 10]}
             hide
           />
-          <Tooltip content={<TimelineTooltip />} />
+          <Tooltip 
+            content={<TimelineTooltip />}
+            animationDuration={300}
+            animationEasing="ease-out"
+          />
           <Line
             type="monotone"
             dataKey="value"
-            stroke="#8884d8"
+            stroke="#9CA3AF"
             strokeWidth={2}
-            dot={{ r: 4, fill: "#8884d8" }}
-            activeDot={{ r: 6, fill: "#6366F1" }}
+            dot={{ r: 6, fill: "#9CA3AF" }}
+            activeDot={{ r: 8, fill: "#4B5563" }}
+            animationDuration={1500}
+            animationEasing="ease-in-out"
           />
         </LineChart>
       </ResponsiveContainer>

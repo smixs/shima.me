@@ -63,17 +63,19 @@ export default function Home() {
                 className="w-20 h-20 mx-auto mb-4 border-2 border-white shadow-lg"
               />
               <h1 className="text-4xl font-bold mb-2">Serge Shima</h1>
-              <p className="text-gray-600">Chief AI Officer @ TDI Group</p>
+              <p className="text-gray-600">Chief AI Officer @ TDI Group CA</p>
             </div>
             
             <h2 className="text-2xl md:text-4xl font-bold mb-8 flex flex-col items-center leading-relaxed">
-              <span>Driving</span>
-              <span>creativity</span>
-              <span>with AI</span>
+              <span>Making brands smarter </span>
+              <span>with a dash of AI</span>
             </h2>
             
             <Button variant="default" size="lg" className="rounded-full px-8">
-              Latest Work
+              <Link href="https://t.me/aimastersme" target="_blank" className="relative">
+                <div className="absolute inset-0 bg-black/2 hover:bg-black/10 transition-colors rounded-full" />
+                @aimastersme
+              </Link>
             </Button>
           </div>
         </div>
