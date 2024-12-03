@@ -13,25 +13,25 @@ export function MusicTab({ music }: MusicTabProps) {
     <Card>
       <CardContent className="p-6">
         <div className="space-y-6 max-w-4xl mx-auto">
-          <div className="text-center">
+          <div className="text-left">
             <h3 className="font-semibold mb-3">DJ Career ({music.period})</h3>
-            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+            <div className="flex flex-wrap gap-2 mb-4">
               {music.roles.map((role, index) => (
                 <Badge key={index} variant="secondary">{role}</Badge>
               ))}
             </div>
           </div>
           
-          <div className="text-center">
+          <div className="text-left">
             <h3 className="font-semibold mb-3">Music Style</h3>
-            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+            <div className="flex flex-wrap gap-2 mb-4">
               {music.genres.map((genre, index) => (
                 <Badge key={index} variant="outline">{genre}</Badge>
               ))}
             </div>
           </div>
           
-          <div className="text-center">
+          <div className="text-left">
             <h3 className="font-semibold mb-3">Key Achievements</h3>
             <ul className="list-none space-y-2 text-sm text-gray-600">
               {music.achievements.map((achievement, index) => (
@@ -40,7 +40,7 @@ export function MusicTab({ music }: MusicTabProps) {
             </ul>
           </div>
           
-          <div className="mt-4 text-sm text-gray-600 italic text-center">
+          <div className="mt-4 text-sm text-gray-600 italic text-left">
             {music.currentActivity}
           </div>
         </div>

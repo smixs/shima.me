@@ -27,7 +27,7 @@ export default function Home() {
         <div className="relative bg-white rounded-b-[32px] mb-8 md:mb-16">
           <div className="w-full px-4 py-4">
             <div className="flex flex-row justify-between items-center">
-              <div>
+              <div className="pl-4">
                 <Link 
                   href="https://t.me/shimaoz" 
                   target="_blank" 
