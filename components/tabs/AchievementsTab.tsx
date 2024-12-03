@@ -17,7 +17,7 @@ export function AchievementsTab() {
           </div>
           <div className="border rounded-lg p-4">
             <h3 className="font-semibold text-gray-900">Published Author</h3>
-            <p className="text-sm text-gray-600">"Effective Branding" - Guide on innovative branding strategies</p>
+            <p className="text-sm text-gray-600">&ldquo;Effective Branding&rdquo; - Guide on innovative branding strategies</p>
           </div>
         </div>
       </CardContent>

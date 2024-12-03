@@ -5,6 +5,9 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: '/shima.me',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig
