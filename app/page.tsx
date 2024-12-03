@@ -55,8 +55,8 @@ export default function Home() {
             <p className="text-gray-600">Chief AI Officer @ TDI Group</p>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 max-w-3xl mx-auto">
-            Building digital products, brands, and experience.
+          <h2 className="text-2xl md:text-4xl font-bold mb-8">
+            Driving creativity and innovations with AI
           </h2>
           
           <Button variant="default" size="lg" className="rounded-full px-8">
@@ -83,13 +83,13 @@ export default function Home() {
       <div className="relative bg-white rounded-[32px] mb-8 md:mb-16">
         <div className="w-full px-4 py-12 md:py-20">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
               Collaborate with brands and agencies<br className="hidden md:block" />
               to create impactful results.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-lg md:max-w-none mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-[500px] md:max-w-none mx-auto">
             <div className="p-4 md:p-6 text-center md:text-left">
               <div className="mb-4 flex justify-center md:justify-start">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

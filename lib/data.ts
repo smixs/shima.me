@@ -226,8 +226,8 @@ export const musicCareer: MusicCareer = {
   genres: ["House", "Techno", "Drum-n-bass", "Electronica", "World music"],
   achievements: [
     "Built and managed 3 successful nightclubs",
-    "Released 5 original tracks",
-    "Organized 100+ events",
+    "Released 5 original EP's",
+    "Organized 1000+ events",
     "Performed at major festivals",
   ],
   currentActivity: "Still records mixtapes and DJ mixes",

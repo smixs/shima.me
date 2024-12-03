@@ -13,15 +13,15 @@ export function CareerTab({ careers }: CareerTabProps) {
   return (
     <Card>
       <CardContent className="p-6">
-        <div className="space-y-8">
+        <div className="space-y-8 max-w-4xl mx-auto">
           {careers.map((role, index) => (
-            <div key={index} className="relative pl-6 border-l-2 border-blue-500">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-blue-500 rounded-full" />
+            <div key={index} className="relative pl-6 border-l-2 border-gray-300">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-gray-300 rounded-full" />
               
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">{role.title}</h3>
-                  <p className="text-lg text-blue-600">{role.company}</p>
+                  <p className="text-lg text-gray-700">{role.company}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm text-gray-600">{role.period}</p>
@@ -49,7 +49,7 @@ export function CareerTab({ careers }: CareerTabProps) {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {role.achievements.map((achievement, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-sm">
+                      <Badge key={idx} variant="secondary" className="text-sm bg-gray-100 text-gray-800 hover:bg-gray-200">
                         {achievement}
                       </Badge>
                     ))}
@@ -65,7 +65,7 @@ export function CareerTab({ careers }: CareerTabProps) {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {role.skills.map((skill, idx) => (
-                      <Badge key={idx} variant="outline" className="text-sm">
+                      <Badge key={idx} variant="outline" className="text-sm text-gray-700 border-gray-300 hover:bg-gray-50">
                         {skill}
                       </Badge>
                     ))}
