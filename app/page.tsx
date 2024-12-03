@@ -45,7 +45,7 @@ export default function Home() {
         <div className="w-full px-4 py-12 md:py-20 text-center">
           <div className="mb-8">
             <Avatar 
-              src="/shima.me/avatar.png" 
+              src="/avatar.png" 
               alt="Serge Shima" 
               size="custom" 
               className="w-20 h-20 mx-auto mb-4 border-2 border-white shadow-lg"
@@ -68,12 +68,12 @@ export default function Home() {
       <div className="relative bg-white rounded-[32px] mb-8 md:mb-16">
         <div className="w-full px-4 py-8 md:py-16">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-50">
-            <img src="/shima.me/logos/bnb.png" alt="BNB Bank" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-            <img src="/shima.me/logos/unilayer.png" alt="UniLayer" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-            <img src="/shima.me/logos/kemliva.png" alt="Kemliva" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-            <img src="/shima.me/logos/eurotorg.png" alt="Eurotorg" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-            <img src="/shima.me/logos/aida.png" alt="AIDA" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
-            <img src="/shima.me/logos/bbdo.png" alt="BBDO" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
+            <img src="/logos/BNB.png" alt="BNB Bank" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
+            <img src="/logos/Unilayer.png" alt="UniLayer" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
+            <img src="/logos/kemliva.png" alt="Kemliva" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
+            <img src="/logos/eurotorg.png" alt="Eurotorg" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
+            <img src="/logos/aida.png" alt="AIDA" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
+            <img src="/logos/bbdo.png" alt="BBDO" className="h-6 md:h-8 w-auto object-contain grayscale mx-auto" />
           </div>
         </div>
       </div>

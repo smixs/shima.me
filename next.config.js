@@ -5,10 +5,10 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: '/shima.me',
+  assetPrefix: '/shima.me',
   eslint: {
     ignoreDuringBuilds: true,
   },
-  assetPrefix: '/shima.me/',
 }
 
 module.exports = nextConfig
