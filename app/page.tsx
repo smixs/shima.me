@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, MessageCircle } from "lucide-react";
 import { Avatar } from "@/components/Avatar";
 import { TabNavigation, TabValue } from "@/components/TabNavigation";
 import { PersonalTab } from "@/components/tabs/PersonalTab";
@@ -12,6 +12,7 @@ import { SkillsTab } from "@/components/tabs/SkillsTab";
 import { TimelineTab } from "@/components/tabs/TimelineTab";
 import { MusicTab } from "@/components/tabs/MusicTab";
 import { personalInfo, careerData, musicCareer, timelineData } from "@/lib/data";
+import Link from "next/link";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabValue>("personal");
@@ -26,16 +27,23 @@ export default function Home() {
         <div className="relative bg-white rounded-b-[32px] mb-8 md:mb-16">
           <div className="w-full px-4 py-4">
             <div className="flex flex-row justify-between items-center">
-              <div className="flex items-center gap-4">
-                <span className="text-sm text-gray-600 whitespace-nowrap">serge@shima.me</span>
+              <div>
+                <Link 
+                  href="https://t.me/shimaoz" 
+                  target="_blank" 
+                  className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Telegram
+                </Link>
               </div>
-              <div className="flex items-center gap-4">
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+              <div className="flex items-center gap-6 pr-4">
+                <Link href="https://www.linkedin.com/in/sergeshima/" target="_blank" className="text-gray-600 hover:text-gray-900">
                   <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                </Link>
+                <Link href="https://www.instagram.com/serge.shima/" target="_blank" className="text-gray-600 hover:text-gray-900">
                   <Instagram className="w-5 h-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
