@@ -13,7 +13,7 @@ export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
   return (
     <div className="flex justify-center w-full">
       <Tabs value={activeTab} onValueChange={(value) => onTabChange(value as TabValue)} className="w-full">
-        <TabsList className="w-full bg-white rounded-[32px] p-2">
+        <TabsList className="w-full bg-white rounded-[32px] p-0">
           <div className="inline-flex h-10 items-center justify-center rounded-[24px] bg-white p-1 text-gray-500 border border-gray-200 w-full">
             <TabsTrigger 
               value="personal"

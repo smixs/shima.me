@@ -93,7 +93,7 @@ export default function Home() {
         </div>
 
         {/* Tab Content */}
-        <div className="px-4 mb-8">
+        <div className="mb-8">
           {activeTab === "personal" && <PersonalTab info={personalInfo} />}
           {activeTab === "career" && <CareerTab careers={careerData} />}
           {activeTab === "achievements" && <AchievementsTab />}
