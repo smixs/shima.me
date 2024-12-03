@@ -3,6 +3,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { MusicCareer } from "@/types";
 import { Badge } from "@/components/ui/badge";
+import { Headphones, Music2, Radio } from "lucide-react";
+import Link from "next/link";
 
 interface MusicTabProps {
   music: MusicCareer;
@@ -10,9 +12,9 @@ interface MusicTabProps {
 
 export function MusicTab({ music }: MusicTabProps) {
   return (
-    <Card>
+    <Card className="w-full">
       <CardContent className="p-6">
-        <div className="space-y-6 max-w-4xl mx-auto">
+        <div className="space-y-6">
           <div className="text-left">
             <h3 className="font-semibold mb-3">DJ Career ({music.period})</h3>
             <div className="flex flex-wrap gap-2 mb-4">
@@ -42,6 +44,36 @@ export function MusicTab({ music }: MusicTabProps) {
           
           <div className="mt-4 text-sm text-gray-600 italic text-left">
             {music.currentActivity}
+          </div>
+
+          <div className="pt-4 border-t">
+            <h3 className="font-semibold mb-3">Listen & Follow</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link 
+                href="https://t.me/taxiaudio" 
+                target="_blank" 
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
+              >
+                <Headphones className="w-4 h-4" />
+                Taxi Audio
+              </Link>
+              <Link 
+                href="https://t.me/shimamuzik" 
+                target="_blank" 
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
+              >
+                <Radio className="w-4 h-4" />
+                Shima Muzik
+              </Link>
+              <Link 
+                href="https://open.spotify.com/playlist/7C7g8dPXdgzMuBbxDL4YYI?si=8e2643ec0ab74b57" 
+                target="_blank" 
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
+              >
+                <Music2 className="w-4 h-4" />
+                Spotify Playlist
+              </Link>
+            </div>
           </div>
         </div>
       </CardContent>
