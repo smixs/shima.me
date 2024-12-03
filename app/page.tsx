@@ -11,7 +11,7 @@ import { AchievementsTab } from "@/components/tabs/AchievementsTab";
 import { SkillsTab } from "@/components/tabs/SkillsTab";
 import { TimelineTab } from "@/components/tabs/TimelineTab";
 import { MusicTab } from "@/components/tabs/MusicTab";
-import { personalInfo, careers, musicCareer, timelineData } from "@/lib/data";
+import { personalInfo, careerData, musicCareer, timelineData } from "@/lib/data";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabValue>("personal");
@@ -86,7 +86,7 @@ export default function Home() {
       {/* Tab Content */}
       <div className="px-4 mb-8">
         {activeTab === "personal" && <PersonalTab info={personalInfo} />}
-        {activeTab === "career" && <CareerTab careers={careers} />}
+        {activeTab === "career" && <CareerTab careers={careerData} />}
         {activeTab === "achievements" && <AchievementsTab />}
         {activeTab === "skills" && <SkillsTab />}
         {activeTab === "timeline" && <TimelineTab data={timelineData} />}

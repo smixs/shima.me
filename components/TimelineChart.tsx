@@ -2,14 +2,18 @@
 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { TimelineTooltip } from '@/components/charts/TimelineTooltip';
-import { timelineData } from '@/lib/data';
+import { TimelineDataPoint } from '@/types';
 
-export function TimelineChart() {
+interface TimelineChartProps {
+  data: TimelineDataPoint[];
+}
+
+export function TimelineChart({ data }: TimelineChartProps) {
   return (
     <div className="h-64 w-full">
       <ResponsiveContainer>
         <LineChart 
-          data={timelineData} 
+          data={data} 
           margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
