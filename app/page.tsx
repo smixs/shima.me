@@ -54,24 +54,35 @@ export default function Home() {
         {/* Hero Section */}
         <div className="relative bg-white rounded-[32px] mb-8 md:mb-16 overflow-hidden min-h-[400px]">
           <AnimatedBackground />
-          <div className="relative w-full px-4 py-12 md:py-20 text-center">
-            <div className="mb-8">
+          <div className="relative w-full px-4 py-12 md:py-24 text-center">
+            <style jsx>{`
+              @keyframes floatBubble {
+                0%, 100% {
+                  transform: translateY(2px) rotate(-4deg);
+                }
+                50% {
+                  transform: translateY(-4px) rotate(-7deg);
+                }
+              }
+            `}</style>
+            <div className="mb-8 relative inline-block">
               <Avatar 
                 src="/avatar.png" 
                 alt="Serge Shima"
                 size="custom" 
-                className="w-20 h-20 mx-auto mb-4 border-2 border-white shadow-lg"
+                className="w-40 h-40 mx-auto border-2 border-white shadow-lg"
               />
-              <h1 className="text-4xl font-bold mb-2">Serge Shima</h1>
-              <p className="text-gray-600">Chief AI Officer @ TDI Group CA</p>
+              <div className="absolute -right-28 top-12 bg-white px-4 py-3 rounded-[20px] shadow-md" style={{ animation: 'floatBubble 4s ease-in-out infinite' }}>
+                <h1 className="text-base font-light whitespace-nowrap">Serge Shima 👋</h1>
+              </div>
             </div>
             
             <h2 className="text-2xl md:text-4xl font-bold mb-8 flex flex-col items-center leading-relaxed">
-              <span>Making brands smarter </span>
-              <span>with a dash of AI</span>
+              <span>Babai of creative AI</span>
+              <span>Turning ideas into impact</span>
             </h2>
             
-            <Button variant="default" size="lg" className="rounded-full px-8">
+            <Button variant="default" size="lg" className="rounded-full px-6">
               <Link href="https://t.me/aimastersme" target="_blank" className="relative">
                 <div className="absolute inset-0 bg-black/2 hover:bg-black/10 transition-colors rounded-full" />
                 @aimastersme
