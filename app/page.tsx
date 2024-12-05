@@ -143,6 +143,28 @@ export default function Home() {
           {activeTab === "timeline" && <TimelineTab data={timelineData} />}
           {activeTab === "music" && <MusicTab music={musicCareer} />}
         </div>
+
+        {/* Footer */}
+        <div className="relative bg-white rounded-t-[32px] mb-8">
+          <div className="w-full px-4 py-4">
+            <div className="flex flex-row justify-between items-center">
+              <div className="pl-4">
+                <p className="text-sm text-gray-600">© 2024 All made with the help of LLM coder.</p>
+              </div>
+              <div className="flex items-center gap-6 pr-4">
+                <Link href="https://t.me/shimaoz" target="_blank" className="text-gray-600 hover:text-gray-900">
+                  <MessageCircle className="w-5 h-5" />
+                </Link>
+                <Link href="https://www.instagram.com/serge.shima/" target="_blank" className="text-gray-600 hover:text-gray-900">
+                  <Instagram className="w-5 h-5" />
+                </Link>
+                <Link href="https://www.linkedin.com/in/sergeshima/" target="_blank" className="text-gray-600 hover:text-gray-900">
+                  <Linkedin className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
