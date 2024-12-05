@@ -223,14 +223,14 @@ export const timelineData: TimelineDataPoint[] = [
 export const musicCareer: MusicCareer = {
   period: "1998-2014",
   roles: ["DJ", "Music producer", "Event organizer", "Club builder"],
-  genres: ["House", "Techno", "Drum-n-bass", "Electronica", "World music"],
+  genres: ["House", "Techno", "Drum-n-Bass", "Indietronica", "Breaks"],
   achievements: [
+    "Opened Belarus to the global club scene in the 2000s",
     "Built and managed 3 successful nightclubs",
-    "Released 5 original EP's",
-    "Organized 1000+ events",
+    "Organized over 1000 events",
     "Performed at major festivals",
   ],
-  currentActivity: "Still records mixtapes and DJ mixes",
+  currentActivity: "Still recording mixtapes and DJ mixes",
 };
 
 export const skills = [

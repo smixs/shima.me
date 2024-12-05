@@ -28,7 +28,7 @@ export function AboutTab({ info }: AboutTabProps) {
               </div>
               <div>
                 <p className="text-gray-700 leading-relaxed">
-                  Hi, I'm Serge. For 20 years, I've been helping brands grow and stand out by combining creativity and cutting-edge technology. My portfolio includes projects like "Halva," one of the most popular brands in its market, innovative programs for EUROTORG that delivered $21M in profit, and blockchain solutions development for UniLayer.io.
+                  Hi, I'm Serge Shima. For 20 years, I've been helping brands grow and stand out by combining creativity and cutting-edge technology. My portfolio includes projects like "Halva," one of the most popular brands in its market, innovative programs for EUROTORG that delivered $21M in profit, and blockchain solutions development for UniLayer.io.
                 </p>
               </div>
             </div>
