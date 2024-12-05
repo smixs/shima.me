@@ -24,7 +24,7 @@ export default function Home() {
       {/* Noise overlay */}
       <div className="fixed inset-0 bg-noise opacity-30 pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4 min-h-screen flex flex-col">
         {/* Header with contact info */}
         <div className="relative bg-white rounded-b-[32px] mb-8 md:mb-16">
           <div className="w-full px-4 py-4">
@@ -137,29 +137,31 @@ export default function Home() {
         {/* Tab Content */}
         <div className="mb-8">
           {activeTab === "personal" && <AboutTab info={personalInfo} />}
-          {activeTab === "career" && <CareerTab careers={careerData} />}
           {activeTab === "achievements" && <AchievementsTab />}
           {activeTab === "skills" && <SkillsTab />}
-          {activeTab === "timeline" && <TimelineTab data={timelineData} />}
           {activeTab === "music" && <MusicTab music={musicCareer} />}
+          {activeTab === "career" && <CareerTab careers={careerData} />}
+          {activeTab === "timeline" && <TimelineTab data={timelineData} />}
         </div>
 
         {/* Footer */}
-        <div className="relative bg-white rounded-t-[32px] mb-8">
-          <div className="w-full px-4 py-4">
+        <div className="relative bg-white rounded-t-[32px] mt-auto">
+          <div className="w-full px-4 py-8">
             <div className="flex flex-row justify-between items-center">
               <div className="pl-4">
-                <p className="text-sm text-gray-600">© 2024 All made with the help of LLM coder.</p>
+                <p className="text-xs font-extralight text-gray-500">© 2024 This site was created entirely using AI. Honestly, I donn't code.</p>
               </div>
-              <div className="flex items-center gap-6 pr-4">
-                <Link href="https://t.me/shimaoz" target="_blank" className="text-gray-600 hover:text-gray-900">
-                  <MessageCircle className="w-5 h-5" />
+              <div className="pr-4 text-xs font-extralight">
+                <Link href="https://t.me/shimaoz" target="_blank" className="text-gray-500 hover:text-gray-900">
+                  telegram
                 </Link>
-                <Link href="https://www.instagram.com/serge.shima/" target="_blank" className="text-gray-600 hover:text-gray-900">
-                  <Instagram className="w-5 h-5" />
+                <span className="text-gray-300 mx-2">/</span>
+                <Link href="https://www.instagram.com/serge.shima/" target="_blank" className="text-gray-500 hover:text-gray-900">
+                  instagram
                 </Link>
-                <Link href="https://www.linkedin.com/in/sergeshima/" target="_blank" className="text-gray-600 hover:text-gray-900">
-                  <Linkedin className="w-5 h-5" />
+                <span className="text-gray-300 mx-2">/</span>
+                <Link href="https://www.linkedin.com/in/sergeshima/" target="_blank" className="text-gray-500 hover:text-gray-900">
+                  linkedin
                 </Link>
               </div>
             </div>
