@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, MessageCircle } from "lucide-react";
 import { Avatar } from "@/components/Avatar";
 import { TabNavigation, TabValue } from "@/components/TabNavigation";
-import { PersonalTab } from "@/components/tabs/PersonalTab";
+import { AboutTab } from "@/components/tabs/PersonalTab";
 import { CareerTab } from "@/components/tabs/CareerTab";
 import { AchievementsTab } from "@/components/tabs/AchievementsTab";
 import { SkillsTab } from "@/components/tabs/SkillsTab";
@@ -95,12 +95,36 @@ export default function Home() {
         <div className="relative bg-white rounded-[32px] mb-8 md:mb-16">
           <div className="w-full px-4 py-8 md:py-16">
             <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
-              <CompanyLogo src="/logos/BNB.png" alt="BNB Bank" />
-              <CompanyLogo src="/logos/Unilayer.png" alt="UniLayer" />
-              <CompanyLogo src="/logos/kemliva.png" alt="Kemliva" />
-              <CompanyLogo src="/logos/eurotorg.png" alt="Eurotorg" />
-              <CompanyLogo src="/logos/aida.png" alt="AIDA" />
-              <CompanyLogo src="/logos/bbdo.png" alt="BBDO" />
+              <CompanyLogo 
+                src="/logos/BNB.png" 
+                alt="BNB Bank" 
+                description="Developed and launched the most successful BNPL product in Belarus and Russia - Halva Card"
+              />
+              <CompanyLogo 
+                src="/logos/Unilayer.png" 
+                alt="UniLayer" 
+                description="Bonsticks — children's loyalty promo campaigns in Euroopt retail chain brought $21M"
+              />
+              <CompanyLogo 
+                src="/logos/kemliva.png" 
+                alt="Kemliva" 
+                description="Created HR Brand for the largest international IT company"
+              />
+              <CompanyLogo 
+                src="/logos/eurotorg.png" 
+                alt="Eurotorg" 
+                description="Created digital platform for Philip Morris brands communication in Central Asia"
+              />
+              <CompanyLogo 
+                src="/logos/aida.png" 
+                alt="AIDA" 
+                description="Brand and communication strategy for PariMatch betting in Belarus"
+              />
+              <CompanyLogo 
+                src="/logos/bbdo.png" 
+                alt="BBDO" 
+                description="Developed brand strategy for Exponenta protein dairy cocktails. Grand Prix Effie 2018"
+              />
             </div>
           </div>
         </div>
@@ -112,7 +136,7 @@ export default function Home() {
 
         {/* Tab Content */}
         <div className="mb-8">
-          {activeTab === "personal" && <PersonalTab info={personalInfo} />}
+          {activeTab === "personal" && <AboutTab info={personalInfo} />}
           {activeTab === "career" && <CareerTab careers={careerData} />}
           {activeTab === "achievements" && <AchievementsTab />}
           {activeTab === "skills" && <SkillsTab />}

@@ -3,42 +3,57 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { PersonalInfo } from "@/types";
 import { motion } from "framer-motion";
+import { Bot, Music2, Rocket } from "lucide-react";
 
-interface PersonalTabProps {
+interface AboutTabProps {
   info: PersonalInfo;
 }
 
-export function PersonalTab({ info }: PersonalTabProps) {
+export function AboutTab({ info }: AboutTabProps) {
   return (
     <Card>
       <CardContent className="p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Introduction */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-left"
+            className="space-y-6"
           >
-            <h3 className="font-semibold mb-3">Background</h3>
-            <p className="text-sm leading-relaxed text-gray-600">
-              41, born in Minsk, Belarus, now redefining creativity in Tashkent. 
-              An ENTP-A with a knack for turning chaos into genius. 
-              Fluent in Russian, English, and Belarusian.
-            </p>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-left"
-          >
-            <h3 className="font-semibold mb-3">Education</h3>
-            <p className="text-sm leading-relaxed text-gray-600">
-              History and English graduate from Belarusian State Pedagogical 
-              University (2000–2005). I studied the past to shape the future
-            </p>
+            <div className="flex items-start gap-3">
+              <div className="mt-1 p-2 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
+                <Bot className="w-5 h-5 text-blue-600" />
+              </div>
+              <div>
+                <p className="text-gray-700 leading-relaxed">
+                  Hi, I'm Serge. For 20 years, I've been helping brands grow and stand out by combining creativity and cutting-edge technology. My portfolio includes projects like "Halva," one of the most popular brands in its market, innovative programs for EUROTORG that delivered $21M in profit, and blockchain solutions development for UniLayer.io.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="mt-1 p-2 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
+                <Rocket className="w-5 h-5 text-purple-600" />
+              </div>
+              <div>
+                <p className="text-gray-700 leading-relaxed">
+                  I specialize in integrating AI into marketing, strategic planning, R&D, and crafting unconventional solutions. My expertise in gamification has led to the creation of successful AR and VR projects, generating millions in revenue and engaging millions of users.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="mt-1 p-2 bg-gradient-to-br from-pink-50 to-orange-50 rounded-xl">
+                <Music2 className="w-5 h-5 text-pink-600" />
+              </div>
+              <div>
+                <p className="text-gray-700 leading-relaxed">
+                  Outside of work, I'm passionate about electronic music. Since 1998, I've performed in clubs as a DJ and musician. For more details, check out the Music section.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </CardContent>
