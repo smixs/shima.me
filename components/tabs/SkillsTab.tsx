@@ -50,7 +50,7 @@ export function SkillsTab() {
               </div>
               <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                 <motion.div 
-                  className="h-full bg-gray-800 rounded-full"
+                  className="h-full bg-gray-600 rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
                   viewport={{ once: true }}
