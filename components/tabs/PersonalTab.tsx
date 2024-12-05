@@ -23,8 +23,8 @@ export function AboutTab({ info }: AboutTabProps) {
             className="space-y-6"
           >
             <div className="flex items-start gap-3">
-              <div className="mt-1 p-2 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
-                <Bot className="w-5 h-5 text-blue-600" />
+              <div className="mt-1 p-2 bg-gray-50 rounded-xl">
+                <Bot className="w-5 h-5 text-gray-600" />
               </div>
               <div>
                 <p className="text-gray-700 leading-relaxed">
@@ -34,8 +34,8 @@ export function AboutTab({ info }: AboutTabProps) {
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="mt-1 p-2 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
-                <Rocket className="w-5 h-5 text-purple-600" />
+              <div className="mt-1 p-2 bg-gray-50 rounded-xl">
+                <Rocket className="w-5 h-5 text-gray-600" />
               </div>
               <div>
                 <p className="text-gray-700 leading-relaxed">
@@ -45,8 +45,8 @@ export function AboutTab({ info }: AboutTabProps) {
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="mt-1 p-2 bg-gradient-to-br from-pink-50 to-orange-50 rounded-xl">
-                <Music2 className="w-5 h-5 text-pink-600" />
+              <div className="mt-1 p-2 bg-gray-50 rounded-xl">
+                <Music2 className="w-5 h-5 text-gray-600" />
               </div>
               <div>
                 <p className="text-gray-700 leading-relaxed">
