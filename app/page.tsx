@@ -80,7 +80,7 @@ export default function Home() {
             
             <h2 className="text-2xl md:text-4xl font-bold mb-8 flex flex-col items-center leading-relaxed">
               <span className="bg-gradient-to-r from-gray-900 to-gray-600 inline-block text-transparent bg-clip-text">Babai of creative AI</span>
-              <span className="bg-gradient-to-r from-gray-900 to-gray-600 inline-block text-transparent bg-clip-text">Turning ideas into impact</span>
+              <span className="bg-gradient-to-r from-gray-600 to-gray-900 inline-block text-transparent bg-clip-text">Turning ideas into impact</span>
             </h2>
             
             <Button variant="default" size="lg" className="rounded-full px-6">
