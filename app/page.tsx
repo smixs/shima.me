@@ -15,6 +15,7 @@ import { personalInfo, careerData, musicCareer, timelineData } from "@/lib/data"
 import Link from "next/link";
 import { CompanyLogo } from "@/components/CompanyLogo";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { AnimatedTabContent } from "@/components/AnimatedTabContent";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabValue>("personal");
@@ -136,12 +137,29 @@ export default function Home() {
 
         {/* Tab Content */}
         <div className="mb-8">
-          {activeTab === "personal" && <AboutTab info={personalInfo} />}
-          {activeTab === "achievements" && <AchievementsTab />}
-          {activeTab === "skills" && <SkillsTab />}
-          {activeTab === "music" && <MusicTab music={musicCareer} />}
-          {activeTab === "career" && <CareerTab careers={careerData} />}
-          {activeTab === "timeline" && <TimelineTab data={timelineData} />}
+          <AnimatedTabContent isSelected={activeTab === "personal"}>
+            <AboutTab info={personalInfo} />
+          </AnimatedTabContent>
+
+          <AnimatedTabContent isSelected={activeTab === "achievements"}>
+            <AchievementsTab />
+          </AnimatedTabContent>
+
+          <AnimatedTabContent isSelected={activeTab === "skills"}>
+            <SkillsTab />
+          </AnimatedTabContent>
+
+          <AnimatedTabContent isSelected={activeTab === "music"}>
+            <MusicTab music={musicCareer} />
+          </AnimatedTabContent>
+
+          <AnimatedTabContent isSelected={activeTab === "career"}>
+            <CareerTab careers={careerData} />
+          </AnimatedTabContent>
+
+          <AnimatedTabContent isSelected={activeTab === "timeline"}>
+            <TimelineTab data={timelineData} />
+          </AnimatedTabContent>
         </div>
 
         {/* Footer */}
