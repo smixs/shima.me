@@ -27,7 +27,7 @@ export function AboutTab({ info }: AboutTabProps) {
                 <Bot className="w-5 h-5 text-gray-600" />
               </div>
               <div>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm font-extralight text-gray-600 leading-relaxed">
                   Hi, I'm Serge Shima. For 20 years, I've been helping brands grow and stand out by combining creativity and cutting-edge technology. My portfolio includes projects like "Halva," one of the most popular brands in its market, innovative programs for EUROTORG that delivered $21M in profit, and blockchain solutions development for UniLayer.io.
                 </p>
               </div>
@@ -38,7 +38,7 @@ export function AboutTab({ info }: AboutTabProps) {
                 <Rocket className="w-5 h-5 text-gray-600" />
               </div>
               <div>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm font-extralight text-gray-600 leading-relaxed">
                   I specialize in integrating AI into marketing, strategic planning, R&D, and crafting unconventional solutions. My expertise in gamification has led to the creation of successful AR and VR projects, generating millions in revenue and engaging millions of users.
                 </p>
               </div>
@@ -49,7 +49,7 @@ export function AboutTab({ info }: AboutTabProps) {
                 <Music2 className="w-5 h-5 text-gray-600" />
               </div>
               <div>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm font-extralight text-gray-600 leading-relaxed">
                   Outside of work, I'm passionate about electronic music. Since 1998, I've performed in clubs as a DJ and musician. For more details, check out the Music section.
                 </p>
               </div>

@@ -13,9 +13,9 @@ export function AchievementsTab() {
               <div className="p-2 bg-gray-50 rounded-lg">
                 <GraduationCap className="w-5 h-5 text-gray-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">AI in Business Education</h3>
+              <h3 className="text-sm font-normal text-gray-900">AI in Business Education</h3>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-sm font-extralight text-gray-600 leading-relaxed">
               Creator and lead instructor of the "Smart Marketing with AI" MBA course, helping businesses integrate AI to boost productivity and creativity.
             </p>
           </div>
@@ -25,10 +25,10 @@ export function AchievementsTab() {
               <div className="p-2 bg-gray-50 rounded-lg">
                 <Rocket className="w-5 h-5 text-gray-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">AI-Powered Product Development</h3>
+              <h3 className="text-sm font-normal text-gray-900">AI-Powered Product Development</h3>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Designed and launched AI-driven solutions for marketing, branding, and business growth, including predictive analytics tools and personalized chatbot systems.
+            <p className="text-sm font-extralight text-gray-600 leading-relaxed">
+              Designed and launched AI-driven solutions for marketing, branding, and business growth, including multi-agentic systems and personalized creative chatbots.
             </p>
           </div>
 
@@ -37,10 +37,10 @@ export function AchievementsTab() {
               <div className="p-2 bg-gray-50 rounded-lg">
                 <MessageSquare className="w-5 h-5 text-gray-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">AI Content Creation</h3>
+              <h3 className="text-sm font-normal text-gray-900">AI Content Creation</h3>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Founder of a Telegram channel focused on AI applications in marketing, branding, and strategy, providing cutting-edge insights to over 2,000 subscribers.
+            <p className="text-sm font-extralight text-gray-600 leading-relaxed">
+              Founder of a Telegram channel @aimastersme focused on AI applications in life and business, providing cutting-edge insights.
             </p>
           </div>
 
@@ -49,9 +49,9 @@ export function AchievementsTab() {
               <div className="p-2 bg-gray-50 rounded-lg">
                 <Lightbulb className="w-5 h-5 text-gray-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">AI in Creative Strategy</h3>
+              <h3 className="text-sm font-normal text-gray-900">AI in Creative Strategy</h3>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-sm font-extralight text-gray-600 leading-relaxed">
               Integrated AI tools into marketing campaigns and R&D processes, generating innovative concepts and measurable results for clients across various industries.
             </p>
           </div>
@@ -61,9 +61,9 @@ export function AchievementsTab() {
               <div className="p-2 bg-gray-50 rounded-lg">
                 <Cog className="w-5 h-5 text-gray-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">Business Transformation with AI</h3>
+              <h3 className="text-sm font-normal text-gray-900">Business Transformation with AI</h3>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-sm font-extralight text-gray-600 leading-relaxed">
               Developed practical frameworks to teach companies how to use AI for scaling creative and strategic processes, saving time and resources.
             </p>
           </div>
@@ -73,9 +73,9 @@ export function AchievementsTab() {
               <div className="p-2 bg-gray-50 rounded-lg">
                 <Palette className="w-5 h-5 text-gray-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">AI for Branding</h3>
+              <h3 className="text-sm font-normal text-gray-900">AI for Branding</h3>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-sm font-extralight text-gray-600 leading-relaxed">
               Pioneered the use of AI to enhance brand storytelling and communication strategies, delivering memorable experiences and impactful results.
             </p>
           </div>

@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8F8F8]">
       {/* Noise overlay */}
-      <div className="fixed inset-0 bg-noise opacity-30 pointer-events-none" />
+      <div className="fixed inset-0 bg-noise opacity-30 pointer-events-none -z-10" />
 
       <div className="max-w-5xl mx-auto px-4 min-h-screen flex flex-col">
         {/* Header with contact info */}
