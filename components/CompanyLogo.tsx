@@ -40,10 +40,10 @@ export function CompanyLogo({ src, alt, description }: CompanyLogoProps) {
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             className="hidden group-hover:block"
           >
-            <div className="relative bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-xl border border-neutral-200 max-w-[200px] whitespace-normal">
+            <div className="relative bg-white px-4 py-2 rounded-xl shadow-xl border border-neutral-200 max-w-[200px] whitespace-normal">
               <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[95%] w-0 h-0 
                 border-l-[6px] border-l-transparent 
-                border-t-[8px] border-t-white/90
+                border-t-[8px] border-t-white
                 border-r-[6px] border-r-transparent"
               />
               <p className="text-xs font-medium text-neutral-600 text-center leading-relaxed">

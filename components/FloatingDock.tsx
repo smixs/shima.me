@@ -47,7 +47,7 @@ export const FloatingDock = ({
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="mx-auto flex h-16 gap-4 items-end rounded-2xl bg-white/80 border border-neutral-200 px-4 pb-3 shadow-lg backdrop-blur-md"
+        className="mx-auto flex h-16 gap-4 items-end rounded-2xl bg-white border border-neutral-200 px-4 pb-3 shadow-lg"
       >
         {items.map((item) => (
           <IconContainer
