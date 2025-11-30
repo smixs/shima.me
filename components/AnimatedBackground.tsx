@@ -10,7 +10,7 @@ export function AnimatedBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     // Получаем 2D контекст для рисования
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -19,12 +19,12 @@ export function AnimatedBackground() {
     const resizeCanvas = () => {
       const rect = canvas.parentElement?.getBoundingClientRect();
       if (!rect) return;
-      
-      // Учитываем pixel ratio устройства для четкости на retina дисплеях
-      const dpr = window.devicePixelRatio || 1;
+
+      // Учитываем pixel ratio устройства для четкости на retina дисплеях, но не более 2x для производительности
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
-      
+
       // Масштабируем контекст и задаем CSS размеры
       ctx.scale(dpr, dpr);
       canvas.style.width = `${rect.width}px`;
@@ -105,7 +105,7 @@ export function AnimatedBackground() {
 
       // Настраиваем режим наложения для создания эффекта прозрачности
       whiteCtx.globalCompositeOperation = 'destination-out';
-      
+
       // Обновляем и рисуем каждую волну
       waves.forEach(wave => {
         // Плавно перемещаем волну к целевой точке
@@ -118,7 +118,7 @@ export function AnimatedBackground() {
           wave.x, wave.y, 0,
           wave.x, wave.y, radius
         );
-        
+
         // Настраиваем градиент от центра к краям
         gradient.addColorStop(0, `rgba(255, 255, 255, ${wave.intensity})`);
         gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.1)');
@@ -153,7 +153,7 @@ export function AnimatedBackground() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0" // Tailwind классы для позиционирования
-      style={{ 
+      style={{
         width: '100%',
         height: '100%',
         display: 'block',
