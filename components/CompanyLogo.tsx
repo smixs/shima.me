@@ -23,6 +23,7 @@ export function CompanyLogo({ src, alt, description }: CompanyLogoProps) {
             src={src}
             alt={alt}
             fill
+            sizes="(max-width: 768px) 50vw, 16vw"
             className="object-contain"
           />
         </div>

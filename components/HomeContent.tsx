@@ -7,11 +7,13 @@ import { Avatar } from "@/components/Avatar";
 import { TabValue } from "@/components/TabNavigation";
 import { FloatingDock } from "@/components/FloatingDock";
 import { AboutTab } from "@/components/tabs/PersonalTab";
-import { CareerTab } from "@/components/tabs/CareerTab";
-import { AchievementsTab } from "@/components/tabs/AchievementsTab";
-import { SkillsTab } from "@/components/tabs/SkillsTab";
-import { TimelineTab } from "@/components/tabs/TimelineTab";
-import { MusicTab } from "@/components/tabs/MusicTab";
+import dynamic from "next/dynamic";
+
+const CareerTab = dynamic(() => import("@/components/tabs/CareerTab").then((mod) => mod.CareerTab));
+const AchievementsTab = dynamic(() => import("@/components/tabs/AchievementsTab").then((mod) => mod.AchievementsTab));
+const SkillsTab = dynamic(() => import("@/components/tabs/SkillsTab").then((mod) => mod.SkillsTab));
+const TimelineTab = dynamic(() => import("@/components/tabs/TimelineTab").then((mod) => mod.TimelineTab));
+const MusicTab = dynamic(() => import("@/components/tabs/MusicTab").then((mod) => mod.MusicTab));
 import { personalInfo, careerData, musicCareer, timelineData } from "@/lib/data";
 import Link from "next/link";
 import { CompanyLogo } from "@/components/CompanyLogo";
@@ -73,6 +75,7 @@ export function HomeContent() {
                 src="/avatar.png"
                 alt="Serge Shima"
                 size="custom"
+                priority={true}
                 className="w-40 h-40 mx-auto border-2 border-white shadow-lg"
               />
               <div className="absolute -right-28 top-12 bg-white px-4 py-3 rounded-[20px] shadow-md" style={{ animation: 'floatBubble 4s ease-in-out infinite' }}>
