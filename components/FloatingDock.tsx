@@ -45,9 +45,9 @@ export const FloatingDock = ({
   return (
     <div className={cn("fixed bottom-8 left-1/2 -translate-x-1/2 z-50", className)}>
       <motion.div
-        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseMove={(e) => mouseX.set(e.clientX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="mx-auto flex h-16 gap-4 items-end rounded-2xl bg-white border border-neutral-200 px-4 pb-3 shadow-lg"
+        className="mx-auto flex h-14 gap-4 items-center rounded-2xl bg-white/40 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10 px-4 shadow-xl"
       >
         {items.map((item) => (
           <IconContainer
@@ -81,12 +81,13 @@ function IconContainer({
   let ref = useRef<HTMLDivElement>(null);
 
   let distance = useTransform(mouseX, (val) => {
+    if (val === Infinity) return 0;
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  let heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  let widthTransform = useTransform(distance, [-150, 0, 150], [36, 56, 36], { clamp: true });
+  let heightTransform = useTransform(distance, [-150, 0, 150], [36, 56, 36], { clamp: true });
 
   let width = useSpring(widthTransform, {
     mass: 0.1,
@@ -109,8 +110,10 @@ function IconContainer({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className={cn(
-          "aspect-square rounded-full flex items-center justify-center relative transition-colors",
-          isActive ? "bg-neutral-100 border-neutral-300 border" : "bg-neutral-50 border-neutral-200 border hover:bg-neutral-100"
+          "aspect-square rounded-full flex items-center justify-center relative transition-all duration-200",
+          isActive
+            ? "bg-neutral-200/50 dark:bg-neutral-800/50 backdrop-blur-md border border-neutral-300/50 dark:border-neutral-700/50 shadow-inner scale-105"
+            : "bg-white/10 border-transparent border hover:bg-white/20"
         )}
       >
         <AnimatePresence>
@@ -119,16 +122,19 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="px-2 py-0.5 whitespace-pre rounded-md bg-neutral-800 border-neutral-900 text-white absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
+              className="px-2 py-0.5 whitespace-pre rounded-md bg-neutral-800 border-neutral-900 text-white absolute left-1/2 -translate-x-1/2 -top-10 w-fit text-xs"
             >
               {title}
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="flex items-center justify-center w-5 h-5">{icon}</div>
+        <div className={cn("flex items-center justify-center w-5 h-5 transition-colors", isActive ? "text-neutral-900 dark:text-neutral-100" : "text-neutral-500")}>{icon}</div>
       </motion.div>
       {isActive && (
-        <div className="w-1 h-1 bg-neutral-500 rounded-full mx-auto mt-1" />
+        <motion.div
+          layoutId="active-dot"
+          className="w-1 h-1 bg-neutral-900 dark:bg-neutral-100 rounded-full mx-auto mt-1"
+        />
       )}
     </div>
   );
