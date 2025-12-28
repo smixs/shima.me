@@ -176,7 +176,7 @@ export function HomeContent() {
           <div className="w-full px-4 py-8">
             <div className="flex flex-row justify-between items-center">
               <div className="pl-4">
-                <p className="text-xs font-extralight text-gray-500">© 2024 This site was created entirely using AI. Honestly, I donn't code.</p>
+                <p className="text-xs font-extralight text-gray-500">© 2024 This is a personal web page. All rights reserved.</p>
               </div>
               <div className="pr-4 text-xs font-extralight">
                 <Link href="https://t.me/shimaoz" target="_blank" className="text-gray-500 hover:text-gray-900">
