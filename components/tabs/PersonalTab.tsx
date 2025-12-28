@@ -17,7 +17,7 @@ export function AboutTab({ info }: AboutTabProps) {
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative">
           <Image
-            src="/bento/visionary.png"
+            src="/bento/visionary.webp"
             alt="The Visionary"
             fill
             className="object-cover group-hover/bento:scale-105 transition-transform duration-500"
@@ -33,7 +33,7 @@ export function AboutTab({ info }: AboutTabProps) {
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative">
           <Image
-            src="/bento/impact.png"
+            src="/bento/impact.webp"
             alt="Impact & Results"
             fill
             className="object-cover group-hover/bento:scale-105 transition-transform duration-500"
@@ -49,7 +49,7 @@ export function AboutTab({ info }: AboutTabProps) {
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative">
           <Image
-            src="/bento/innovation.png"
+            src="/bento/innovation.webp"
             alt="AI & Innovation"
             fill
             className="object-cover group-hover/bento:scale-105 transition-transform duration-500"
@@ -65,7 +65,7 @@ export function AboutTab({ info }: AboutTabProps) {
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative">
           <Image
-            src="/bento/music.png"
+            src="/bento/music.webp"
             alt="Electronic Music"
             fill
             className="object-cover group-hover/bento:scale-105 transition-transform duration-500"
