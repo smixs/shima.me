@@ -190,6 +190,10 @@ export function HomeContent() {
                 <Link href="https://www.linkedin.com/in/sergeshima/" target="_blank" className="text-gray-500 hover:text-gray-900">
                   linkedin
                 </Link>
+                <span className="text-gray-300 mx-2">/</span>
+                <Link href="https://sergeshima.com" rel="me" className="text-gray-500 hover:text-gray-900">
+                  sergeshima.com
+                </Link>
               </div>
             </div>
           </div>
