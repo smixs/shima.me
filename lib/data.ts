@@ -50,9 +50,27 @@ export const personalInfo: PersonalInfo = {
 
 export const careerData: CareerEntry[] = [
   {
+    title: "Co-founder & CTO",
+    company: "Majento",
+    period: "2026 - Present",
+    location: "Tashkent, Uzbekistan",
+    responsibilities: [
+      "AI-native product company: AI software and multi-agent systems for marketing and business processes",
+      "Deploying agent systems at the client via a forward-deployed-engineer (FDE) model",
+      "Leading product, AI and research",
+    ],
+    skills: [
+      "Multi-agent Systems",
+      "AI Product",
+      "Orchestration",
+      "MCP",
+      "Technical Leadership",
+    ],
+  },
+  {
     title: "Chief AI Officer",
     company: "TDI Group",
-    period: "June 2024 - Present",
+    period: "June 2024 - 2026",
     location: "Tashkent, Uzbekistan",
     responsibilities: [
       "Leading creative advertising agency",

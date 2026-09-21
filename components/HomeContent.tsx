@@ -94,6 +94,18 @@ export function HomeContent() {
               />
             </div>
 
+            <p className="mb-8 text-base md:text-lg text-gray-600">
+              Co-founder &amp; CTO at{" "}
+              <Link
+                href="https://majento.ai/?utm_source=shima.me&utm_medium=referral&utm_campaign=ecosystem"
+                target="_blank"
+                className="font-medium text-gray-900 underline underline-offset-4 hover:text-gray-600"
+              >
+                Majento
+              </Link>
+              {" "}· AI agents for business
+            </p>
+
             <Button variant="default" size="lg" className="rounded-full px-6">
               <Link href="https://t.me/aimastersme" target="_blank" className="relative">
                 <div className="absolute inset-0 bg-black/2 hover:bg-black/10 transition-colors rounded-full" />
@@ -193,6 +205,10 @@ export function HomeContent() {
                 <span className="text-gray-300 mx-2">/</span>
                 <Link href="https://sergeshima.com" rel="me" className="text-gray-500 hover:text-gray-900">
                   sergeshima.com
+                </Link>
+                <span className="text-gray-300 mx-2">/</span>
+                <Link href="https://majento.ai/?utm_source=shima.me&utm_medium=referral&utm_campaign=ecosystem" target="_blank" className="text-gray-500 hover:text-gray-900">
+                  majento.ai
                 </Link>
               </div>
             </div>
