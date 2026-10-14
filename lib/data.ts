@@ -176,8 +176,8 @@ export const careerData: CareerEntry[] = [
     ],
     publications: [
       {
-        type: "Book",
-        title: "Эффективный брендинг",
+        type: "Article",
+        title: "Эффективный брендинг. Метафора",
         description: "Руководство по инновационным стратегиям брендинга",
       }
     ],
