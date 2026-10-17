@@ -221,7 +221,7 @@ export const log: Commit[] = [
     date: "2012.06",
     tag: "v2012.06",
     org: "Publicis Groupe",
-    logo: "publicis.svg",
+    logo: "publicis-lion.svg",
     role: "Event manager, copywriter",
     place: "Minsk",
     notes: ["Events and promotional copy for network clients."],
@@ -318,14 +318,31 @@ export const iva = {
 // DJ side. Source: mixcloud.com/sergeshima and t.me/taxiaudio (checked 17.10.2026).
 export const music = {
   mixes: [
-    { name: "Joyman 2026, classic house", length: "3:00" },
-    { name: "Vebecoder vol.1", length: "1:20" },
-    { name: "Bike Rider 2024", length: "1:00" },
-    { name: "Studio 54, poolside disco", length: "2:28" },
-    { name: "Organic Deep House", length: "4:03" },
+    { name: "Joyman 2026, classic house", length: "3:00", href: "https://www.mixcloud.com/sergeshima/shima-joyman-2026-3-hours-of-classic-house/" },
+    { name: "Vebecoder vol.1", length: "1:20", href: "https://www.mixcloud.com/sergeshima/shima-vebecoder-vol1/" },
+    { name: "Bike Rider 2024", length: "1:00", href: "https://www.mixcloud.com/sergeshima/shima-bike-rider-2024/" },
+    { name: "Studio 54, poolside disco", length: "2:28", href: "https://www.mixcloud.com/sergeshima/shima-studio-54-25-hour-poolside-disco-mix/" },
+    { name: "Organic Deep House", length: "4:03", href: "https://www.mixcloud.com/sergeshima/shima-organic-deep-house-aug-4-hour-mix/" },
   ],
   links: [
     { label: "Mixcloud, 1,023 followers", href: "https://www.mixcloud.com/sergeshima/" },
     { label: "Taxi Audio on Telegram", href: "https://t.me/taxiaudio" },
   ],
 };
+
+// Width / height of each logo's visible ink (measured 17.10.2026), for optical sizing.
+export const logoRatio: Record<string, number> = {
+  "majento-wordmark.svg": 3.93, "tdi-group.svg": 3.26, "bnb-bank.svg": 4.26, "unilayer.png": 6.8,
+  "kemliva.svg": 2.73, "ikra.svg": 2.91, "eurotorg.svg": 5.33, "aida-pioneer.svg": 8.13,
+  "bbdo.svg": 3.48, "publicis-lion.svg": 1, "pepsico.svg": 5.47, "nestle.svg": 3.71, "kia.svg": 4.05,
+  "haval.svg": 8.18, "honor.svg": 5.2, "beeline.svg": 4.53, "ibt.png": 2.49, "kaspersky.svg": 5.24,
+  "mts.svg": 4.02, "alfa-bank.svg": 5.0, "a1.svg": 0.98, "adm-group.png": 3.38, "roodell.png": 3.34,
+};
+
+// Same visual weight for every logo: fixed ink area, clamped height and width.
+export function logoHeight(file: string, area: number, maxH: number, maxW: number) {
+  const r = logoRatio[file] ?? 3;
+  let h = Math.sqrt(area / r);
+  h = Math.min(h, maxH, maxW / r);
+  return Math.round(Math.max(h, 14));
+}

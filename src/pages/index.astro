@@ -6,7 +6,7 @@ import Log from "../components/Log.astro";
 import { Image } from "astro:assets";
 import dj from "../assets/dj-shima.jpg";
 import repos from "../data/repos.json";
-import { releases, log, showcase, mentions, clients, remotes, iva, music } from "../data/site";
+import { releases, log, showcase, mentions, clients, remotes, iva, music, logoHeight } from "../data/site";
 
 const totalStars = repos.reduce((s, r) => s + r.stars, 0);
 const starsLabel = `${Math.floor(totalStars / 100) * 100}+`;
@@ -142,7 +142,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           {
             clients.map((c) => (
               <li>
-                <img src={`/logos/${c.logo}`} alt={c.name} loading="lazy" decoding="async" class:list={{ inv: c.invert }} />
+                <img src={`/logos/${c.logo}`} alt={c.name} loading="lazy" decoding="async" class:list={{ inv: c.invert }} style={`height:${logoHeight(c.logo, 3200, 46, 150)}px`} />
               </li>
             ))
           }
@@ -222,8 +222,10 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
             {
               music.mixes.map((m) => (
                 <li>
-                  <span class="mix-name">{m.name}</span>
-                  <span class="mix-len mono">{m.length}</span>
+                  <a href={m.href} rel="noopener">
+                    <span class="mix-name">{m.name}</span>
+                    <span class="mix-len mono">{m.length}</span>
+                  </a>
                 </li>
               ))
             }
@@ -528,8 +530,8 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
   }
 
   .iva-title img {
-    width: 0.8em;
-    height: 0.8em;
+    width: 0.9em;
+    height: 0.9em;
   }
 
   .iva {
@@ -650,13 +652,11 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
   }
 
   .wall img {
-    max-width: 120px;
-    max-height: 34px;
     width: auto;
-    height: auto;
+    max-width: 100%;
     object-fit: contain;
-    filter: grayscale(1) contrast(1.1);
-    opacity: 0.72;
+    filter: grayscale(1) brightness(0.5) contrast(1.4);
+    opacity: 0.9;
     mix-blend-mode: multiply;
     transition: filter 300ms var(--ease-out), opacity 300ms var(--ease-out);
   }
@@ -668,7 +668,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
 
   .wall img.inv,
   .wall li:hover img.inv {
-    filter: invert(1) grayscale(1) contrast(1.2);
+    filter: invert(1) grayscale(1) brightness(0.5) contrast(1.4);
   }
 
   /* Open source */
@@ -879,12 +879,36 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
   }
 
   .mixes li {
+    border-top: 1px solid var(--rule);
+  }
+
+  .mixes a {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 16px;
     padding-block: 10px;
-    border-top: 1px solid var(--rule);
+    text-decoration: none;
+  }
+
+  .mixes a .mix-name {
+    flex: 1;
+    text-decoration: underline;
+    text-decoration-color: var(--rule-strong);
+    text-underline-offset: 0.22em;
+    transition: text-decoration-color 160ms var(--ease-out);
+  }
+
+  .mixes a:hover .mix-name {
+    text-decoration-color: currentColor;
+  }
+
+  .mixes a::after {
+    content: "↗";
+    font-family: var(--mono);
+    font-size: 0.8em;
+    color: var(--graphite);
+    order: 3;
   }
 
   .mixes li:last-child {

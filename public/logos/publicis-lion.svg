@@ -6,7 +6,7 @@
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
 <svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 width="160" height="68" viewBox="-0.011 -0.817 160 68" enable-background="new -0.011 -0.817 160 68" xml:space="preserve">
+	 width="160" height="68" viewBox="56.6 -0.2 46 46.5" enable-background="new -0.011 -0.817 160 68" xml:space="preserve">
 <defs>
 </defs>
 <path fill="#AD9961" d="M89.995,18.553c0.57-1.653,3.13-1.615,4.23-2.341c0.761-0.504,1.744-1.028,1.777-3.455
