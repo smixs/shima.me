@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+import { PERSON_ID, person } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: "en" | "ru";
+  path?: string;
+}
+
+const { title, description, lang = "en", path = "/" } = Astro.props;
+const site = "https://shima.me";
+const canonical = new URL(path, site).href;
+const enPath = path.replace(/^\/ru\//, "/");
+const ruPath = path.startsWith("/ru/") ? path : `/ru${path}`;
+
+const graph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${canonical}#page`,
+      url: canonical,
+      name: title,
+      inLanguage: lang,
+      mainEntity: { "@id": PERSON_ID },
+      isPartOf: { "@type": "WebSite", "@id": `${site}/#site`, url: `${site}/`, name: "Serge Shima" },
+    },
+    {
+      "@type": "Person",
+      "@id": PERSON_ID,
+      name: person.name,
+      alternateName: person.alternateNames,
+      jobTitle: "Co-founder & CTO",
+      url: person.cv,
+      sameAs: [...person.sameAs, `${site}/`],
+      address: { "@type": "PostalAddress", addressLocality: person.city, addressCountry: "UZ" },
+      worksFor: { "@id": "https://majento.ai/#organization" },
+      founder: [{ "@id": "https://majento.ai/#organization" }],
+      knowsAbout: ["AI agents", "Multi-agent systems", "Model Context Protocol", "AI adoption", "Brand strategy", "Gamification", "DJing"],
+      award: ["Grand Prix Effie (Exponenta)"],
+      alumniOf: { "@type": "CollegeOrUniversity", name: "Belarusian State Pedagogical University" },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://majento.ai/#organization",
+      name: "Majento",
+      url: "https://majento.ai",
+      founder: { "@id": PERSON_ID },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, site).href} />
+    <link rel="alternate" hreflang="ru" href={new URL(ruPath, site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(enPath, site).href} />
+    <link rel="me" href="https://sergeshima.com" />
+    <link rel="me" href="https://github.com/smixs" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#f3f3f1" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Serge Shima" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
