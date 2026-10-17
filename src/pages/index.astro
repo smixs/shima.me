@@ -6,7 +6,7 @@ import Log from "../components/Log.astro";
 import { Image } from "astro:assets";
 import dj from "../assets/dj-shima.jpg";
 import repos from "../data/repos.json";
-import { releases, log, showcase, mentions, clients, remotes } from "../data/site";
+import { releases, log, showcase, mentions, clients, remotes, iva } from "../data/site";
 
 const totalStars = repos.reduce((s, r) => s + r.stars, 0);
 const starsLabel = `${Math.floor(totalStars / 100) * 100}+`;
@@ -26,6 +26,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
     <a class="wordmark" href="/" aria-label="shima.me home">shima<span>.me</span></a>
     <nav aria-label="Sections">
       <a href="#shipping">Shipping</a>
+      <a href="#iva">Iva</a>
       <a href="#log">Log</a>
       <a href="#open-source">Open source</a>
       <a href="#stage">Talks</a>
@@ -88,6 +89,49 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           ))
         }
       </ol>
+    </section>
+
+    <section class="section shell" id="iva" aria-labelledby="iva-h">
+      <div class="section-head">
+        <h2 id="iva-h" class="resolve">Iva</h2>
+        <p class="mono">open source · ★ {fmt(repos.find((r) => r.name === "iva-agent")?.stars ?? 0)}</p>
+      </div>
+      <div class="iva">
+        <div class="iva-lead">
+          <p class="iva-line">
+            A personal AI assistant that lives in your Telegram chat. You talk; it files, remembers and acts, on your own server.
+          </p>
+          <pre class="iva-install"><code>{iva.install}</code></pre>
+          <p class="iva-links">
+            <a href={iva.site} rel="noopener">iva-agent.com</a>
+            <a href={iva.repo} rel="noopener">GitHub</a>
+          </p>
+        </div>
+        <div class="iva-body">
+          <h3>How Iva remembers</h3>
+          <dl class="iva-tree">
+            {
+              iva.tree.map((t) => (
+                <div>
+                  <dt>{t.name}</dt>
+                  <dd>{t.text}</dd>
+                </div>
+              ))
+            }
+          </dl>
+          <h3>What it does</h3>
+          <dl class="iva-features">
+            {
+              iva.features.map((f) => (
+                <div>
+                  <dt>{f.name}</dt>
+                  <dd>{f.text}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
     </section>
 
     <section class="section shell" id="log" aria-labelledby="log-h">
@@ -444,6 +488,95 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
     }
   }
 
+  /* Iva */
+  .iva {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(32px, 6vw, 96px);
+    padding-top: clamp(32px, 4.5vw, 56px);
+  }
+
+  .iva-line {
+    font-size: var(--step-2);
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  .iva-install {
+    margin: 24px 0 0;
+    padding: 14px 16px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--ink-2);
+  }
+
+  .iva-links {
+    display: flex;
+    gap: 22px;
+    margin-top: 22px;
+  }
+
+  .iva-links a {
+    font-weight: 560;
+    text-decoration-color: var(--ink);
+  }
+
+  .iva-links a::after {
+    content: " ↗";
+    font-family: var(--mono);
+    font-size: 0.8em;
+  }
+
+  .iva-body h3 {
+    font-size: var(--step-1);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+
+  .iva-body h3 + dl {
+    margin: 0 0 40px;
+  }
+
+  .iva-tree div,
+  .iva-features div {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 16px;
+    padding-block: 12px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .iva-tree dt,
+  .iva-features dt {
+    font-weight: 560;
+  }
+
+  .iva-tree dd,
+  .iva-features dd {
+    margin: 0;
+    color: var(--graphite);
+  }
+
+  @media (max-width: 860px) {
+    .iva {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .iva-tree div,
+    .iva-features div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+
   /* Clients */
   .clients {
     padding-top: clamp(56px, 7vw, 96px);
@@ -762,7 +895,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
     display: inline-block;
     margin-top: 8px;
     font-family: var(--display);
-    font-size: clamp(3rem, 0.8rem + 9vw, 9rem);
+    font-size: clamp(2.25rem, 1.4rem + 3.5vw, 4rem);
     font-weight: 800;
     letter-spacing: -0.06em;
     line-height: 0.95;

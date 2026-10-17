@@ -67,20 +67,6 @@ export const releases: Release[] = [
     ],
   },
   {
-    id: "iva",
-    name: "Iva",
-    kind: "Product · open source · Telegram",
-    line: "A personal AI assistant that lives in your Telegram chat and remembers everything.",
-    notes: [
-      "Files voice notes, photos and decisions into a markdown vault on your own server.",
-      "Self-hosted, installed with one command, works with your own model keys.",
-    ],
-    links: [
-      { label: "iva-agent.com", href: "https://iva-agent.com" },
-      { label: "GitHub", href: "https://github.com/smixs/iva-agent" },
-    ],
-  },
-  {
     id: "sotish",
     name: "sotish",
     kind: "Product · Majento",
@@ -139,7 +125,7 @@ export const log: Commit[] = [
     head: true,
     notes: ["AI software and multi-agent systems for business, deployed at the client.", "Client work includes IBT / PepsiCo."],
     branches: [
-      { name: "iva", href: "#release-iva" },
+      { name: "iva", href: "#iva" },
       { name: "sotish", href: "#release-sotish" },
       { name: "sezish", href: "#release-sezish" },
       { name: "claimp", href: "#release-claimp" },
@@ -289,11 +275,3 @@ export const iva = {
     { name: "Self-updating", text: "A daily check, then a one-tap update in Telegram, staged, with rollback." },
   ],
 };
-
-// Preset questions for the "ask about Serge" chat. Answers use facts from this file only.
-export const askSerge = [
-  { q: "Who is Serge Shima?", a: "An AI builder in Tashkent. Co-founder and CTO of Majento, founder of Aimasters, author of Iva and other open-source agent tools." },
-  { q: "What is he building now?", a: "Majento's products: Iva, the sotish Telegram storefront, sezish voice-to-text for Uzbek, Kazakh and Kyrgyz, and the Claimp DJ player." },
-  { q: "What did he do before AI?", a: "Twenty years of brand strategy. He co-created the Halva card (13M+ users), won a Grand Prix Effie and ran promos that brought Eurotorg $21M in profit." },
-  { q: "How do I reach him?", a: "Telegram @shimaoz, or hello@shima.me. For event organizers there is a short CV at sergeshima.com." },
-];

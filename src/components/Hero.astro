@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
     <div class="portrait">
       <Image src={avatar} alt="Serge Shima, cartoon portrait" width={400} height={400} loading="eager" fetchpriority="high" class="avatar" />
       <p class="bubble" id="hero-name">
-        Serge Shima <span class="wave" aria-hidden="true">👋</span><!-- pinned brand greeting, taste-skill-ignore -->
+        Serge Shima <span class="wave" aria-hidden="true">👋</span>
       </p>
     </div>
     <h1 class="title">
@@ -39,10 +39,10 @@ import { Image } from "astro:assets";
     display: grid;
     place-items: center;
     background:
-      radial-gradient(60% 55% at 50% 42%, #fbfbfa 0%, transparent 70%), /* pinned brand hero, taste-skill-ignore */
+      radial-gradient(60% 55% at 50% 42%, #fbfbfa 0%, transparent 70%),
       var(--grain) 0 0 / 200px,
       #dcdcd9;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 30px 60px -40px rgba(23, 24, 28, 0.35); /* pinned brand hero, taste-skill-ignore */
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 30px 60px -40px rgba(23, 24, 28, 0.35);
   }
 
   .hero-grain {
@@ -78,7 +78,7 @@ import { Image } from "astro:assets";
     aspect-ratio: 1;
     border-radius: 50%;
     border: clamp(8px, 0.9vw, 12px) solid #f7f7f5;
-    box-shadow: /* pinned brand hero, taste-skill-ignore */
+    box-shadow:
       0 0 0 1px rgba(23, 24, 28, 0.06),
       0 18px 40px -18px rgba(23, 24, 28, 0.45);
   }
@@ -94,7 +94,7 @@ import { Image } from "astro:assets";
     background: #fdfdfc;
     padding: 0.7em 1.1em;
     border-radius: 999px;
-    box-shadow: /* pinned brand hero, taste-skill-ignore */
+    box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.9) inset,
       0 10px 24px -10px rgba(23, 24, 28, 0.35);
     transform-origin: 0% 60%;
@@ -110,7 +110,7 @@ import { Image } from "astro:assets";
   }
 
   .title {
-    font-size: clamp(2.25rem, 1.2rem + 3.8vw, 4.25rem);
+    font-size: clamp(2rem, 1.2rem + 2.6vw, 3.5rem);
     font-weight: 720;
     letter-spacing: -0.04em;
     line-height: 1.04;
