@@ -67,6 +67,20 @@ export const releases: Release[] = [
     ],
   },
   {
+    id: "iva",
+    name: "Iva",
+    kind: "Product · open source · Telegram",
+    line: "A personal AI assistant that lives in your Telegram chat and remembers everything.",
+    notes: [
+      "Files voice notes, photos and decisions into a markdown vault on your own server.",
+      "Self-hosted, installed with one command, works with your own model keys.",
+    ],
+    links: [
+      { label: "iva-agent.com", href: "https://iva-agent.com" },
+      { label: "GitHub", href: "https://github.com/smixs/iva-agent" },
+    ],
+  },
+  {
     id: "sotish",
     name: "sotish",
     kind: "Product · Majento",
@@ -125,6 +139,7 @@ export const log: Commit[] = [
     head: true,
     notes: ["AI software and multi-agent systems for business, deployed at the client.", "Client work includes IBT / PepsiCo."],
     branches: [
+      { name: "iva", href: "#release-iva" },
       { name: "sotish", href: "#release-sotish" },
       { name: "sezish", href: "#release-sezish" },
       { name: "claimp", href: "#release-claimp" },
@@ -227,9 +242,13 @@ export const showcase = ["agent-second-brain", "visual-skills", "iva-agent", "sk
 export type Mention = { outlet: string; date?: string; title: string; href?: string };
 
 export const mentions: Mention[] = [
-  { outlet: "Spot", date: "2026.09", title: "Expert Talk at PRO BUSINESS: AI agents in business", href: "https://www.spot.uz/ru/2026/09/15/ai-agent/" },
+  { outlet: "Techstars Startup Weekend Tashkent", date: "2026.09", title: "Mentor, MDIST, September 25–27", href: "https://www.techstars.com/location/uzbekistan" },
+  { outlet: "Hackonnect bootcamp at Yandex Uzbekistan", date: "2026.09", title: "How to create software products using AI", href: "https://www.instagram.com/reel/Ddlf1RsORur" },
+  { outlet: "PRO BUSINESS Expert Talk", date: "2026.09", title: "A personal AI assistant in Telegram: how to choose, set up and use it", href: "https://www.spot.uz/ru/2026/09/15/ai-agent/" },
+  { outlet: "NextGen Business Club, American Corner Tashkent", date: "2026.08", title: "AI agents: why it's not just ChatGPT", href: "https://www.instagram.com/p/DbX_ApguXrz" },
+  { outlet: "Online workshop", date: "2026.06", title: "Human + AI = a new formula" },
+  { outlet: "Alpha open lecture", date: "2026.02", title: "5 AI tools that do the work of 10 people" },
   { outlet: "NeyroSummit 16.0", title: "Clone your expertise: skills for AI agents", href: "https://vc.ru/id667/2871202-vystuplenie-na-neyrosummit-kontekstnaya-inzheneriya-i-instrumenty" },
-  { outlet: "Angel AI Hackathon", date: "2026", title: "Mentor and speaker, Tashkent" },
   { outlet: "Tashkent Marketing Forum", date: "2025", title: "Key AI tools for marketers", href: "https://tmf25.marketing.uz/speakers/shima1.htm" },
   { outlet: "AI DAY Conference", date: "2024.05", title: "Building a team of AI experts for business", href: "https://business-pro.by/marketing/ne-stoit-polzovatsya-besplatnymi-servisami-s-nejronkami-v-kotoryh-eshhe-i-reklama-integrirovana-kak-sdelat-komandu-ai-ekspertov-dlya-biznesa/" },
   { outlet: "White Square", date: "2024", title: "From idea to visualization with neural nets" },
@@ -247,4 +266,34 @@ export const remotes: Link[] = [
   { label: "YouTube", href: "https://www.youtube.com/@SergeShima" },
   { label: "Instagram", href: "https://www.instagram.com/serge.shima" },
   { label: "CV for organizers", href: "https://sergeshima.com" },
+];
+
+// Iva in depth. Source: iva-agent.com (fetched 17.10.2026).
+export const iva = {
+  site: "https://iva-agent.com",
+  repo: "https://github.com/smixs/iva-agent",
+  install: "curl -fsSL https://raw.githubusercontent.com/smixs/iva-agent/main/install.sh | bash",
+  tree: [
+    { name: "Leaves", text: "The word-for-word transcript of each day, Iva's replies included. Nothing is paraphrased on arrival." },
+    { name: "Branches", text: "Every night at 04:00 the days fold into weeks, months and years. Facts that change get rewritten." },
+    { name: "Trunk", text: "CORE.md, a profile under 1,200 characters that rides in every prompt, plus cards for people, projects and decisions." },
+  ],
+  features: [
+    { name: "Voice", text: "Voice, audio and video notes transcribed; English, Russian and Uzbek detected automatically." },
+    { name: "Documents", text: "Send a PDF, DOCX or XLSX and Iva answers on its content and files it into the vault." },
+    { name: "Personal CRM", text: "Who your people are, what you agreed and when to follow up." },
+    { name: "Google Workspace", text: "Gmail, Calendar, Drive, Sheets, Docs and Tasks from the chat." },
+    { name: "Userbot", text: "Works from your own account like a secretary: reads group chats, summarises them, replies as you." },
+    { name: "Your model", text: "OpenCode Go, Ollama Cloud, OpenRouter or your ChatGPT subscription. Your keys." },
+    { name: "Security", text: "Web pages and forwards pass a prompt-injection sanitizer; every reply passes a secret-redaction gate." },
+    { name: "Self-updating", text: "A daily check, then a one-tap update in Telegram, staged, with rollback." },
+  ],
+};
+
+// Preset questions for the "ask about Serge" chat. Answers use facts from this file only.
+export const askSerge = [
+  { q: "Who is Serge Shima?", a: "An AI builder in Tashkent. Co-founder and CTO of Majento, founder of Aimasters, author of Iva and other open-source agent tools." },
+  { q: "What is he building now?", a: "Majento's products: Iva, the sotish Telegram storefront, sezish voice-to-text for Uzbek, Kazakh and Kyrgyz, and the Claimp DJ player." },
+  { q: "What did he do before AI?", a: "Twenty years of brand strategy. He co-created the Halva card (13M+ users), won a Grand Prix Effie and ran promos that brought Eurotorg $21M in profit." },
+  { q: "How do I reach him?", a: "Telegram @shimaoz, or hello@shima.me. For event organizers there is a short CV at sergeshima.com." },
 ];
