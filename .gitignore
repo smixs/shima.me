@@ -6,3 +6,5 @@ dist/
 .vercel
 .scratch/
 .wrangler/
+.taste-skill/
+/assets/
