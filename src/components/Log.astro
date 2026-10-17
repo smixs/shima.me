@@ -1,0 +1,419 @@
+---
+import { log, logoHeight } from "../data/site";
+---
+
+<ol class="log" aria-label="Career, newest first">
+  <span class="log-progress" aria-hidden="true"></span>
+  <span class="log-tip" aria-hidden="true"></span>
+  {
+    log.map((c) => (
+      <>
+        <li class:list={["commit", { head: c.head }]} id={`v${c.date.replace(".", "-")}`}>
+          <div class="when">
+            <time class="mono" datetime={c.date.replace(".", "-")}>{c.date}</time>
+            {c.place && <span class="place">{c.place}</span>}
+          </div>
+          <div class="rail" aria-hidden="true">
+            <span class="node" />
+          </div>
+          <div class="body">
+            <p class="refs mono">
+              {c.head && <span class="ref-head">HEAD → main</span>}
+              <span class="ref-tag">{c.tag}</span>
+            </p>
+            <div class="org-line">
+              <h3 class="org">{c.org}</h3>
+              {c.logo && <img class:list={["org-logo", { inv: c.invert }]} src={`/logos/${c.logo}`} alt="" loading="lazy" decoding="async" style={`height:${logoHeight(c.logo, 2400, 44, 140)}px`} />}
+            </div>
+            <p class="role">{c.role}</p>
+            <ul class="notes">
+              <li>{c.notes[0]}</li>
+            </ul>
+          </div>
+        </li>
+        {c.branches?.map((b, i, all) => (
+          <li
+            class:list={["commit", "branch", { first: i === 0, last: i === all.length - 1 }]}
+          >
+            <div class="when">
+              <span class="mono branch-label">{i === 0 ? "branch" : ""}</span>
+            </div>
+            <div class="rail" aria-hidden="true">
+              {i === 0 && (
+                <svg class="fork" viewBox="0 0 64 30" preserveAspectRatio="none">
+                  <path d="M20 0 C20 18, 46 12, 46 30" />
+                </svg>
+              )}
+              <span class="lane" />
+              <span class="node" />
+            </div>
+            <div class="body">
+              <a class="branch-name" href={b.href}>
+                {b.name}
+              </a>
+            </div>
+          </li>
+        ))}
+      </>
+    ))
+  }
+</ol>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  const list = document.querySelector<HTMLElement>(".log");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (list && !reduce) {
+    gsap.registerPlugin(ScrollTrigger);
+    list.classList.add("is-scrubbed");
+    const bar = list.querySelector<HTMLElement>(".log-progress")!;
+    const tip = list.querySelector<HTMLElement>(".log-tip")!;
+
+    ScrollTrigger.create({
+      trigger: list,
+      start: "top 62%",
+      end: "bottom 62%",
+      scrub: 0.4,
+      onUpdate: (self) => {
+        bar.style.transform = `scaleY(${self.progress})`;
+        tip.style.transform = `translate(-50%, ${self.progress * list.offsetHeight}px)`;
+        tip.style.opacity = self.progress > 0 && self.progress < 1 ? "1" : "0";
+      },
+    });
+
+    list.querySelectorAll<HTMLElement>(".commit").forEach((row) => {
+      ScrollTrigger.create({
+        trigger: row.querySelector(".node"),
+        start: "top 62%",
+        onEnter: () => row.classList.add("is-past"),
+        onLeaveBack: () => row.classList.remove("is-past"),
+      });
+    });
+  }
+</script>
+
+<style>
+  .log {
+    --date-w: 8.5rem;
+    --rail-w: 64px;
+    --main-x: 20px;
+    --lane-x: 46px;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 clamp(24px, 4vw, 48px);
+  }
+
+  .log::before,
+  .log-progress {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--date-w) + var(--main-x) - 1px);
+    width: 2px;
+    background: var(--rule);
+  }
+
+  .log-progress {
+    background: var(--ink);
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+
+  .log.is-scrubbed .log-progress {
+    transform: scaleY(0);
+  }
+
+  .log-tip {
+    position: absolute;
+    top: 0;
+    left: calc(var(--date-w) + var(--main-x));
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--head);
+    box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--ink);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity 200ms linear;
+  }
+
+  .commit {
+    position: relative;
+    display: grid;
+    --pad: clamp(28px, 3.4vw, 44px);
+    --title-y: calc(38px + var(--step-3) * 0.52);
+    grid-template-columns: var(--date-w) var(--rail-w) minmax(0, 1fr);
+    padding-block: var(--pad);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .when {
+    display: grid;
+    align-content: start;
+    gap: 4px;
+    padding-top: calc(38px + var(--step-3) * 0.18);
+  }
+
+  .when time {
+    color: var(--ink);
+  }
+
+  .place {
+    font-size: var(--step--1);
+    color: var(--graphite);
+  }
+
+  .rail {
+    position: relative;
+  }
+
+  .node {
+    position: absolute;
+    left: var(--main-x);
+    top: var(--title-y);
+    width: 15px;
+    height: 15px;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    z-index: 1;
+    transition: background-color 300ms var(--ease-out), scale 300ms var(--ease-out);
+  }
+
+  .log:not(.is-scrubbed) .node,
+  .commit.is-past .node {
+    background: var(--ink);
+  }
+
+  .commit.is-past .node {
+    scale: 1.08;
+  }
+
+  .commit.head .node {
+    background: var(--head);
+    width: 19px;
+    height: 19px;
+  }
+
+  .body {
+    min-width: 0;
+    padding-left: clamp(8px, 1.5vw, 20px);
+  }
+
+  .refs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .refs span {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 9px;
+    border-radius: 6px;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink-2);
+  }
+
+  .refs .ref-head {
+    background: var(--head);
+    border-color: var(--head);
+    color: var(--head-ink);
+    font-weight: 600;
+  }
+
+  .org-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .org-logo {
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: grayscale(1) brightness(0.5) contrast(1.4);
+    opacity: 0.85;
+    mix-blend-mode: multiply;
+    transition: opacity 300ms var(--ease-out), filter 300ms var(--ease-out);
+  }
+
+  .commit:hover .org-logo {
+    filter: none;
+    opacity: 1;
+  }
+
+  .org-logo.inv,
+  .commit:hover .org-logo.inv {
+    filter: invert(1) grayscale(1) brightness(0.5) contrast(1.4);
+  }
+
+  .org {
+    font-size: var(--step-3);
+    font-weight: 720;
+  }
+
+  .role {
+    margin-top: 8px;
+    font-size: var(--step-1);
+    color: var(--ink-2);
+    font-weight: 400;
+  }
+
+  .notes {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+    max-width: 62ch;
+    color: var(--graphite);
+  }
+
+  .notes li {
+    padding-left: 1.1em;
+    text-indent: -1.1em;
+  }
+
+  .notes li::before {
+    content: "+ ";
+    font-family: var(--mono);
+    font-size: 0.85em;
+    color: var(--rule-strong);
+  }
+
+  /* Branch rows: a second lane forks off the HEAD commit. */
+  .branch {
+    padding-block: 14px;
+    border-bottom: 0;
+  }
+
+  .branch.last {
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .branch .when {
+    padding-top: 6px;
+  }
+
+  .branch-label {
+    color: var(--graphite);
+  }
+
+  .branch .node {
+    left: var(--lane-x);
+    top: 24px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .lane {
+    position: absolute;
+    left: calc(var(--lane-x) - 1px);
+    top: -14px;
+    bottom: -14px;
+    width: 2px;
+    background: var(--ink);
+  }
+
+  .branch.first .lane {
+    top: 24px;
+  }
+
+  .branch.last .lane {
+    bottom: auto;
+    height: 38px;
+  }
+
+  .fork {
+    position: absolute;
+    left: 0;
+    top: -14px;
+    width: var(--rail-w);
+    height: 38px;
+    overflow: visible;
+  }
+
+  .fork path {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .branch-name {
+    display: inline-block;
+    padding-top: 12px;
+    line-height: 1.1;
+    font-family: var(--display);
+    font-size: var(--step-1);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: translate 260ms var(--ease-out);
+  }
+
+  .branch-name::after {
+    content: " ↓";
+    font-family: var(--mono);
+    font-size: 0.7em;
+    color: var(--graphite);
+  }
+
+  .branch-name:hover {
+    translate: 4px 0;
+  }
+
+  .commit:not(.branch) {
+    transition: background-color 300ms var(--ease-out);
+  }
+
+  @media (max-width: 760px) {
+    .log {
+      --date-w: 0px;
+      --rail-w: 52px;
+      --main-x: 14px;
+      --lane-x: 34px;
+    }
+    .commit {
+      grid-template-columns: var(--rail-w) minmax(0, 1fr);
+    }
+    .when {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      gap: 12px;
+      padding: 0 0 10px clamp(8px, 1.5vw, 20px);
+    }
+    .rail {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    .body {
+      grid-column: 2;
+    }
+    .commit {
+      --title-y: calc(34px + 38px + var(--step-3) * 0.52);
+    }
+    .branch .when {
+      display: none;
+    }
+    .branch .rail {
+      grid-row: 1;
+    }
+    .branch .body {
+      grid-row: 1;
+    }
+  }
+</style>

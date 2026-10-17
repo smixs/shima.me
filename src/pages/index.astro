@@ -1,0 +1,1086 @@
+---
+import "../styles/global.css";
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Log from "../components/Log.astro";
+import { Image } from "astro:assets";
+import dj from "../assets/dj-shima.jpg";
+import repos from "../data/repos.json";
+import { releases, log, showcase, mentions, clients, remotes, iva, music, logoHeight } from "../data/site";
+
+const totalStars = repos.reduce((s, r) => s + r.stars, 0);
+const starsLabel = `${Math.floor(totalStars / 100) * 100}+`;
+const fmt = (n: number) => n.toLocaleString("en-US");
+
+const featured = showcase.map((n) => repos.find((r) => r.name === n)).filter((r): r is (typeof repos)[number] => Boolean(r));
+const rest = repos.filter((r) => !showcase.includes(r.name) && r.name !== "smixs");
+const listed = rest.slice(0, 9);
+const more = rest.slice(9);
+
+const title = "Serge Shima: co-founder & CTO at Majento, AI builder in Tashkent";
+const description = `Serge Shima (Сергей Шима) builds AI products in Tashkent: co-founder & CTO of Majento, founder of Aimasters, author of open-source agent tools with ${starsLabel} GitHub stars. Career since 1998: Halva, Grand Prix Effie, Re:fresh.`;
+---
+
+<Base title={title} description={description} path="/">
+  <header class="top shell">
+    <a class="wordmark" href="/" aria-label="shima.me home">shima<span>.me</span></a>
+    <nav aria-label="Sections">
+      <a href="#shipping">Shipping</a>
+      <a href="#iva">Iva</a>
+      <a href="#log">Log</a>
+      <a href="#open-source">Open source</a>
+      <a href="#stage">Talks</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tg" href="https://t.me/shimaoz" rel="noopener">Telegram</a>
+  </header>
+
+  <main>
+    <div class="shell"><Hero /></div>
+
+    <section class="section shell who" aria-labelledby="who">
+      <h2 id="who" class="visually-hidden">Who is Serge Shima</h2>
+      <p class="lede">
+        <strong>Serge Shima</strong> (Сергей Шима) builds AI products in Tashkent. He is co-founder and CTO of{" "}
+        <a href="#release-majento">Majento</a>, founder of <a href="#release-aimasters">Aimasters</a>, and the author of open-source agent tools with <a href="#open-source">{starsLabel} stars on GitHub</a>. Before AI he spent twenty years
+        in brand strategy: he co-created the Halva card, won a Grand Prix Effie and ran promos that brought a retailer $21M in profit.
+        He has played house and techno since 1998.
+      </p>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Tashkent, Uzbekistan</dd></div>
+        <div><dt>From</dt><dd>Minsk, Belarus</dd></div>
+        <div><dt>Now</dt><dd>Majento, Aimasters</dd></div>
+        <div><dt>In AI since</dt><dd>2017</dd></div>
+        <div><dt>Trained</dt><dd>1000+ people, 50+ teams</dd></div>
+        <div><dt>Speaks</dt><dd>Russian, Belarusian, English</dd></div>
+        <div><dt>Short CV</dt><dd><a href="https://sergeshima.com">sergeshima.com</a></dd></div>
+      </dl>
+    </section>
+
+    <section class="section shell" id="shipping" aria-labelledby="shipping-h">
+      <div class="section-head">
+        <h2 id="shipping-h" class="resolve">Now shipping</h2>
+        <p class="mono">{releases.length} companies and products · 2026</p>
+      </div>
+      <ol class="releases">
+        {
+          releases.map((r) => (
+            <li class="release" id={`release-${r.id}`}>
+              <div class="release-name">
+                {r.logo && <img class="release-mark" src={`/logos/${r.logo}`} alt="" width="44" height="44" loading="lazy" />}
+                <h3>{r.name}</h3>
+                <p class="mono">{r.kind}</p>
+              </div>
+              <div class="release-body">
+                <p class="release-line">{r.line}</p>
+                <p class="release-links">
+                  {r.links.map((l) => (
+                    <a href={l.href} rel="noopener">
+                      {l.label}
+                    </a>
+                  ))}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="section shell" id="iva" aria-labelledby="iva-h">
+      <div class="section-head">
+        <h2 id="iva-h" class="resolve iva-title"><img src="/logos/iva.svg" alt="" width="40" height="40" />Iva</h2>
+        <p class="mono">open source · ★ {fmt(repos.find((r) => r.name === "iva-agent")?.stars ?? 0)}</p>
+      </div>
+      <div class="iva">
+        <div class="iva-lead">
+          <p class="iva-line">
+            A personal AI assistant that lives in your Telegram chat. You talk; it files, remembers and acts, on your own server.
+          </p>
+          <pre class="iva-install"><code>{iva.install}</code></pre>
+          <p class="iva-links">
+            <a href={iva.site} rel="noopener">iva-agent.com</a>
+            <a href={iva.repo} rel="noopener">GitHub</a>
+          </p>
+        </div>
+        <div class="iva-body">
+          <h3>How Iva remembers</h3>
+          <dl class="iva-tree">
+            {
+              iva.tree.map((t) => (
+                <div>
+                  <dt>{t.name}</dt>
+                  <dd>{t.text}</dd>
+                </div>
+              ))
+            }
+          </dl>
+          <h3>What it does</h3>
+          <dl class="iva-features">
+            {
+              iva.features.slice(0, 4).map((f) => (
+                <div>
+                  <dt>{f.name}</dt>
+                  <dd>{f.text}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="log" aria-labelledby="log-h">
+      <div class="section-head">
+        <h2 id="log-h" class="resolve">The log</h2>
+        <p class="mono">{log.length} commits · 1998 → 2026</p>
+      </div>
+      <Log />
+      <div class="clients">
+        <h3>Brands I worked for</h3>
+        <ul class="wall">
+          {
+            clients.map((c) => (
+              <li>
+                <img src={`/logos/${c.logo}`} alt={c.name} loading="lazy" decoding="async" class:list={{ inv: c.invert }} style={`height:${logoHeight(c.logo, 3200, 46, 150)}px`} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section shell" id="open-source" aria-labelledby="os-h">
+      <div class="section-head">
+        <h2 id="os-h" class="resolve">Open source</h2>
+        <p class="mono">{repos.length} public repos · ★ {fmt(totalStars)}</p>
+      </div>
+      <ol class="featured">
+        {
+          featured.map((r) => (
+            <li>
+              <a class="pkg" href={r.url} rel="noopener">
+                <span class="pkg-name">{r.name}</span>
+                <span class="pkg-desc">{r.description}</span>
+                <span class="pkg-meta mono">
+                  <span>{r.language ?? "Markdown"}</span>
+                  <span class="star">★ {fmt(r.stars)}</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+      <ol class="repo-list">
+        {
+          listed.map((r) => (
+            <li>
+              <a href={r.url} rel="noopener">
+                <span class="r-name">{r.name}</span>
+                <span class="r-desc">{r.description ?? ""}</span>
+                <span class="r-star mono">★ {fmt(r.stars)}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+      {
+        more.length > 0 && (
+          <details class="more">
+            <summary>
+              <span>Show {more.length} more repositories</span>
+            </summary>
+            <ol class="repo-list">
+              {more.map((r) => (
+                <li>
+                  <a href={r.url} rel="noopener">
+                    <span class="r-name">{r.name}</span>
+                    <span class="r-desc">{r.description ?? ""}</span>
+                    <span class="r-star mono">★ {fmt(r.stars)}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </details>
+        )
+      }
+    </section>
+
+    <section class="section shell music" id="music" aria-labelledby="music-h">
+      <div class="music-grid">
+        <figure class="music-photo">
+          <Image src={dj} alt="Serge Shima behind the decks" widths={[480, 800]} sizes="(max-width: 760px) 100vw, 40vw" />
+        </figure>
+        <div class="music-text">
+          <h2 id="music-h" class="resolve">Behind the decks since 1998</h2>
+          <p>
+            House and techno first, then the biggest raves in Belarus: from 2005 to 2011 he co-ran Re:fresh in Minsk.
+            Today it is long classic house, nu-disco and deep house mixes, and <a href="#release-claimp">Claimp</a>, a free
+            waveform player he wrote for building DJ sets on macOS.
+          </p>
+          <ul class="mixes">
+            {
+              music.mixes.map((m) => (
+                <li>
+                  <a href={m.href} rel="noopener">
+                    <span class="mix-name">{m.name}</span>
+                    <span class="mix-len mono">{m.length}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="music-links">
+            {
+              music.links.map((l) => (
+                <a href={l.href} rel="noopener">
+                  {l.label}
+                </a>
+              ))
+            }
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="stage" aria-labelledby="stage-h">
+      <div class="section-head">
+        <h2 id="stage-h" class="resolve">On stage and in print</h2>
+        <p class="mono">{mentions.length} entries</p>
+      </div>
+      <ol class="mentions">
+        {
+          mentions.map((m) => (
+            <li>
+              {m.href ? (
+                <a href={m.href} rel="noopener">
+                  <span class="m-date mono">{m.date ?? ""}</span>
+                  <span class="m-outlet">{m.outlet}</span>
+                  <span class="m-title">{m.title}</span>
+                  <span class="m-go" aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                <div>
+                  <span class="m-date mono">{m.date ?? ""}</span>
+                  <span class="m-outlet">{m.outlet}</span>
+                  <span class="m-title">{m.title}</span>
+                  <span class="m-go" aria-hidden="true" />
+                </div>
+              )}
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="section shell contact" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="resolve">Write to me</h2>
+      <a class="contact-big" href="https://t.me/shimaoz" rel="noopener">t.me/shimaoz</a>
+      <ul class="remotes">
+        {
+          remotes.map((r) => (
+            <li>
+              <a href={r.href} rel="noopener">
+                {r.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot shell">
+    <p>Serge Shima · Tashkent · 2026</p>
+    <p>Stars update daily from GitHub</p>
+  </footer>
+</Base>
+
+<script>
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      }
+    },
+    { rootMargin: "0px 0px -12% 0px" },
+  );
+  document.querySelectorAll(".resolve").forEach((el) => io.observe(el));
+</script>
+
+<style>
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-block: 20px;
+  }
+
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 760;
+    font-size: 1.25rem;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+  }
+
+  .wordmark span {
+    color: var(--graphite);
+    font-weight: 400;
+  }
+
+  .top nav {
+    display: flex;
+    gap: clamp(14px, 2vw, 28px);
+    font-size: 0.9375rem;
+  }
+
+  .top nav a {
+    text-decoration: none;
+    color: var(--ink-2);
+  }
+
+  .top nav a:hover {
+    color: var(--ink);
+  }
+
+  .tg {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 999px;
+    border: 1px solid var(--ink);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: background-color 200ms var(--ease-out), color 200ms var(--ease-out);
+  }
+
+  .tg:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  @media (max-width: 860px) {
+    .top nav {
+      display: none;
+    }
+  }
+
+  /* Who */
+  .who {
+    display: grid;
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+  }
+
+  .lede {
+    font-family: var(--display);
+    font-size: var(--step-2);
+    font-weight: 360;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+  }
+
+  .lede strong {
+    font-weight: 700;
+  }
+
+  .lede a {
+    text-decoration-color: var(--ink);
+    text-decoration-thickness: 1.5px;
+  }
+
+  .facts {
+    margin: 0;
+    border-top: 1px solid var(--ink);
+  }
+
+  .facts div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 12px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.9375rem;
+  }
+
+  .facts dt {
+    color: var(--graphite);
+  }
+
+  .facts dd {
+    margin: 0;
+    text-align: right;
+    font-weight: 500;
+  }
+
+  @media (max-width: 860px) {
+    .who {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Releases */
+  .releases {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .release {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(20px, 4vw, 64px);
+    padding-block: clamp(32px, 4.5vw, 56px);
+    border-bottom: 1px solid var(--rule);
+    scroll-margin-top: 24px;
+  }
+
+  .release-name {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: center;
+  }
+
+  .release-mark {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    grid-row: 1;
+  }
+
+  .release-name .mono {
+    grid-column: 2;
+  }
+
+  .release-name h3 {
+    font-size: var(--step-4);
+    font-weight: 780;
+    letter-spacing: -0.05em;
+    transition: translate 500ms var(--ease-out);
+  }
+
+  .release:hover .release-name h3 {
+    translate: 10px 0;
+  }
+
+  .release-name .mono {
+    margin-top: 14px;
+    color: var(--graphite);
+  }
+
+  .release-line {
+    font-size: var(--step-2);
+    font-weight: 380;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .release-notes {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+    color: var(--graphite);
+    max-width: 60ch;
+  }
+
+  .release-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-top: 22px;
+  }
+
+  .release-links a {
+    font-weight: 560;
+    text-decoration-color: var(--ink);
+  }
+
+  .release-links a::after {
+    content: " ↗";
+    font-family: var(--mono);
+    font-size: 0.8em;
+  }
+
+  .release:target {
+    background: linear-gradient(90deg, rgba(242, 194, 48, 0.18), transparent 70%);
+  }
+
+  @media (max-width: 760px) {
+    .release {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Iva */
+  .iva-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .iva-title img {
+    width: 0.9em;
+    height: 0.9em;
+  }
+
+  .iva {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(32px, 6vw, 96px);
+    padding-top: clamp(32px, 4.5vw, 56px);
+  }
+
+  .iva-line {
+    font-size: var(--step-2);
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  .iva-install {
+    margin: 24px 0 0;
+    padding: 14px 16px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--ink-2);
+  }
+
+  .iva-links {
+    display: flex;
+    gap: 22px;
+    margin-top: 22px;
+  }
+
+  .iva-links a {
+    font-weight: 560;
+    text-decoration-color: var(--ink);
+  }
+
+  .iva-links a::after {
+    content: " ↗";
+    font-family: var(--mono);
+    font-size: 0.8em;
+  }
+
+  .iva-body h3 {
+    font-size: var(--step-1);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+
+  .iva-body h3 + dl {
+    margin: 0 0 40px;
+  }
+
+  .iva-tree div,
+  .iva-features div {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 16px;
+    padding-block: 12px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .iva-tree dt,
+  .iva-features dt {
+    font-weight: 560;
+  }
+
+  .iva-tree dd,
+  .iva-features dd {
+    margin: 0;
+    color: var(--graphite);
+  }
+
+  @media (max-width: 860px) {
+    .iva {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .iva-tree div,
+    .iva-features div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+
+  /* Clients */
+  .clients {
+    padding-top: clamp(56px, 7vw, 96px);
+  }
+
+  .clients h3 {
+    font-size: var(--step-1);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--graphite);
+    margin-bottom: 18px;
+  }
+
+  .wall {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px 16px;
+  }
+
+  .wall li {
+    display: grid;
+    place-items: center;
+    height: 88px;
+    padding: 12px;
+  }
+
+  .wall img {
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0.5) contrast(1.4);
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+    transition: filter 300ms var(--ease-out), opacity 300ms var(--ease-out);
+  }
+
+  .wall li:hover img {
+    filter: none;
+    opacity: 1;
+  }
+
+  .wall img.inv,
+  .wall li:hover img.inv {
+    filter: invert(1) grayscale(1) brightness(0.5) contrast(1.4);
+  }
+
+  /* Open source */
+  .featured {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-left: 1px solid var(--rule);
+  }
+
+  .featured li {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pkg {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 14px;
+    height: 100%;
+    min-height: 260px;
+    padding: clamp(20px, 2.4vw, 32px);
+    text-decoration: none;
+    transition: background-color 300ms var(--ease-out);
+  }
+
+  .pkg:hover {
+    background: var(--card);
+  }
+
+  .pkg-name {
+    font-family: var(--display);
+    font-size: var(--step-2);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .pkg-desc {
+    color: var(--graphite);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .pkg-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--graphite);
+  }
+
+  .pkg-meta .star {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .pkg:hover .star {
+    color: var(--head-ink);
+    background: var(--head);
+    border-radius: 4px;
+    padding-inline: 4px;
+    margin-inline: -4px;
+  }
+
+  @media (max-width: 960px) {
+    .featured {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .featured {
+      grid-template-columns: 1fr;
+    }
+    .pkg {
+      min-height: 0;
+    }
+  }
+
+  .repo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .repo-list a {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 6fr) auto;
+    gap: 24px;
+    align-items: baseline;
+    padding-block: 16px;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+  }
+
+  .repo-list a > span:first-child {
+    transition: translate 300ms var(--ease-out);
+  }
+
+  .repo-list a:hover > span:first-child {
+    translate: 8px 0;
+  }
+
+  .r-name {
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+
+  .r-desc {
+    color: var(--graphite);
+    font-size: 0.9375rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .r-star {
+    color: var(--ink-2);
+  }
+
+  @media (max-width: 760px) {
+    .repo-list a {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+    .r-desc {
+      display: none;
+    }
+  }
+
+  .more summary {
+    list-style: none;
+    cursor: pointer;
+    padding-block: 22px;
+    font-weight: 560;
+  }
+
+  .more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .more summary span {
+    text-decoration: underline;
+    text-decoration-color: var(--ink);
+    text-underline-offset: 0.22em;
+  }
+
+  .more summary::after {
+    content: " ↓";
+    font-family: var(--mono);
+    font-size: 0.8em;
+  }
+
+  .more[open] summary::after {
+    content: " ↑";
+  }
+
+  /* Music */
+  .music-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 5vw, 80px);
+    align-items: center;
+    padding-top: clamp(24px, 3vw, 40px);
+    border-top: 1px solid var(--ink);
+  }
+
+  .music-photo {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .music-photo :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 70% 60%;
+    scale: 1.2;
+    transform-origin: 100% 0%;
+    filter: grayscale(1) contrast(1.15);
+    mix-blend-mode: multiply;
+    transition: scale 900ms var(--ease-out), filter 900ms var(--ease-out);
+  }
+
+  .music-photo:hover :global(img) {
+    scale: 1.24;
+    filter: grayscale(0.2) contrast(1.05);
+  }
+
+  .music-text h2 {
+    font-size: var(--step-4);
+    font-weight: 760;
+    letter-spacing: -0.045em;
+  }
+
+  .mixes {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    max-width: 52ch;
+  }
+
+  .mixes li {
+    border-top: 1px solid var(--rule);
+  }
+
+  .mixes a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 10px;
+    text-decoration: none;
+  }
+
+  .mixes a .mix-name {
+    flex: 1;
+    text-decoration: underline;
+    text-decoration-color: var(--rule-strong);
+    text-underline-offset: 0.22em;
+    transition: text-decoration-color 160ms var(--ease-out);
+  }
+
+  .mixes a:hover .mix-name {
+    text-decoration-color: currentColor;
+  }
+
+  .mixes a::after {
+    content: "↗";
+    font-family: var(--mono);
+    font-size: 0.8em;
+    color: var(--graphite);
+    order: 3;
+  }
+
+  .mixes li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .mix-len {
+    color: var(--graphite);
+  }
+
+  .music-text .music-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-top: 22px;
+  }
+
+  .music-links a {
+    font-weight: 560;
+    text-decoration-color: var(--ink);
+  }
+
+  .music-links a::after {
+    content: " ↗";
+    font-family: var(--mono);
+    font-size: 0.8em;
+  }
+
+  .music-text p {
+    margin-top: 24px;
+    font-size: var(--step-1);
+    color: var(--ink-2);
+    max-width: 52ch;
+  }
+
+  @media (max-width: 760px) {
+    .music-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Mentions */
+  .mentions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mentions a,
+  .mentions div {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 3fr) minmax(0, 6fr) 2rem;
+    gap: 24px;
+    align-items: baseline;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+  }
+
+  .mentions a {
+    transition: background-color 300ms var(--ease-out);
+  }
+
+  .mentions a:hover {
+    background: var(--card);
+  }
+
+  .m-date {
+    color: var(--graphite);
+  }
+
+  .m-outlet {
+    font-family: var(--display);
+    font-weight: 680;
+    font-size: var(--step-1);
+    letter-spacing: -0.02em;
+  }
+
+  .m-title {
+    color: var(--ink-2);
+  }
+
+  .m-go {
+    font-family: var(--mono);
+    text-align: right;
+    transition: translate 300ms var(--ease-out);
+  }
+
+  .mentions a:hover .m-go {
+    translate: 3px -3px;
+  }
+
+  @media (max-width: 760px) {
+    .mentions a,
+    .mentions div {
+      grid-template-columns: minmax(0, 1fr) 1.5rem;
+      gap: 4px 16px;
+    }
+    .m-date,
+    .m-outlet,
+    .m-title {
+      grid-column: 1;
+    }
+    .m-go {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  /* Contact */
+  .contact {
+    padding-bottom: clamp(64px, 8vw, 120px);
+  }
+
+  .contact h2 {
+    font-size: var(--step-4);
+    font-weight: 600;
+    color: var(--graphite);
+    letter-spacing: -0.04em;
+  }
+
+  .contact-big {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: var(--display);
+    font-size: clamp(2.25rem, 1.4rem + 3.5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+    text-decoration: none;
+    background: linear-gradient(var(--head), var(--head)) 0 92% / 0% 0.14em no-repeat;
+    transition: background-size 600ms var(--ease-out);
+  }
+
+  .contact-big:hover {
+    background-size: 100% 0.14em;
+  }
+
+  .remotes {
+    list-style: none;
+    margin: clamp(40px, 5vw, 64px) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .remotes a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: border-color 200ms var(--ease-out), background-color 200ms var(--ease-out);
+  }
+
+  .remotes a:hover {
+    border-color: var(--ink);
+    background: var(--card);
+  }
+
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 28px 40px;
+    border-top: 1px solid var(--rule);
+    color: var(--graphite);
+    font-size: 0.875rem;
+  }
+</style>
