@@ -614,6 +614,20 @@
     "topics": []
   },
   {
+    "name": "shima.me",
+    "description": "Serge Shima's personal site: products, career log, open source, DJ sets. Astro, deployed on Vercel.",
+    "stars": 0,
+    "language": "Astro",
+    "homepage": "https://www.shima.me",
+    "url": "https://github.com/smixs/shima.me",
+    "pushed": "2026-10-17T05:41:28Z",
+    "topics": [
+      "astro",
+      "personal-website",
+      "portfolio"
+    ]
+  },
+  {
     "name": "dj-mix",
     "description": "Spicetify extension: order any Spotify playlist like a DJ set. Harmonic mixing on the Camelot wheel, a two-wave energy arc, smooth BPM steps. Uses Spotify's own Mix keys, saves a new playlist.",
     "stars": 0,
@@ -648,16 +662,6 @@
     "homepage": "https://claimp.app",
     "url": "https://github.com/smixs/homebrew-claimp",
     "pushed": "2026-10-01T09:18:33Z",
-    "topics": []
-  },
-  {
-    "name": "shima.me",
-    "description": "Personal site — shima.me",
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": "https://shima-me.vercel.app",
-    "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-17T05:17:57Z",
     "topics": []
   },
   {
