@@ -32,6 +32,7 @@ export type Link = { label: string; href: string };
 export type Release = {
   id: string;
   name: string;
+  logo?: string;
   kind: string;
   line: string;
   notes: string[];
@@ -42,6 +43,7 @@ export type Release = {
 export const releases: Release[] = [
   {
     id: "majento",
+    logo: "majento.png",
     name: "Majento",
     kind: "Company · co-founder & CTO · since May 2026",
     line: "An AI-native product company in Tashkent, founded with Batyr Latipov.",
@@ -54,6 +56,7 @@ export const releases: Release[] = [
   },
   {
     id: "aimasters",
+    logo: "aimasters.svg",
     name: "Aimasters",
     kind: "Education · founder",
     line: "Corporate AI training and a Telegram channel about working with AI.",
@@ -69,6 +72,7 @@ export const releases: Release[] = [
   },
   {
     id: "sotish",
+    logo: "sotish.svg",
     name: "sotish",
     kind: "Product · Majento",
     line: "A Telegram storefront that sells on its own, with an AI marketer inside.",
@@ -80,6 +84,7 @@ export const releases: Release[] = [
   },
   {
     id: "sezish",
+    logo: "sezish.svg",
     name: "sezish",
     kind: "Product · Majento",
     line: "Voice to text in Uzbek, Kazakh and Kyrgyz.",
@@ -90,6 +95,7 @@ export const releases: Release[] = [
   },
   {
     id: "claimp",
+    logo: "claimp.svg",
     name: "Claimp",
     kind: "Product · open source",
     line: "A free waveform player for building DJ sets on macOS.",
@@ -106,6 +112,8 @@ export const releases: Release[] = [
 
 export type Commit = {
   date: string; // YYYY.MM or YYYY
+  logo?: string;
+  invert?: boolean;
   tag: string;
   org: string;
   role: string;
@@ -121,10 +129,11 @@ export const log: Commit[] = [
     date: "2026.05",
     tag: "v2026.05",
     org: "Majento",
+    logo: "majento-wordmark.svg",
     role: "Co-founder & CTO",
     place: "Tashkent",
     head: true,
-    notes: ["AI software and multi-agent systems for business, deployed at the client.", "Client work includes IBT / PepsiCo."],
+    notes: ["AI software and multi-agent systems for business, deployed at the client team.", "Client work includes IBT / PepsiCo."],
     branches: [
       { name: "iva", href: "#iva" },
       { name: "sotish", href: "#release-sotish" },
@@ -137,6 +146,7 @@ export const log: Commit[] = [
     date: "2024.06",
     tag: "v2024.06",
     org: "TDI Group",
+    logo: "tdi-group.svg",
     role: "CEO / CTO",
     place: "Tashkent",
     notes: ["Ran the agency and its technology.", "Clients: PepsiCo, Nestlé, Honor, Haval, KIA, Beeline."],
@@ -145,6 +155,7 @@ export const log: Commit[] = [
     date: "2023.03",
     tag: "v2023.03",
     org: "Belarusian People's Bank",
+    logo: "bnb-bank.svg",
     role: "Head of Brand Marketing & AI",
     place: "Minsk",
     notes: ["Put AI into the bank's in-house creative team.", "Taught Smart Marketing with AI on MBA programs."],
@@ -153,6 +164,8 @@ export const log: Commit[] = [
     date: "2022.01",
     tag: "v2022.01",
     org: "UniLayer",
+    logo: "unilayer.png",
+    invert: true,
     role: "Product marketing, blockchain",
     place: "Dubai",
     notes: ["MVP of a cross-chain product, market analysis and the white paper."],
@@ -161,6 +174,8 @@ export const log: Commit[] = [
     date: "2019.04",
     tag: "v2019.04",
     org: "kemliva",
+    logo: "kemliva.svg",
+    invert: true,
     role: "Co-founder / COO",
     place: "Almaty",
     notes: ["Creative agency: branding, R&D and communications in one team."],
@@ -169,6 +184,8 @@ export const log: Commit[] = [
     date: "2018.09",
     tag: "v2018.09",
     org: "IKRA",
+    logo: "ikra.svg",
+    invert: true,
     role: "Education mentor",
     place: "Minsk",
     notes: ["Author of the course Strategist's Path."],
@@ -177,6 +194,7 @@ export const log: Commit[] = [
     date: "2017.03",
     tag: "v2017.03",
     org: "Eurotorg",
+    logo: "eurotorg.svg",
     role: "Deputy Head of R&D & Gamification",
     place: "Minsk",
     notes: ["Bonsticks children's promos: +$21M profit for the retailer.", "First NLP chatbot in production, 2017."],
@@ -185,14 +203,16 @@ export const log: Commit[] = [
     date: "2014.10",
     tag: "v2014.10",
     org: "AIDA Pioneer",
+    logo: "aida-pioneer.svg",
     role: "Creative Strategist",
     place: "Minsk",
-    notes: ["60+ campaigns; the agency became #1 in Belarus.", "Grand Prix Effie for the Exponenta strategy."],
+    notes: ["Grand Prix Effie for Exponenta; 60+ campaigns, the agency became #1 in Belarus.", "Grand Prix Effie for the Exponenta strategy."],
   },
   {
     date: "2013.04",
     tag: "v2013.04",
     org: "BBDO Group",
+    logo: "bbdo.svg",
     role: "Creative Group Head",
     place: "Minsk",
     notes: ["Co-created Halva, the installment card with 13M+ users in Belarus and Russia."],
@@ -201,6 +221,7 @@ export const log: Commit[] = [
     date: "2012.06",
     tag: "v2012.06",
     org: "Publicis Groupe",
+    logo: "publicis.svg",
     role: "Event manager, copywriter",
     place: "Minsk",
     notes: ["Events and promotional copy for network clients."],
@@ -243,7 +264,23 @@ export const mentions: Mention[] = [
   { outlet: "probusiness.by", date: "2014", title: "Effective branding: the metaphor", href: "http://probusiness.by/markets/2014-kak-sdelat-tak-chtoby-nachinka-sootvetstvovala-upakovke-strateg-aida-pioneer-ob-effektivnom-brende.html" },
 ];
 
-export const clients = ["PepsiCo", "Nestlé", "Honor", "Haval", "KIA", "Beeline", "IBT", "Alfa Bank", "A1", "ADM Group", "Kaspersky", "MTS", "Roodell"];
+export type Client = { name: string; logo: string; invert?: boolean };
+
+export const clients: Client[] = [
+  { name: "PepsiCo", logo: "pepsico.svg" },
+  { name: "Nestlé", logo: "nestle.svg" },
+  { name: "KIA", logo: "kia.svg" },
+  { name: "Haval", logo: "haval.svg" },
+  { name: "Honor", logo: "honor.svg" },
+  { name: "Beeline", logo: "beeline.svg" },
+  { name: "IBT, PepsiCo bottler in Uzbekistan", logo: "ibt.png", invert: true },
+  { name: "Kaspersky", logo: "kaspersky.svg" },
+  { name: "MTS", logo: "mts.svg" },
+  { name: "Alfa Bank", logo: "alfa-bank.svg" },
+  { name: "A1", logo: "a1.svg" },
+  { name: "ADM Group", logo: "adm-group.png" },
+  { name: "Roodell", logo: "roodell.png", invert: true },
+];
 
 export const remotes: Link[] = [
   { label: "Telegram", href: "https://t.me/shimaoz" },
@@ -269,10 +306,10 @@ export const iva = {
   features: [
     { name: "Voice", text: "Voice, audio and video notes transcribed; English, Russian and Uzbek detected automatically." },
     { name: "Documents", text: "Send a PDF, DOCX or XLSX and Iva answers on its content and files it into the vault." },
-    { name: "Personal CRM", text: "Who your people are, what you agreed and when to follow up." },
-    { name: "Google Workspace", text: "Gmail, Calendar, Drive, Sheets, Docs and Tasks from the chat." },
     { name: "Userbot", text: "Works from your own account like a secretary: reads group chats, summarises them, replies as you." },
     { name: "Your model", text: "OpenCode Go, Ollama Cloud, OpenRouter or your ChatGPT subscription. Your keys." },
+    { name: "Personal CRM", text: "Who your people are, what you agreed and when to follow up." },
+    { name: "Google Workspace", text: "Gmail, Calendar, Drive, Sheets, Docs and Tasks from the chat." },
     { name: "Security", text: "Web pages and forwards pass a prompt-injection sanitizer; every reply passes a secret-redaction gate." },
     { name: "Self-updating", text: "A daily check, then a one-tap update in Telegram, staged, with rollback." },
   ],

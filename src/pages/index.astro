@@ -67,16 +67,12 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           releases.map((r) => (
             <li class="release" id={`release-${r.id}`}>
               <div class="release-name">
+                {r.logo && <img class="release-mark" src={`/logos/${r.logo}`} alt="" width="44" height="44" loading="lazy" />}
                 <h3>{r.name}</h3>
                 <p class="mono">{r.kind}</p>
               </div>
               <div class="release-body">
                 <p class="release-line">{r.line}</p>
-                <ul class="release-notes">
-                  {r.notes.map((n) => (
-                    <li>{n}</li>
-                  ))}
-                </ul>
                 <p class="release-links">
                   {r.links.map((l) => (
                     <a href={l.href} rel="noopener">
@@ -93,7 +89,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
 
     <section class="section shell" id="iva" aria-labelledby="iva-h">
       <div class="section-head">
-        <h2 id="iva-h" class="resolve">Iva</h2>
+        <h2 id="iva-h" class="resolve iva-title"><img src="/logos/iva.svg" alt="" width="40" height="40" />Iva</h2>
         <p class="mono">open source · ★ {fmt(repos.find((r) => r.name === "iva-agent")?.stars ?? 0)}</p>
       </div>
       <div class="iva">
@@ -122,7 +118,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           <h3>What it does</h3>
           <dl class="iva-features">
             {
-              iva.features.map((f) => (
+              iva.features.slice(0, 4).map((f) => (
                 <div>
                   <dt>{f.name}</dt>
                   <dd>{f.text}</dd>
@@ -142,16 +138,15 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
       <Log />
       <div class="clients">
         <h3>Brands I worked for</h3>
-        <p>
+        <ul class="wall">
           {
-            clients.map((c, i) => (
-              <>
-                <span>{c}</span>
-                {i < clients.length - 1 && <span class="sep" aria-hidden="true"> / </span>}
-              </>
+            clients.map((c) => (
+              <li>
+                <img src={`/logos/${c.logo}`} alt={c.name} loading="lazy" decoding="async" class:list={{ inv: c.invert }} />
+              </li>
             ))
           }
-        </p>
+        </ul>
       </div>
     </section>
 
@@ -446,6 +441,24 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
     scroll-margin-top: 24px;
   }
 
+  .release-name {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: center;
+  }
+
+  .release-mark {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    grid-row: 1;
+  }
+
+  .release-name .mono {
+    grid-column: 2;
+  }
+
   .release-name h3 {
     font-size: var(--step-4);
     font-weight: 780;
@@ -508,6 +521,17 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
   }
 
   /* Iva */
+  .iva-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .iva-title img {
+    width: 0.8em;
+    height: 0.8em;
+  }
+
   .iva {
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
@@ -609,17 +633,42 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
     margin-bottom: 18px;
   }
 
-  .clients p {
-    font-family: var(--display);
-    font-size: var(--step-3);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 1.12;
+  .wall {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px 16px;
   }
 
-  .clients .sep {
-    color: var(--rule-strong);
-    font-weight: 300;
+  .wall li {
+    display: grid;
+    place-items: center;
+    height: 88px;
+    padding: 12px;
+  }
+
+  .wall img {
+    max-width: 120px;
+    max-height: 34px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1) contrast(1.1);
+    opacity: 0.72;
+    mix-blend-mode: multiply;
+    transition: filter 300ms var(--ease-out), opacity 300ms var(--ease-out);
+  }
+
+  .wall li:hover img {
+    filter: none;
+    opacity: 1;
+  }
+
+  .wall img.inv,
+  .wall li:hover img.inv {
+    filter: invert(1) grayscale(1) contrast(1.2);
   }
 
   /* Open source */
