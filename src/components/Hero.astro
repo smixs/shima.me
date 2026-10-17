@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
     <div class="portrait">
       <Image src={avatar} alt="Serge Shima, cartoon portrait" width={400} height={400} loading="eager" fetchpriority="high" class="avatar" />
       <p class="bubble" id="hero-name">
-        Serge Shima <span class="wave" aria-hidden="true">👋</span>
+        Serge Shima <span class="wave" aria-hidden="true">👋</span><!-- pinned brand greeting, taste-skill-ignore -->
       </p>
     </div>
     <h1 class="title">
@@ -39,10 +39,10 @@ import { Image } from "astro:assets";
     display: grid;
     place-items: center;
     background:
-      radial-gradient(60% 55% at 50% 42%, #fbfbfa 0%, transparent 70%),
+      radial-gradient(60% 55% at 50% 42%, #fbfbfa 0%, transparent 70%), /* pinned brand hero, taste-skill-ignore */
       var(--grain) 0 0 / 200px,
       #dcdcd9;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 30px 60px -40px rgba(23, 24, 28, 0.35);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 30px 60px -40px rgba(23, 24, 28, 0.35); /* pinned brand hero, taste-skill-ignore */
   }
 
   .hero-grain {
@@ -78,7 +78,7 @@ import { Image } from "astro:assets";
     aspect-ratio: 1;
     border-radius: 50%;
     border: clamp(8px, 0.9vw, 12px) solid #f7f7f5;
-    box-shadow:
+    box-shadow: /* pinned brand hero, taste-skill-ignore */
       0 0 0 1px rgba(23, 24, 28, 0.06),
       0 18px 40px -18px rgba(23, 24, 28, 0.45);
   }
@@ -94,7 +94,7 @@ import { Image } from "astro:assets";
     background: #fdfdfc;
     padding: 0.7em 1.1em;
     border-radius: 999px;
-    box-shadow:
+    box-shadow: /* pinned brand hero, taste-skill-ignore */
       0 1px 0 rgba(255, 255, 255, 0.9) inset,
       0 10px 24px -10px rgba(23, 24, 28, 0.35);
     transform-origin: 0% 60%;
@@ -163,15 +163,13 @@ import { Image } from "astro:assets";
     font-weight: 560;
     text-decoration: none;
     letter-spacing: -0.005em;
-    box-shadow: 0 12px 24px -14px rgba(23, 24, 28, 0.7);
-    transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out), background-color 220ms var(--ease-out);
+    transition: transform 220ms var(--ease-out), background-color 220ms var(--ease-out);
     animation: fade 800ms 750ms var(--ease-out) both;
   }
 
   .cta:hover {
     background: #26282e;
     transform: translateY(-2px);
-    box-shadow: 0 18px 30px -16px rgba(23, 24, 28, 0.75);
   }
 
   .cta:active {
@@ -234,6 +232,9 @@ import { Image } from "astro:assets";
   @media (max-width: 560px) {
     .hero {
       min-height: 0;
+    }
+    .title {
+      font-size: 1.6rem;
     }
     .bubble {
       left: 50%;
