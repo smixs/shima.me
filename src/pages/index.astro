@@ -6,7 +6,7 @@ import Log from "../components/Log.astro";
 import { Image } from "astro:assets";
 import dj from "../assets/dj-shima.jpg";
 import repos from "../data/repos.json";
-import { releases, log, showcase, mentions, clients, remotes, iva } from "../data/site";
+import { releases, log, showcase, mentions, clients, remotes, iva, music } from "../data/site";
 
 const totalStars = repos.reduce((s, r) => s + r.stars, 0);
 const starsLabel = `${Math.floor(totalStars / 100) * 100}+`;
@@ -220,8 +220,27 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           <h2 id="music-h" class="resolve">Behind the decks since 1998</h2>
           <p>
             House and techno first, then the biggest raves in Belarus: from 2005 to 2011 he co-ran Re:fresh in Minsk.
-            He still records mixes, and wrote <a href="#release-claimp">Claimp</a>, a free waveform player for building
-            DJ sets on macOS.
+            Today it is long classic house, nu-disco and deep house mixes, and <a href="#release-claimp">Claimp</a>, a free
+            waveform player he wrote for building DJ sets on macOS.
+          </p>
+          <ul class="mixes">
+            {
+              music.mixes.map((m) => (
+                <li>
+                  <span class="mix-name">{m.name}</span>
+                  <span class="mix-len mono">{m.length}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="music-links">
+            {
+              music.links.map((l) => (
+                <a href={l.href} rel="noopener">
+                  {l.label}
+                </a>
+              ))
+            }
           </p>
         </div>
       </div>
@@ -768,7 +787,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: clamp(28px, 5vw, 80px);
-    align-items: end;
+    align-items: center;
     padding-top: clamp(24px, 3vw, 40px);
     border-top: 1px solid var(--ink);
   }
@@ -782,13 +801,18 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
   .music-photo :global(img) {
     width: 100%;
     height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 70% 60%;
+    scale: 1.2;
+    transform-origin: 100% 0%;
     filter: grayscale(1) contrast(1.15);
     mix-blend-mode: multiply;
     transition: scale 900ms var(--ease-out), filter 900ms var(--ease-out);
   }
 
   .music-photo:hover :global(img) {
-    scale: 1.03;
+    scale: 1.24;
     filter: grayscale(0.2) contrast(1.05);
   }
 
@@ -796,6 +820,48 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
     font-size: var(--step-4);
     font-weight: 760;
     letter-spacing: -0.045em;
+  }
+
+  .mixes {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    max-width: 52ch;
+  }
+
+  .mixes li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 10px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .mixes li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .mix-len {
+    color: var(--graphite);
+  }
+
+  .music-text .music-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-top: 22px;
+  }
+
+  .music-links a {
+    font-weight: 560;
+    text-decoration-color: var(--ink);
+  }
+
+  .music-links a::after {
+    content: " ↗";
+    font-family: var(--mono);
+    font-size: 0.8em;
   }
 
   .music-text p {

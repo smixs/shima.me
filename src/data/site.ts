@@ -23,6 +23,7 @@ export const person = {
     "https://t.me/aimastersme",
     "https://aimasters.me",
     "https://majento.ai",
+    "https://www.mixcloud.com/sergeshima/",
   ],
 };
 
@@ -251,6 +252,7 @@ export const remotes: Link[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sergeshima" },
   { label: "YouTube", href: "https://www.youtube.com/@SergeShima" },
   { label: "Instagram", href: "https://www.instagram.com/serge.shima" },
+  { label: "Mixcloud", href: "https://www.mixcloud.com/sergeshima/" },
   { label: "CV for organizers", href: "https://sergeshima.com" },
 ];
 
@@ -273,5 +275,20 @@ export const iva = {
     { name: "Your model", text: "OpenCode Go, Ollama Cloud, OpenRouter or your ChatGPT subscription. Your keys." },
     { name: "Security", text: "Web pages and forwards pass a prompt-injection sanitizer; every reply passes a secret-redaction gate." },
     { name: "Self-updating", text: "A daily check, then a one-tap update in Telegram, staged, with rollback." },
+  ],
+};
+
+// DJ side. Source: mixcloud.com/sergeshima and t.me/taxiaudio (checked 17.10.2026).
+export const music = {
+  mixes: [
+    { name: "Joyman 2026, classic house", length: "3:00" },
+    { name: "Vebecoder vol.1", length: "1:20" },
+    { name: "Bike Rider 2024", length: "1:00" },
+    { name: "Studio 54, poolside disco", length: "2:28" },
+    { name: "Organic Deep House", length: "4:03" },
+  ],
+  links: [
+    { label: "Mixcloud, 1,023 followers", href: "https://www.mixcloud.com/sergeshima/" },
+    { label: "Taxi Audio on Telegram", href: "https://t.me/taxiaudio" },
   ],
 };
