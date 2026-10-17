@@ -10,10 +10,8 @@ interface Props {
 }
 
 const { title, description, lang = "en", path = "/", noindex = false } = Astro.props;
-const site = "https://shima.me";
+const site = "https://www.shima.me";
 const canonical = new URL(path, site).href;
-const enPath = path.replace(/^\/ru\//, "/");
-const ruPath = path.startsWith("/ru/") ? path : `/ru${path}`;
 
 const graph = {
   "@context": "https://schema.org",
@@ -62,9 +60,6 @@ const graph = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="alternate" hreflang="en" href={new URL(enPath, site).href} />
-    <link rel="alternate" hreflang="ru" href={new URL(ruPath, site).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL(enPath, site).href} />
     <link rel="me" href="https://sergeshima.com" />
     <link rel="me" href="https://github.com/smixs" />
     <link rel="icon" href="/favicon.ico" />

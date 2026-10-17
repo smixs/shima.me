@@ -22,4 +22,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://shima.me/sitemap-index.xml
+Sitemap: https://www.shima.me/sitemap-index.xml

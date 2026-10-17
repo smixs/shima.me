@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://shima.me",
+  site: "https://www.shima.me",
   trailingSlash: "always",
   i18n: {
     defaultLocale: "en",
