@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 527,
+    "stars": 528,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 406,
+    "stars": 407,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 249,
+    "stars": 251,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-10-18T00:04:58Z",
+    "pushed": "2026-10-18T05:49:12Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 191,
+    "stars": 190,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -515,7 +515,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-17T03:06:35Z",
+    "pushed": "2026-10-18T03:09:13Z",
     "topics": []
   },
   {
@@ -737,7 +737,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-17T06:39:34Z",
+    "pushed": "2026-10-18T03:07:57Z",
     "topics": [
       "astro",
       "personal-website",
