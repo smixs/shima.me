@@ -1,5 +1,5 @@
 ---
-import { log, logoHeight } from "../data/site";
+import { log, logoHeight, logoRatio } from "../data/site";
 ---
 
 <ol class="log" aria-label="Career, newest first">
@@ -23,11 +23,11 @@ import { log, logoHeight } from "../data/site";
             </p>
             <div class="org-line">
               <h3 class="org">{c.org}</h3>
-              {c.logo && <img class:list={["org-logo", { inv: c.invert }]} src={`/logos/${c.logo}`} alt="" loading="lazy" decoding="async" style={`height:${logoHeight(c.logo, 2400, 44, 140)}px`} />}
+              {c.logo && <img width={Math.round(100 * (logoRatio[c.logo] ?? 3))} height="100" class:list={["org-logo", { inv: c.invert }]} src={`/logos/${c.logo}`} alt="" loading="lazy" decoding="async" style={`height:${logoHeight(c.logo, 2400, 44, 140)}px`} />}
             </div>
             <p class="role">{c.role}</p>
             <ul class="notes">
-              <li>{c.notes[0]}</li>
+              {c.notes.map((note) => <li>{note}</li>)}
             </ul>
           </div>
         </li>
@@ -60,38 +60,29 @@ import { log, logoHeight } from "../data/site";
 </ol>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
   const list = document.querySelector<HTMLElement>(".log");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   if (list && !reduce) {
-    gsap.registerPlugin(ScrollTrigger);
-    list.classList.add("is-scrubbed");
     const bar = list.querySelector<HTMLElement>(".log-progress")!;
     const tip = list.querySelector<HTMLElement>(".log-tip")!;
-
-    ScrollTrigger.create({
-      trigger: list,
-      start: "top 62%",
-      end: "bottom 62%",
-      scrub: 0.4,
-      onUpdate: (self) => {
-        bar.style.transform = `scaleY(${self.progress})`;
-        tip.style.transform = `translate(-50%, ${self.progress * list.offsetHeight}px)`;
-        tip.style.opacity = self.progress > 0 && self.progress < 1 ? "1" : "0";
-      },
-    });
-
-    list.querySelectorAll<HTMLElement>(".commit").forEach((row) => {
-      ScrollTrigger.create({
-        trigger: row.querySelector(".node"),
-        start: "top 62%",
-        onEnter: () => row.classList.add("is-past"),
-        onLeaveBack: () => row.classList.remove("is-past"),
-      });
-    });
+    const rows = [...list.querySelectorAll<HTMLElement>(".commit")];
+    list.classList.add("is-scrubbed");
+    let pending = false;
+    const update = () => {
+      const rect = list.getBoundingClientRect();
+      const threshold = innerHeight * 0.62;
+      const progress = Math.max(0, Math.min(1, (threshold - rect.top) / rect.height));
+      const past = rows.map(row => row.querySelector(".node")!.getBoundingClientRect().top <= threshold);
+      bar.style.transform = "scaleY(" + progress + ")";
+      tip.style.transform = "translate(-50%, " + progress * rect.height + "px)";
+      tip.style.opacity = progress > 0 && progress < 1 ? "1" : "0";
+      rows.forEach((row,i) => row.classList.toggle("is-past", past[i]));
+      pending = false;
+    };
+    const schedule = () => { if (!pending) { pending = true; requestAnimationFrame(update); } };
+    addEventListener("scroll", schedule, {passive:true});
+    addEventListener("resize", schedule, {passive:true});
+    update();
   }
 </script>
 

@@ -1,0 +1,51 @@
+---
+import Document from "../layouts/Document.astro";
+import { getReleases, getIva, projectIntro, type Locale } from "../data/localized";
+import { person, PERSON_ID } from "../data/site";
+import { sourcePolicy } from "../data/editorial";
+interface Props { id: string; lang: Locale; }
+const {id,lang} = Astro.props;
+const ru = lang === "ru", prefix = ru ? "/ru" : "";
+const product = getReleases(lang).find(r => r.id === id);
+const assistant = getIva(lang);
+const isIva = id === "iva";
+if (!product && !isIva) throw new Error("Unknown project");
+const name = isIva ? (ru ? "Ива" : "Iva") : product!.name;
+const description = isIva ? projectIntro[lang] : product!.line;
+const path = `${prefix}/projects/${id}/`;
+const website = isIva ? assistant.site : product!.links[0].href;
+const graph = id === "majento" || id === "aimasters" ? [] : [{
+ "@type": "SoftwareApplication", "@id": `https://www.shima.me/projects/${id}/#software`,
+ name, description, url: website, creator: {"@id":PERSON_ID},
+ ...(id === "claimp" ? {operatingSystem:"macOS",applicationCategory:"MultimediaApplication"} : {})
+}];
+---
+<Document title={`${name} - ${ru ? "проект Сергея Шимы" : "a project by Serge Shima"}`} description={description} lang={lang} path={path} extraGraph={graph}>
+ <h1>{name}</h1>
+ <p class="meta">{isIva ? (ru ? "Открытый код · личный ассистент" : "Open source · personal assistant") : product!.kind}</p>
+ <p class="intro">{description}</p>
+ <section>
+  <h2>{ru ? "Что делает проект" : "What the project does"}</h2>
+  {isIva ? <>
+   <p>{ru ? "Диалог, память и действия собраны в одном Telegram-чате. Ива работает на сервере владельца; модель и подключения выбирает владелец." : "Conversation, memory and actions live in one Telegram chat. Iva runs on the owner's server, with the model and service connections chosen by the owner."}</p>
+   <dl>{assistant.features.map(f => <div><dt>{f.name}</dt><dd>{f.text}</dd></div>)}</dl>
+   <h2>{ru ? "Как устроена память" : "How memory works"}</h2>
+   <dl>{assistant.tree.map(t => <div><dt>{t.name}</dt><dd>{t.text}</dd></div>)}</dl>
+  </> : <ul>{product!.notes.map(note => <li>{note}</li>)}</ul>}
+ </section>
+ <section>
+  <h2>{ru ? "Роль Сергея Шимы" : "Serge Shima's role"}</h2>
+  <p>{id === "majento" ? (ru ? "Сооснователь и CTO. Компания основана в Ташкенте вместе с Батыром Латиповым в мае 2026 года." : "Co-founder and CTO. Founded in Tashkent with Batyr Latipov in May 2026.")
+   : id === "aimasters" ? (ru ? "Основатель Aimasters. Обучает специалистов и команды работе с AI, пишет об агентах и инструментах." : "Founder of Aimasters. Trains specialists and teams to work with AI and writes about agents and tools.")
+   : id === "claimp" ? (ru ? "Автор плеера. DJ с 1998 года; написал инструмент для подготовки собственных сетов." : "Author of the player. A DJ since 1998, he built it to prepare his own sets.")
+   : id === "iva" ? (ru ? "Автор открытого проекта iva-agent." : "Author of the open-source iva-agent project.")
+   : (ru ? "Сооснователь и CTO Majento, компании, которая развивает продукт." : "Co-founder and CTO of Majento, the company developing the product.")}</p>
+ </section>
+ <section>
+  <h2>{ru ? "Ссылки и источник" : "Links and source"}</h2>
+  <p>{ru ? "Описание подготовлено по сведениям автора и официальным страницам проекта. Текущие возможности и инструкции проверяйте в документации проекта." : "This description uses the author's information and official project pages. Consult the project's documentation for current capabilities and instructions."}</p>
+  <ul>{(isIva ? [{label:"iva-agent.com",href:assistant.site},{label:"GitHub",href:assistant.repo}] : product!.links).map(l => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+  {id === "aimasters" && <p class="source-note">{sourcePolicy[lang]}</p>}
+  <p><a href={`${prefix}/#shipping`}>{ru ? "Все проекты" : "All projects"}</a> · <a href={person.telegram}>{ru ? "Написать Сергею" : "Contact Serge"}</a></p>
+ </section>
+</Document>

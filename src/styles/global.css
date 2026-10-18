@@ -48,7 +48,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image: linear-gradient(rgba(243,243,241,.84), rgba(243,243,241,.84)), var(--grain);
   color: var(--ink);
   font-family: var(--body);
   font-size: var(--step-0);
@@ -59,16 +60,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  pointer-events: none;
-  background-image: var(--grain);
-  opacity: 0.16;
-  mix-blend-mode: multiply;
-}
 
 ::selection {
   background: var(--head);
@@ -162,40 +153,12 @@ img {
   color: var(--graphite);
 }
 
-/* Headings resolve out of grain on first view. Visible by default without JS. */
-.js .resolve {
-  opacity: 0.08;
-  filter: blur(10px);
-  -webkit-mask-image: var(--grain), linear-gradient(#000, #000);
-  mask-image: var(--grain), linear-gradient(#000, #000);
-  -webkit-mask-size: 180px, 0 0;
-  mask-size: 180px, 0 0;
-  -webkit-mask-repeat: repeat, no-repeat;
-  mask-repeat: repeat, no-repeat;
-  -webkit-mask-position: 0 0, center;
-  mask-position: 0 0, center;
-  transition:
-    opacity 900ms var(--ease-out),
-    filter 1100ms var(--ease-out),
-    -webkit-mask-size 1100ms var(--ease-out),
-    mask-size 1100ms var(--ease-out);
-}
-
-.js .resolve.is-in {
-  opacity: 1;
-  filter: blur(0);
-  -webkit-mask-size: 180px, 100% 100%;
-  mask-size: 180px, 100% 100%;
-}
-
+/* Headings stay readable before scrolling, without JavaScript and with reduced motion. */
+.resolve { opacity: 1; filter: none; }
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .js .resolve {
-    filter: none;
-    -webkit-mask-image: none;
-    mask-image: none;
-    transition: opacity 400ms linear;
-  }
+  html { scroll-behavior: auto; }
 }
+.release-notes { padding-left: 1.2em; margin: 16px 0; color: var(--ink-2); }
+.release-notes li + li { margin-top: 8px; }
+.source-note { color: var(--graphite); font-size: .9rem; margin-top: 24px; max-width: 75ch; }
+.locale-link { font-weight: 600; }

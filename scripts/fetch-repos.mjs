@@ -21,8 +21,9 @@ try {
       pushed: r.pushed_at,
       topics: r.topics ?? [],
     }))
-    .sort((a, b) => b.stars - a.stars);
+    .sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name));
   await writeFile(OUT, JSON.stringify(repos, null, 2) + "\n");
+  await writeFile(new URL("../src/data/repos-meta.json", import.meta.url), JSON.stringify({ fetchedAt: new Date().toISOString(), source: "https://api.github.com/users/smixs/repos", count: repos.length }, null, 2) + "\n");
   console.log(`repos.json: ${repos.length} public repos`);
 } catch (err) {
   console.warn(`repos.json kept as is: ${err.message}`);

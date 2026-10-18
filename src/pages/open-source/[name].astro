@@ -1,0 +1,6 @@
+---
+import Repository from "../../components/Repository.astro";
+import docs from "../../data/repo-docs.json";
+export function getStaticPaths(){ return docs.map(d=>({params:{name:d.name}})); }
+---
+<Repository name={Astro.params.name!} lang="en" />

@@ -1,0 +1,34 @@
+---
+import Document from "../layouts/Document.astro";
+import repos from "../data/repos.json";
+import docs from "../data/repo-docs.json";
+import snapshot from "../data/repos-meta.json";
+import { PERSON_ID } from "../data/site";
+import type { Locale } from "../data/localized";
+interface Props { name:string; lang:Locale; }
+const {name,lang} = Astro.props;
+const r = repos.find(r=>r.name === name)!;
+const doc = docs.find(d=>d.name === name)!;
+const ru = lang === "ru", prefix = ru ? "/ru" : "";
+const path = `${prefix}/open-source/${name}/`;
+const description = ru ? `${name} - открытый проект Сергея Шимы. Исходный код, выдержка из документации и GitHub-метрики с датой среза.` : (r.description || `${name}, an open-source project by Serge Shima. Source code and documentation.`).slice(0,220);
+const graph = [{"@type":"SoftwareSourceCode","@id":`https://www.shima.me/open-source/${name}/#code`,name:r.name,description:r.description,codeRepository:r.url,
+ ...(r.language ? {programmingLanguage:r.language} : {}),author:{"@id":PERSON_ID},url:`https://www.shima.me/open-source/${name}/`}];
+---
+<Document title={`${name} — ${ru ? "открытый проект Сергея Шимы" : "open source by Serge Shima"}`} description={description} lang={lang} path={path} extraGraph={graph}>
+ <h1>{name}</h1>
+ <p class="intro">{r.description}</p>
+ <p class="meta">{r.language ?? (ru ? "Документация и скиллы" : "Documentation and skills")} · {r.stars.toLocaleString("en-US")} GitHub stars · {ru ? "Срез" : "Snapshot"} <time datetime={snapshot.fetchedAt}>{snapshot.fetchedAt.slice(0,10)}</time></p>
+ <p><a href={r.url}>GitHub</a> · <a href={doc.readmeUrl}>{ru ? "Полная документация" : "Full documentation"}</a>{r.homepage && <> · <a href={r.homepage}>{ru ? "Сайт проекта" : "Project website"}</a></>}</p>
+ <section>
+  <h2>{ru ? "Из документации проекта" : "From the project documentation"}</h2>
+  <p class="meta">{ru ? "Выдержка на языке оригинала из README. Актуальные инструкции, требования и лицензия - в репозитории." : "An excerpt in the original language from the README. Current instructions, requirements and license are maintained in the repository."}</p>
+  <div class="source-excerpt">{doc.excerpt}</div>
+  <p class="meta">{ru ? "Источник прочитан" : "Source retrieved"} <time datetime={doc.fetchedAt}>{doc.fetchedAt.slice(0,10)}</time> · README <code>{doc.sourceSha.slice(0,12)}</code></p>
+ </section>
+ <section>
+  <h2>{ru ? "Об авторе" : "About the author"}</h2>
+  <p>{ru ? "Сергей Шима — сооснователь и CTO Majento в Ташкенте, основатель Aimasters. Создаёт AI-продукты и открытые инструменты для агентов." : "Serge Shima is co-founder and CTO of Majento in Tashkent and founder of Aimasters. He builds AI products and open-source tools for agents."}</p>
+  <p><a href={`${prefix}/#open-source`}>{ru ? "Все репозитории" : "All repositories"}</a> · <a href="https://github.com/smixs">github.com/smixs</a></p>
+ </section>
+</Document>

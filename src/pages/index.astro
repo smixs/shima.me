@@ -6,7 +6,12 @@ import Log from "../components/Log.astro";
 import { Image } from "astro:assets";
 import dj from "../assets/dj-shima.jpg";
 import repos from "../data/repos.json";
-import { releases, log, showcase, mentions, clients, remotes, iva, music, logoHeight } from "../data/site";
+import { releases, log, showcase, mentions, clients, remotes, iva, music, logoHeight, logoRatio } from "../data/site";
+
+import { contentUpdated, sourcePolicy } from "../data/editorial";
+import snapshot from "../data/repos-meta.json";
+import docs from "../data/repo-docs.json";
+const repoHref = (r: {name: string;url:string}) => docs.some(d=>d.name===r.name) ? "/open-source/"+r.name+"/" : r.url;
 
 const totalStars = repos.reduce((s, r) => s + r.stars, 0);
 const starsLabel = `${Math.floor(totalStars / 100) * 100}+`;
@@ -18,7 +23,7 @@ const listed = rest.slice(0, 9);
 const more = rest.slice(9);
 
 const title = "Serge Shima: co-founder & CTO at Majento, AI builder in Tashkent";
-const description = `Serge Shima (Сергей Шима) builds AI products in Tashkent: co-founder & CTO of Majento, founder of Aimasters, author of open-source agent tools with ${starsLabel} GitHub stars. Career since 1998: Halva, Grand Prix Effie, Re:fresh.`;
+const description = `Serge Shima builds AI products in Tashkent: co-founder & CTO of Majento, founder of Aimasters. Products, open source, career, talks and music.`;
 ---
 
 <Base title={title} description={description} path="/">
@@ -32,6 +37,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
       <a href="#stage">Talks</a>
       <a href="#contact">Contact</a>
     </nav>
+    <a class="locale-link" href="/ru/" lang="ru" hreflang="ru">Русский</a>
     <a class="tg" href="https://t.me/shimaoz" rel="noopener">Telegram</a>
   </header>
 
@@ -55,6 +61,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
         <div><dt>Speaks</dt><dd>Russian, Belarusian, English</dd></div>
         <div><dt>Short CV</dt><dd><a href="https://sergeshima.com">sergeshima.com</a></dd></div>
       </dl>
+      <p class="source-note">{sourcePolicy.en} <a href="#stage">Talks and sources</a> · Updated <time datetime={contentUpdated}>{contentUpdated}</time>.</p>
     </section>
 
     <section class="section shell" id="shipping" aria-labelledby="shipping-h">
@@ -68,11 +75,12 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
             <li class="release" id={`release-${r.id}`}>
               <div class="release-name">
                 {r.logo && <img class="release-mark" src={`/logos/${r.logo}`} alt="" width="44" height="44" loading="lazy" />}
-                <h3>{r.name}</h3>
+                <h3><a href={`/projects/${r.id}/`}>{r.name}</a></h3>
                 <p class="mono">{r.kind}</p>
               </div>
               <div class="release-body">
                 <p class="release-line">{r.line}</p>
+                <ul class="release-notes">{r.notes.map((note) => <li>{note}</li>)}</ul>
                 <p class="release-links">
                   {r.links.map((l) => (
                     <a href={l.href} rel="noopener">
@@ -99,6 +107,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           </p>
           <pre class="iva-install"><code>{iva.install}</code></pre>
           <p class="iva-links">
+            <a href="/projects/iva/">About the project</a>
             <a href={iva.site} rel="noopener">iva-agent.com</a>
             <a href={iva.repo} rel="noopener">GitHub</a>
           </p>
@@ -118,7 +127,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           <h3>What it does</h3>
           <dl class="iva-features">
             {
-              iva.features.slice(0, 4).map((f) => (
+              iva.features.map((f) => (
                 <div>
                   <dt>{f.name}</dt>
                   <dd>{f.text}</dd>
@@ -142,7 +151,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
           {
             clients.map((c) => (
               <li>
-                <img src={`/logos/${c.logo}`} alt={c.name} loading="lazy" decoding="async" class:list={{ inv: c.invert }} style={`height:${logoHeight(c.logo, 3200, 46, 150)}px`} />
+                <img src={`/logos/${c.logo}`} alt={c.name} loading="lazy" decoding="async" width={Math.round(100 * (logoRatio[c.logo] ?? 3))} height="100" class:list={{ inv: c.invert }} style={`height:${logoHeight(c.logo, 3200, 46, 150)}px`} />
               </li>
             ))
           }
@@ -159,7 +168,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
         {
           featured.map((r) => (
             <li>
-              <a class="pkg" href={r.url} rel="noopener">
+              <a class="pkg" href={repoHref(r)} rel="noopener">
                 <span class="pkg-name">{r.name}</span>
                 <span class="pkg-desc">{r.description}</span>
                 <span class="pkg-meta mono">
@@ -175,7 +184,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
         {
           listed.map((r) => (
             <li>
-              <a href={r.url} rel="noopener">
+              <a href={repoHref(r)} rel="noopener">
                 <span class="r-name">{r.name}</span>
                 <span class="r-desc">{r.description ?? ""}</span>
                 <span class="r-star mono">★ {fmt(r.stars)}</span>
@@ -193,7 +202,7 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
             <ol class="repo-list">
               {more.map((r) => (
                 <li>
-                  <a href={r.url} rel="noopener">
+                  <a href={repoHref(r)} rel="noopener">
                     <span class="r-name">{r.name}</span>
                     <span class="r-desc">{r.description ?? ""}</span>
                     <span class="r-star mono">★ {fmt(r.stars)}</span>
@@ -292,24 +301,10 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
 
   <footer class="foot shell">
     <p>Serge Shima · Tashkent · 2026</p>
-    <p>Stars update daily from GitHub</p>
+    <p>GitHub snapshot: <time datetime={snapshot.fetchedAt}>{snapshot.fetchedAt.slice(0,10)}</time> · <a href="/index.md">Markdown</a> · <a href="/llms.txt">Agent index</a></p>
   </footer>
 </Base>
 
-<script>
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-in");
-          io.unobserve(e.target);
-        }
-      }
-    },
-    { rootMargin: "0px 0px -12% 0px" },
-  );
-  document.querySelectorAll(".resolve").forEach((el) => io.observe(el));
-</script>
 
 <style>
   .top {
@@ -800,8 +795,13 @@ const description = `Serge Shima (Сергей Шима) builds AI products in T
       grid-template-columns: minmax(0, 1fr) auto;
     }
     .r-desc {
-      display: none;
+      display: block;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      white-space: normal;
+      overflow: visible;
     }
+    .r-star { grid-column: 2; grid-row: 1; }
   }
 
   .more summary {

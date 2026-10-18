@@ -20,9 +20,6 @@ export const person = {
     "https://www.youtube.com/@SergeShima",
     "https://www.instagram.com/serge.shima",
     "https://t.me/shimaoz",
-    "https://t.me/aimastersme",
-    "https://aimasters.me",
-    "https://majento.ai",
     "https://www.mixcloud.com/sergeshima/",
   ],
 };
@@ -63,7 +60,7 @@ export const releases: Release[] = [
     notes: [
       "1000+ specialists and 50+ teams trained.",
       "Programs for Alfa Bank, A1, ADM Group, Kaspersky, MTS, Roodell.",
-      "@aimastersme: 6,847 subscribers reading notes on agents and tools.",
+      "Notes on agents and tools at @aimastersme.",
     ],
     links: [
       { label: "aimasters.me", href: "https://aimasters.me" },
@@ -206,7 +203,7 @@ export const log: Commit[] = [
     logo: "aida-pioneer.svg",
     role: "Creative Strategist",
     place: "Minsk",
-    notes: ["Grand Prix Effie for Exponenta; 60+ campaigns, the agency became #1 in Belarus.", "Grand Prix Effie for the Exponenta strategy."],
+    notes: ["Grand Prix Effie for Exponenta; 60+ campaigns, the agency became #1 in Belarus."],
   },
   {
     date: "2013.04",
@@ -325,7 +322,7 @@ export const music = {
     { name: "Organic Deep House", length: "4:03", href: "https://www.mixcloud.com/sergeshima/shima-organic-deep-house-aug-4-hour-mix/" },
   ],
   links: [
-    { label: "Mixcloud, 1,023 followers", href: "https://www.mixcloud.com/sergeshima/" },
+    { label: "Mixcloud", href: "https://www.mixcloud.com/sergeshima/" },
     { label: "Taxi Audio on Telegram", href: "https://t.me/taxiaudio" },
   ],
 };

@@ -1,0 +1,7 @@
+---
+import Project from "../../components/Project.astro";
+import { releases } from "../../data/site";
+export function getStaticPaths() { return [...releases.map(r=>r.id),"iva"].map(id=>({params:{id}})); }
+const {id} = Astro.params;
+---
+<Project id={id!} lang="en" />

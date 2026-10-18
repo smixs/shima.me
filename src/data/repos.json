@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1403,
+    "stars": 1406,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 523,
+    "stars": 527,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 403,
+    "stars": 406,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 260,
+    "stars": 262,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 241,
+    "stars": 249,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-10-16T04:28:37Z",
+    "pushed": "2026-10-18T00:04:58Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 190,
+    "stars": 191,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -257,7 +257,7 @@
   {
     "name": "autograph",
     "description": "Schema-as-code memory for AI agents in Obsidian: typed cards, entity dedup, link repair, update-in-place, and Ebbinghaus decay. Plain Markdown you own — a Claude Code skill.",
-    "stars": 75,
+    "stars": 76,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/autograph",
@@ -363,16 +363,6 @@
     ]
   },
   {
-    "name": "d-buddy",
-    "description": "Transctiption Telegram Bot",
-    "stars": 9,
-    "language": "Python",
-    "homepage": null,
-    "url": "https://github.com/smixs/d-buddy",
-    "pushed": "2026-07-26T04:02:06Z",
-    "topics": []
-  },
-  {
     "name": "agent-memory-skill",
     "description": null,
     "stars": 9,
@@ -390,9 +380,19 @@
     ]
   },
   {
+    "name": "d-buddy",
+    "description": "Transctiption Telegram Bot",
+    "stars": 9,
+    "language": "Python",
+    "homepage": null,
+    "url": "https://github.com/smixs/d-buddy",
+    "pushed": "2026-07-26T04:02:06Z",
+    "topics": []
+  },
+  {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 8,
+    "stars": 9,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -421,6 +421,22 @@
     ]
   },
   {
+    "name": "morning-tab",
+    "description": "Скилл для агентов: ежедневная газетная страница-дайджест на любую тему с публикацией по ссылке",
+    "stars": 8,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/morning-tab",
+    "pushed": "2026-10-16T03:41:37Z",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "claude-skill",
+      "digest",
+      "rss"
+    ]
+  },
+  {
     "name": "youtube-publisher",
     "description": "AI agent skill: tell Claude Code, Codex, Gemini or OpenClaw to upload your recording to YouTube — it downloads from Drive, transcribes, generates timestamps and metadata automatically.",
     "stars": 8,
@@ -444,22 +460,6 @@
       "whisper",
       "youtube",
       "youtube-upload"
-    ]
-  },
-  {
-    "name": "morning-tab",
-    "description": "Скилл для агентов: ежедневная газетная страница-дайджест на любую тему с публикацией по ссылке",
-    "stars": 6,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/morning-tab",
-    "pushed": "2026-10-16T03:41:37Z",
-    "topics": [
-      "agent-skills",
-      "claude-code",
-      "claude-skill",
-      "digest",
-      "rss"
     ]
   },
   {
@@ -499,16 +499,6 @@
     ]
   },
   {
-    "name": "smixs",
-    "description": null,
-    "stars": 3,
-    "language": null,
-    "homepage": null,
-    "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-17T03:06:35Z",
-    "topics": []
-  },
-  {
     "name": "claude-news",
     "description": "A split-flap news board above the Claude Code prompt: Telegram channels and RSS, clickable, zero tokens",
     "stars": 3,
@@ -516,6 +506,16 @@
     "homepage": null,
     "url": "https://github.com/smixs/claude-news",
     "pushed": "2026-09-15T03:58:33Z",
+    "topics": []
+  },
+  {
+    "name": "smixs",
+    "description": null,
+    "stars": 3,
+    "language": null,
+    "homepage": null,
+    "url": "https://github.com/smixs/smixs",
+    "pushed": "2026-10-17T03:06:35Z",
     "topics": []
   },
   {
@@ -529,16 +529,6 @@
     "topics": []
   },
   {
-    "name": "sezish-desktop",
-    "description": "Сборки sezish для macOS и Windows: ссылки и багрепорты тестеров",
-    "stars": 2,
-    "language": "Swift",
-    "homepage": null,
-    "url": "https://github.com/smixs/sezish-desktop",
-    "pushed": "2026-10-06T15:54:47Z",
-    "topics": []
-  },
-  {
     "name": "agent-process",
     "description": "Интерактивная карта агентского процесса: 5 этапов, 44 узла, React Flow. https://agency-process.com",
     "stars": 2,
@@ -549,13 +539,13 @@
     "topics": []
   },
   {
-    "name": "jevchik",
-    "description": "Telegram bot for group chats: karma for useful messages, anti-spam for newcomers, a Mini App leaderboard. Judged by the Jev model.",
-    "stars": 1,
-    "language": "TypeScript",
+    "name": "sezish-desktop",
+    "description": "Сборки sezish для macOS и Windows: ссылки и багрепорты тестеров",
+    "stars": 2,
+    "language": "Swift",
     "homepage": null,
-    "url": "https://github.com/smixs/jevchik",
-    "pushed": "2026-10-01T13:02:49Z",
+    "url": "https://github.com/smixs/sezish-desktop",
+    "pushed": "2026-10-06T15:54:47Z",
     "topics": []
   },
   {
@@ -594,6 +584,16 @@
     ]
   },
   {
+    "name": "jevchik",
+    "description": "Telegram bot for group chats: karma for useful messages, anti-spam for newcomers, a Mini App leaderboard. Judged by the Jev model.",
+    "stars": 1,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/jevchik",
+    "pushed": "2026-10-01T13:02:49Z",
+    "topics": []
+  },
+  {
     "name": "nanobot-claude",
     "description": null,
     "stars": 1,
@@ -614,18 +614,14 @@
     "topics": []
   },
   {
-    "name": "shima.me",
-    "description": "Serge Shima's personal site: products, career log, open source, DJ sets. Astro, deployed on Vercel.",
+    "name": "ai_photo_style",
+    "description": "ai photo style",
     "stars": 0,
-    "language": "Astro",
-    "homepage": "https://www.shima.me",
-    "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-17T05:41:28Z",
-    "topics": [
-      "astro",
-      "personal-website",
-      "portfolio"
-    ]
+    "language": "TypeScript",
+    "homepage": "https://ai-photo-style.vercel.app",
+    "url": "https://github.com/smixs/ai_photo_style",
+    "pushed": "2025-09-18T09:23:34Z",
+    "topics": []
   },
   {
     "name": "dj-mix",
@@ -655,126 +651,6 @@
     ]
   },
   {
-    "name": "homebrew-claimp",
-    "description": "Homebrew tap for Claimp, the waveform player for DJ sets",
-    "stars": 0,
-    "language": "Ruby",
-    "homepage": "https://claimp.app",
-    "url": "https://github.com/smixs/homebrew-claimp",
-    "pushed": "2026-10-01T09:18:33Z",
-    "topics": []
-  },
-  {
-    "name": "smixs.github.io",
-    "description": "Root — redirects to github.com/smixs/iva",
-    "stars": 0,
-    "language": "HTML",
-    "homepage": null,
-    "url": "https://github.com/smixs/smixs.github.io",
-    "pushed": "2026-08-19T06:33:34Z",
-    "topics": []
-  },
-  {
-    "name": "murkdown",
-    "description": null,
-    "stars": 0,
-    "language": "Python",
-    "homepage": null,
-    "url": "https://github.com/smixs/murkdown",
-    "pushed": "2024-12-16T06:08:00Z",
-    "topics": []
-  },
-  {
-    "name": "Tercel",
-    "description": "AI-powered creative brief generator",
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": "https://tercel-eta.vercel.app",
-    "url": "https://github.com/smixs/Tercel",
-    "pushed": "2025-12-19T03:27:32Z",
-    "topics": []
-  },
-  {
-    "name": "woofwhisper",
-    "description": "Dog bark translator (joke project)",
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": "https://woofwhisper-alpha.vercel.app",
-    "url": "https://github.com/smixs/woofwhisper",
-    "pushed": "2025-12-17T06:03:49Z",
-    "topics": []
-  },
-  {
-    "name": "raqasaservice",
-    "description": null,
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/raqasaservice",
-    "pushed": "2025-11-19T19:58:59Z",
-    "topics": []
-  },
-  {
-    "name": "nstl_web",
-    "description": null,
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": "https://nstl-tdi.vercel.app",
-    "url": "https://github.com/smixs/nstl_web",
-    "pushed": "2025-10-21T02:42:45Z",
-    "topics": []
-  },
-  {
-    "name": "nanobanana",
-    "description": null,
-    "stars": 0,
-    "language": null,
-    "homepage": null,
-    "url": "https://github.com/smixs/nanobanana",
-    "pushed": "2025-09-22T02:39:02Z",
-    "topics": []
-  },
-  {
-    "name": "ustyler",
-    "description": "---",
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": "https://ustyler.vercel.app",
-    "url": "https://github.com/smixs/ustyler",
-    "pushed": "2025-09-18T12:56:06Z",
-    "topics": []
-  },
-  {
-    "name": "ai_photo_style",
-    "description": "ai photo style",
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": "https://ai-photo-style.vercel.app",
-    "url": "https://github.com/smixs/ai_photo_style",
-    "pushed": "2025-09-18T09:23:34Z",
-    "topics": []
-  },
-  {
-    "name": "test",
-    "description": null,
-    "stars": 0,
-    "language": null,
-    "homepage": null,
-    "url": "https://github.com/smixs/test",
-    "pushed": "2025-08-07T11:38:55Z",
-    "topics": []
-  },
-  {
-    "name": "nstl",
-    "description": null,
-    "stars": 0,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/nstl",
-    "pushed": "2025-08-04T11:32:40Z",
-    "topics": []
-  },
-  {
     "name": "Eurotorg",
     "description": null,
     "stars": 0,
@@ -782,6 +658,16 @@
     "homepage": "https://eurotorg.vercel.app",
     "url": "https://github.com/smixs/Eurotorg",
     "pushed": "2025-08-01T00:52:46Z",
+    "topics": []
+  },
+  {
+    "name": "homebrew-claimp",
+    "description": "Homebrew tap for Claimp, the waveform player for DJ sets",
+    "stars": 0,
+    "language": "Ruby",
+    "homepage": "https://claimp.app",
+    "url": "https://github.com/smixs/homebrew-claimp",
+    "pushed": "2026-10-01T09:18:33Z",
     "topics": []
   },
   {
@@ -795,13 +681,77 @@
     "topics": []
   },
   {
-    "name": "soliq",
+    "name": "murkdown",
     "description": null,
     "stars": 0,
     "language": "Python",
     "homepage": null,
-    "url": "https://github.com/smixs/soliq",
-    "pushed": "2025-02-14T05:31:53Z",
+    "url": "https://github.com/smixs/murkdown",
+    "pushed": "2024-12-16T06:08:00Z",
+    "topics": []
+  },
+  {
+    "name": "nanobanana",
+    "description": null,
+    "stars": 0,
+    "language": null,
+    "homepage": null,
+    "url": "https://github.com/smixs/nanobanana",
+    "pushed": "2025-09-22T02:39:02Z",
+    "topics": []
+  },
+  {
+    "name": "nstl",
+    "description": null,
+    "stars": 0,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/nstl",
+    "pushed": "2025-08-04T11:32:40Z",
+    "topics": []
+  },
+  {
+    "name": "nstl_web",
+    "description": null,
+    "stars": 0,
+    "language": "TypeScript",
+    "homepage": "https://nstl-tdi.vercel.app",
+    "url": "https://github.com/smixs/nstl_web",
+    "pushed": "2025-10-21T02:42:45Z",
+    "topics": []
+  },
+  {
+    "name": "raqasaservice",
+    "description": null,
+    "stars": 0,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/raqasaservice",
+    "pushed": "2025-11-19T19:58:59Z",
+    "topics": []
+  },
+  {
+    "name": "shima.me",
+    "description": "Serge Shima's personal site: products, career log, open source, DJ sets. Astro, deployed on Vercel.",
+    "stars": 0,
+    "language": "Astro",
+    "homepage": "https://www.shima.me",
+    "url": "https://github.com/smixs/shima.me",
+    "pushed": "2026-10-17T06:39:34Z",
+    "topics": [
+      "astro",
+      "personal-website",
+      "portfolio"
+    ]
+  },
+  {
+    "name": "smixs.github.io",
+    "description": "Root — redirects to github.com/smixs/iva",
+    "stars": 0,
+    "language": "HTML",
+    "homepage": null,
+    "url": "https://github.com/smixs/smixs.github.io",
+    "pushed": "2026-08-19T06:33:34Z",
     "topics": []
   },
   {
@@ -815,13 +765,13 @@
     "topics": []
   },
   {
-    "name": "telebotLLM",
+    "name": "soliq",
     "description": null,
     "stars": 0,
     "language": "Python",
     "homepage": null,
-    "url": "https://github.com/smixs/telebotLLM",
-    "pushed": "2024-11-23T06:24:49Z",
+    "url": "https://github.com/smixs/soliq",
+    "pushed": "2025-02-14T05:31:53Z",
     "topics": []
   },
   {
@@ -832,6 +782,56 @@
     "homepage": null,
     "url": "https://github.com/smixs/t-bot2024",
     "pushed": "2024-08-18T10:35:41Z",
+    "topics": []
+  },
+  {
+    "name": "telebotLLM",
+    "description": null,
+    "stars": 0,
+    "language": "Python",
+    "homepage": null,
+    "url": "https://github.com/smixs/telebotLLM",
+    "pushed": "2024-11-23T06:24:49Z",
+    "topics": []
+  },
+  {
+    "name": "Tercel",
+    "description": "AI-powered creative brief generator",
+    "stars": 0,
+    "language": "TypeScript",
+    "homepage": "https://tercel-eta.vercel.app",
+    "url": "https://github.com/smixs/Tercel",
+    "pushed": "2025-12-19T03:27:32Z",
+    "topics": []
+  },
+  {
+    "name": "test",
+    "description": null,
+    "stars": 0,
+    "language": null,
+    "homepage": null,
+    "url": "https://github.com/smixs/test",
+    "pushed": "2025-08-07T11:38:55Z",
+    "topics": []
+  },
+  {
+    "name": "ustyler",
+    "description": "---",
+    "stars": 0,
+    "language": "TypeScript",
+    "homepage": "https://ustyler.vercel.app",
+    "url": "https://github.com/smixs/ustyler",
+    "pushed": "2025-09-18T12:56:06Z",
+    "topics": []
+  },
+  {
+    "name": "woofwhisper",
+    "description": "Dog bark translator (joke project)",
+    "stars": 0,
+    "language": "TypeScript",
+    "homepage": "https://woofwhisper-alpha.vercel.app",
+    "url": "https://github.com/smixs/woofwhisper",
+    "pushed": "2025-12-17T06:03:49Z",
     "topics": []
   }
 ]

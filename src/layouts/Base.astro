@@ -1,79 +1,76 @@
 ---
 import { PERSON_ID, person } from "../data/site";
-
+import { contentUpdated } from "../data/editorial";
+import latinFont from "@fontsource-variable/geologica/files/geologica-latin-wght-normal.woff2?url";
+import cyrillicFont from "@fontsource-variable/geologica/files/geologica-cyrillic-wght-normal.woff2?url";
 interface Props {
-  title: string;
-  description: string;
-  lang?: "en" | "ru";
-  path?: string;
-  noindex?: boolean;
+ title: string; description: string; lang?: "en" | "ru"; path?: string;
+ noindex?: boolean; pageType?: "ProfilePage" | "WebPage"; extraGraph?: Record<string, unknown>[];
 }
-
-const { title, description, lang = "en", path = "/", noindex = false } = Astro.props;
+const { title, description, lang = "en", path = "/", noindex = false, pageType = "ProfilePage", extraGraph = [] } = Astro.props;
 const site = "https://www.shima.me";
 const canonical = new URL(path, site).href;
-
+const enPath = path.replace(/^\/ru\//, "/");
+const ruPath = path.startsWith("/ru/") ? path : `/ru${path}`;
 const graph = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ProfilePage",
-      "@id": `${canonical}#page`,
-      url: canonical,
-      name: title,
-      inLanguage: lang,
-      mainEntity: { "@id": PERSON_ID },
-      isPartOf: { "@type": "WebSite", "@id": `${site}/#site`, url: `${site}/`, name: "Serge Shima" },
-    },
-    {
-      "@type": "Person",
-      "@id": PERSON_ID,
-      name: person.name,
-      alternateName: person.alternateNames,
-      jobTitle: "Co-founder & CTO",
-      url: person.cv,
-      sameAs: [...person.sameAs, `${site}/`],
-      address: { "@type": "PostalAddress", addressLocality: person.city, addressCountry: "UZ" },
-      worksFor: { "@id": "https://majento.ai/#organization" },
-      founder: [{ "@id": "https://majento.ai/#organization" }],
-      knowsAbout: ["AI agents", "Multi-agent systems", "Model Context Protocol", "AI adoption", "Brand strategy", "Gamification", "DJing"],
-      award: ["Grand Prix Effie (Exponenta)"],
-      alumniOf: { "@type": "CollegeOrUniversity", name: "Belarusian State Pedagogical University" },
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://majento.ai/#organization",
-      name: "Majento",
-      url: "https://majento.ai",
-      founder: { "@id": PERSON_ID },
-    },
-  ],
+ "@context": "https://schema.org",
+ "@graph": [
+  { "@type": pageType, "@id": `${canonical}#page`, url: canonical, name: title,
+    description, inLanguage: lang, dateModified: contentUpdated,
+    ...(pageType === "ProfilePage" ? { mainEntity: { "@id": PERSON_ID } } : { author: { "@id": PERSON_ID } }),
+    image: `${site}/social.png`,
+    isPartOf: { "@id": `${site}/#site` } },
+  { "@type": "WebSite", "@id": `${site}/#site`, url: `${site}/`, name: "Serge Shima", inLanguage: ["en","ru"], publisher: { "@id": PERSON_ID } },
+  { "@type": "Person", "@id": PERSON_ID, name: person.name, alternateName: person.alternateNames,
+    jobTitle: "Co-founder & CTO", url: person.cv, image: `${site}/social.png`,
+    sameAs: [...person.sameAs, `${site}/`],
+    address: { "@type": "PostalAddress", addressLocality: person.city, addressCountry: "UZ" },
+    worksFor: { "@id": "https://majento.ai/#organization" },
+    knowsAbout: ["AI agents", "Multi-agent systems", "Model Context Protocol", "AI adoption", "Brand strategy", "Gamification", "DJing"],
+    award: ["Grand Prix Effie (Exponenta)"],
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Belarusian State Pedagogical University" } },
+  { "@type": "Organization", "@id": "https://majento.ai/#organization", name: "Majento", url: "https://majento.ai", founder: { "@id": PERSON_ID } },
+  { "@type": "Organization", "@id": "https://aimasters.me/#organization", name: "Aimasters", url: "https://aimasters.me",
+    founder: { "@id": PERSON_ID }, sameAs: ["https://t.me/aimastersme"] },
+  ...extraGraph
+ ]
 };
 ---
-
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex" />}
-    <link rel="me" href="https://sergeshima.com" />
-    <link rel="me" href="https://github.com/smixs" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="theme-color" content="#f3f3f1" />
-    <meta property="og:type" content="profile" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="Serge Shima" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
-    <script is:inline>document.documentElement.classList.add("js");</script>
-  </head>
-  <body>
-    <slot />
-  </body>
+ <head>
+  <meta charset="utf-8" />
+  <link rel="preload" href={latinFont} as="font" type="font/woff2" crossorigin />
+  {(lang === "ru" || pageType === "ProfilePage") && <link rel="preload" href={cyrillicFont} as="font" type="font/woff2" crossorigin />}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  {!noindex && <>
+   <link rel="alternate" hreflang="en" href={new URL(enPath, site).href} />
+   <link rel="alternate" hreflang="ru" href={new URL(ruPath, site).href} />
+   <link rel="alternate" hreflang="x-default" href={new URL(enPath, site).href} />
+  </>}
+  {pageType === "ProfilePage" && <link rel="alternate" type="text/markdown" href={lang === "ru" ? "/ru/index.md" : "/index.md"} title={lang === "ru" ? "Сведения о Сергее Шиме" : "About Serge Shima"} />}
+  <link rel="me" href="https://sergeshima.com" />
+  <link rel="me" href="https://github.com/smixs" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#f3f3f1" />
+  <meta property="og:type" content={pageType === "ProfilePage" ? "profile" : "website"} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="Serge Shima" />
+  <meta property="og:locale" content={lang === "ru" ? "ru_RU" : "en_US"} />
+  <meta property="og:image" content={`${site}/social.png`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Serge Shima — AI products, open source, Tashkent" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={`${site}/social.png`} />
+  <script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g, "\\u003c")} />
+  <script is:inline>document.documentElement.classList.add("js");</script>
+ </head>
+ <body><slot /></body>
 </html>

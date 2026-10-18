@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+import Base from "./Base.astro";
+import { contentUpdated } from "../data/editorial";
+interface Props { title: string; description: string; lang?: "en" | "ru"; path: string; pageType?: "ProfilePage" | "WebPage"; extraGraph?: Record<string, unknown>[]; }
+const {title, description, lang = "en", path, pageType = "WebPage", extraGraph = []} = Astro.props;
+const ru = lang === "ru";
+const home = ru ? "/ru/" : "/";
+const alternate = ru ? path.replace(/^\/ru\//, "/") : `/ru${path}`;
+---
+<Base title={title} description={description} lang={lang} path={path} pageType={pageType} extraGraph={extraGraph}>
+ <header class="doc-header shell">
+  <a class="wordmark" href={home}>shima.me</a>
+  <nav aria-label={ru ? "Навигация" : "Navigation"}>
+   <a href={home + "#shipping"}>{ru ? "Проекты" : "Projects"}</a>
+   <a href={home + "#open-source"}>Open source</a>
+   <a href={home + "#contact"}>{ru ? "Контакт" : "Contact"}</a>
+   <a href={alternate} lang={ru ? "en" : "ru"} hreflang={ru ? "en" : "ru"}>{ru ? "English" : "Русский"}</a>
+  </nav>
+ </header>
+ <main class="document shell">
+  <p class="eyebrow"><a href={home}>{ru ? "Сергей Шима" : "Serge Shima"}</a> / {ru ? "Работа и проекты" : "Work and projects"}</p>
+  <slot />
+ </main>
+ <footer class="doc-footer shell">
+  <p>{ru ? "Обновлено" : "Updated"} <time datetime={contentUpdated}>{contentUpdated}</time> · <a href={ru ? "/ru/index.md" : "/index.md"}>Markdown</a> · <a href="/llms.txt">llms.txt</a></p>
+  <p><a href="https://sergeshima.com">{ru ? "Краткое CV" : "Short CV"}</a> · <a href="https://t.me/shimaoz">Telegram</a></p>
+ </footer>
+</Base>
+<style is:global>
+ .doc-header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; padding-block:24px; border-bottom:1px solid var(--rule); }
+ .doc-header nav { display:flex; gap:clamp(12px,3vw,28px); flex-wrap:wrap; font-size:.9rem; }
+ .wordmark { font-size:1.25rem; font-weight:700; text-decoration:none; }
+ .document { max-width:920px; padding-block:64px; min-height:60vh; }
+ .document h1 { font-size:clamp(2.1rem,6vw,4.5rem); margin:24px 0 32px; overflow-wrap:anywhere; }
+ .document h2 { font-size:clamp(1.6rem,4vw,2.4rem); margin:48px 0 24px; }
+ .document h3 { font-size:1.3rem; margin:28px 0 14px; line-height:1.2; }
+ .document p { margin:16px 0; }
+ .document li { margin-block:10px; }
+ .document .intro { font-size:clamp(1.2rem,3vw,1.6rem); color:var(--ink-2); }
+ .document .eyebrow, .document .meta { font-size:.9rem; color:var(--graphite); }
+ .document section { scroll-margin-top:32px; }
+ .document dl > div { border-bottom:1px solid var(--rule); padding:16px 0; }
+ .document dt { font-weight:600; } .document dd { margin:8px 0 0; }
+ .doc-footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px; padding-block:28px; border-top:1px solid var(--rule); color:var(--graphite); font-size:.9rem; }
+ .source-excerpt { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; line-height:1.65; border-left:2px solid var(--rule-strong); padding-left:20px; }
+ .entry { border-top:1px solid var(--rule); padding-block:12px 24px; }
+</style>

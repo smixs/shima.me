@@ -4,15 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/fetch-repos.mjs && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "repos": "node scripts/fetch-repos.mjs"
+    "repos": "node scripts/fetch-repos.mjs",
+    "check": "node scripts/check-site.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
     "@fontsource-variable/geologica": "^5.3.0",
     "@fontsource-variable/martian-mono": "^5.3.0",
-    "astro": "^7.4.0",
-    "gsap": "^3.15.0"
+    "astro": "^7.4.0"
   }
 }

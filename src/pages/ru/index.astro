@@ -1,0 +1,76 @@
+---
+import Document from "../../layouts/Document.astro";
+import Hero from "../../components/Hero.astro";
+import {intro,getReleases,getLog,getMentions,getIva} from "../../data/localized";
+import {clients,remotes,music,showcase} from "../../data/site";
+import {sourcePolicy} from "../../data/editorial";
+import repos from "../../data/repos.json";
+import docs from "../../data/repo-docs.json";
+import snapshot from "../../data/repos-meta.json";
+const products = getReleases("ru"), history = getLog("ru"), assistant = getIva("ru");
+const selected = showcase.map(name=>repos.find(r=>r.name===name)).filter(Boolean);
+const rest = repos.filter(r=>!showcase.includes(r.name) && r.name!=="smixs");
+const profile = "Сергей Шима - AI-продукты, Majento, Aimasters, Ташкент";
+---
+<Document title={profile} description="Сергей Шима: сооснователь и CTO Majento, основатель Aimasters. AI-продукты, открытые инструменты для агентов, карьера, выступления и DJ-история." lang="ru" path="/ru/" pageType="ProfilePage">
+ <Hero lang="ru" />
+ <section aria-labelledby="who">
+  <h2 id="who">Кто такой Сергей Шима</h2>
+  <p class="intro">{intro.ru}</p>
+  <p>Соавтор карты рассрочки «Халва», обладатель Гран-при Effie. Детские промо «Бонстики» принесли ретейлеру дополнительные $21 млн прибыли.</p>
+  <dl>
+   <div><dt>Живёт и работает</dt><dd>Ташкент, Узбекистан. Родом из Минска, Беларусь.</dd></div>
+   <div><dt>Сейчас</dt><dd>Majento и Aimasters</dd></div>
+   <div><dt>В AI с</dt><dd>2017 года</dd></div>
+   <div><dt>Обучение</dt><dd>Более 1000 специалистов и 50 команд</dd></div>
+   <div><dt>Языки</dt><dd>Русский, белорусский, английский</dd></div>
+   <div><dt>Краткое CV для организаторов</dt><dd><a href="https://sergeshima.com">sergeshima.com</a></dd></div>
+  </dl>
+  <p class="source-note">{sourcePolicy.ru} <a href="#stage">Выступления и публикации</a>.</p>
+ </section>
+ <section id="shipping">
+  <h2>Компании и продукты</h2>
+  {products.map(r=><article class="entry" id={`release-${r.id}`}>
+   <h3><a href={`/ru/projects/${r.id}/`}>{r.name}</a></h3>
+   <p class="meta">{r.kind}</p><p>{r.line}</p>
+   <ul>{r.notes.map(n=><li>{n}</li>)}</ul>
+   <p>{r.links.map(l=><><a href={l.href}>{l.label}</a>{" "}</>)}</p>
+  </article>)}
+ </section>
+ <section id="iva">
+  <h2><a href="/ru/projects/iva/">Ива - личный AI-ассистент в Telegram</a></h2>
+  <p>Вы разговариваете; Ива сохраняет, помнит и выполняет действия на вашем сервере.</p>
+  <h3>Как устроена память</h3>
+  <dl>{assistant.tree.map(t=><div><dt>{t.name}</dt><dd>{t.text}</dd></div>)}</dl>
+  <h3>Возможности</h3>
+  <dl>{assistant.features.map(f=><div><dt>{f.name}</dt><dd>{f.text}</dd></div>)}</dl>
+  <p><a href={assistant.site}>iva-agent.com</a> · <a href={assistant.repo}>GitHub</a></p>
+ </section>
+ <section id="log">
+  <h2>Карьера с 1998 года</h2>
+  {history.map(c=><article class="entry"><p class="meta"><time datetime={c.date.replace(".","-")}>{c.date}</time> · {c.place}</p><h3>{c.org === "First DJ set" ? "Первый DJ-сет" : c.org}</h3><p>{c.role}</p><ul>{c.notes.map(n=><li>{n}</li>)}</ul></article>)}
+  <h3>Бренды, с которыми работал</h3>
+  <p>{clients.map(c=>c.name).join(", ")}.</p>
+ </section>
+ <section id="open-source">
+  <h2>Открытые проекты</h2>
+  <p>{repos.length} публичных репозиториев · {repos.reduce((sum,r)=>sum+r.stars,0).toLocaleString("ru-RU")} звёзд. Срез GitHub: <time datetime={snapshot.fetchedAt}>{snapshot.fetchedAt.slice(0,10)}</time>.</p>
+  <p class="meta">Названия и описания репозиториев приведены на языке оригинала автора.</p>
+  <ul>{[...selected,...rest].map(r=>r && <li><a href={docs.some(d=>d.name===r.name) ? `/ru/open-source/${r.name}/` : r.url}>{r.name}</a> - {r.description ?? r.language ?? "GitHub"} · ★ {r.stars}</li>)}</ul>
+ </section>
+ <section id="music">
+  <h2>За пультом с 1998 года</h2>
+  <p>Хаус и техно, затем рейвы в Беларуси: с 2005 по 2011 год Сергей был сооснователем Re:fresh в Минске. Сейчас записывает длинные сеты классического хауса, ню-диско и дип-хауса. Для подготовки сетов написал <a href="/ru/projects/claimp/">Claimp</a>, бесплатный плеер для macOS.</p>
+  <ul>{music.mixes.map(m=><li><a href={m.href}>{m.name}</a> · {m.length}</li>)}</ul>
+  <p>{music.links.map(l=><><a href={l.href}>{l.label}</a>{" "}</>)}</p>
+ </section>
+ <section id="stage">
+  <h2>Выступления и публикации</h2>
+  <ul>{getMentions("ru").map(m=><li>{m.date && <>{m.date} · </>}{m.outlet}: {m.href ? <a href={m.href}>{m.title}</a> : m.title}</li>)}</ul>
+ </section>
+ <section id="contact">
+  <h2>Написать Сергею</h2>
+  <p><a href="https://t.me/shimaoz">t.me/shimaoz</a> · <a href="mailto:hello@shima.me">hello@shima.me</a></p>
+  <ul>{remotes.map(r=><li><a href={r.href}>{r.label === "Channel" ? "Канал Aimasters" : r.label === "CV for organizers" ? "CV для организаторов" : r.label}</a></li>)}</ul>
+ </section>
+</Document>
