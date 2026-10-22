@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1414,
+    "stars": 1419,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 548,
+    "stars": 552,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 269,
+    "stars": 271,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 263,
+    "stars": 264,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-10-21T05:17:28Z",
+    "pushed": "2026-10-22T08:01:34Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 191,
+    "stars": 193,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -185,7 +185,7 @@
   {
     "name": "osint-skill",
     "description": "OSINT Skill for AI agents (Claude Code, OpenClaw, Codex, OpenCode) — from a name to a scored dossier with psychoprofile, career map, and confidence grades. 55+ Apify actors, 7 search APIs, swarm mode. Early Beta.",
-    "stars": 146,
+    "stars": 147,
     "language": "Shell",
     "homepage": "https://github.com/smixs/osint-skill#readme",
     "url": "https://github.com/smixs/osint-skill",
@@ -286,6 +286,37 @@
     ]
   },
   {
+    "name": "pi-durable-telegram",
+    "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
+    "stars": 22,
+    "language": "TypeScript",
+    "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
+    "url": "https://github.com/smixs/pi-durable-telegram",
+    "pushed": "2026-10-21T04:12:32Z",
+    "topics": [
+      "ai-agent",
+      "ai-assistant",
+      "anthropic",
+      "claude",
+      "coding-agent",
+      "durable-execution",
+      "grammy",
+      "llm",
+      "nodejs",
+      "personal-ai",
+      "pi",
+      "pi-agent",
+      "pi-durable",
+      "pi-package",
+      "self-hosted",
+      "sqlite",
+      "telegram",
+      "telegram-bot",
+      "typescript",
+      "vps"
+    ]
+  },
+  {
     "name": "disruptor-skills",
     "description": "12 agent skills for AI-driven software development — a gated idea-to-ship pipeline: 7w3 design, build-ready specs, executable architecture, honest review loops, a parallel worker-fleet lane, QA, safe deploy. Works with Claude Code, Codex, Cursor and any skills-capable agent. No vibecode.",
     "stars": 20,
@@ -344,37 +375,6 @@
       "quality-gate",
       "static-analysis",
       "test-tampering"
-    ]
-  },
-  {
-    "name": "pi-durable-telegram",
-    "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 18,
-    "language": "TypeScript",
-    "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
-    "url": "https://github.com/smixs/pi-durable-telegram",
-    "pushed": "2026-10-21T04:12:32Z",
-    "topics": [
-      "ai-agent",
-      "ai-assistant",
-      "anthropic",
-      "claude",
-      "coding-agent",
-      "durable-execution",
-      "grammy",
-      "llm",
-      "nodejs",
-      "personal-ai",
-      "pi",
-      "pi-agent",
-      "pi-durable",
-      "pi-package",
-      "self-hosted",
-      "sqlite",
-      "telegram",
-      "telegram-bot",
-      "typescript",
-      "vps"
     ]
   },
   {
@@ -509,13 +509,23 @@
     "topics": []
   },
   {
+    "name": "jevchik",
+    "description": "Telegram bot for group chats: karma for useful messages, anti-spam for newcomers, a Mini App leaderboard. Judged by the Jev model.",
+    "stars": 3,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/jevchik",
+    "pushed": "2026-10-01T13:02:49Z",
+    "topics": []
+  },
+  {
     "name": "smixs",
     "description": null,
     "stars": 3,
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-21T03:25:57Z",
+    "pushed": "2026-10-22T03:24:48Z",
     "topics": []
   },
   {
@@ -536,16 +546,6 @@
     "homepage": "https://agencyprocessmap-smixs-projects.vercel.app",
     "url": "https://github.com/smixs/agent-process",
     "pushed": "2026-06-09T13:43:03Z",
-    "topics": []
-  },
-  {
-    "name": "jevchik",
-    "description": "Telegram bot for group chats: karma for useful messages, anti-spam for newcomers, a Mini App leaderboard. Judged by the Jev model.",
-    "stars": 2,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/jevchik",
-    "pushed": "2026-10-01T13:02:49Z",
     "topics": []
   },
   {
@@ -737,7 +737,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-20T08:38:19Z",
+    "pushed": "2026-10-21T08:39:13Z",
     "topics": [
       "astro",
       "personal-website",
