@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 565,
+    "stars": 572,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 274,
+    "stars": 276,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -100,7 +100,7 @@
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-10-24T08:04:38Z",
+    "pushed": "2026-10-25T05:47:57Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 194,
+    "stars": 195,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 24,
+    "stars": 32,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -314,6 +314,37 @@
       "telegram-bot",
       "typescript",
       "vps"
+    ]
+  },
+  {
+    "name": "code-quality",
+    "description": "Deterministic code quality gate for AI coding agents (Claude Code, Codex, pi): git hooks that block test tampering, hold the CRAP bar on changed functions, check diff coverage, secrets and dependencies. 12 languages, one config file. Optional Jev classifier for test hunks.",
+    "stars": 20,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/code-quality",
+    "pushed": "2026-10-04T05:52:36Z",
+    "topics": [
+      "agent-skills",
+      "ai-coding-agents",
+      "ast-grep",
+      "claude-code",
+      "claude-skills",
+      "code-coverage",
+      "code-quality",
+      "codex",
+      "crap-metric",
+      "cyclomatic-complexity",
+      "developer-tools",
+      "git-hooks",
+      "gitleaks",
+      "jscpd",
+      "lizard",
+      "osv-scanner",
+      "pre-commit",
+      "quality-gate",
+      "static-analysis",
+      "test-tampering"
     ]
   },
   {
@@ -344,37 +375,6 @@
       "skills",
       "software-engineering",
       "spec-driven-development"
-    ]
-  },
-  {
-    "name": "code-quality",
-    "description": "Deterministic code quality gate for AI coding agents (Claude Code, Codex, pi): git hooks that block test tampering, hold the CRAP bar on changed functions, check diff coverage, secrets and dependencies. 12 languages, one config file. Optional Jev classifier for test hunks.",
-    "stars": 19,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/code-quality",
-    "pushed": "2026-10-04T05:52:36Z",
-    "topics": [
-      "agent-skills",
-      "ai-coding-agents",
-      "ast-grep",
-      "claude-code",
-      "claude-skills",
-      "code-coverage",
-      "code-quality",
-      "codex",
-      "crap-metric",
-      "cyclomatic-complexity",
-      "developer-tools",
-      "git-hooks",
-      "gitleaks",
-      "jscpd",
-      "lizard",
-      "osv-scanner",
-      "pre-commit",
-      "quality-gate",
-      "static-analysis",
-      "test-tampering"
     ]
   },
   {
@@ -525,7 +525,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-24T03:24:20Z",
+    "pushed": "2026-10-25T03:19:50Z",
     "topics": []
   },
   {
@@ -737,7 +737,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-23T08:37:24Z",
+    "pushed": "2026-10-24T08:12:16Z",
     "topics": [
       "astro",
       "personal-website",
