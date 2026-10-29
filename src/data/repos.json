@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1430,
+    "stars": 1433,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 591,
+    "stars": 598,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 280,
+    "stars": 284,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -96,7 +96,7 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 273,
+    "stars": 274,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
@@ -158,7 +158,7 @@
   {
     "name": "skill-conductor",
     "description": "Architecture-first skill lifecycle for AI agents. BinEval binary scoring with threshold-blind, cross-family-calibrated judges, gated self-update loop, pressure testing, 10 authoring principles grounded in empirical research.",
-    "stars": 196,
+    "stars": 198,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/skill-conductor",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 37,
+    "stars": 38,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -479,7 +479,7 @@
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/jevchik",
-    "pushed": "2026-10-01T13:02:49Z",
+    "pushed": "2026-10-29T08:48:43Z",
     "topics": []
   },
   {
@@ -525,7 +525,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-28T04:08:25Z",
+    "pushed": "2026-10-29T04:30:50Z",
     "topics": []
   },
   {
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-27T09:05:15Z",
+    "pushed": "2026-10-28T09:46:14Z",
     "topics": [
       "astro",
       "personal-website",
