@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1433,
+    "stars": 1436,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 598,
+    "stars": 602,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 284,
+    "stars": 286,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -125,6 +125,33 @@
     ]
   },
   {
+    "name": "skill-conductor",
+    "description": "Architecture-first skill lifecycle for AI agents. BinEval binary scoring with threshold-blind, cross-family-calibrated judges, gated self-update loop, pressure testing, 10 authoring principles grounded in empirical research.",
+    "stars": 200,
+    "language": "Python",
+    "homepage": "https://t.me/aimastersme",
+    "url": "https://github.com/smixs/skill-conductor",
+    "pushed": "2026-08-03T10:30:46Z",
+    "topics": [
+      "agent-skills",
+      "ai-agents",
+      "anthropic",
+      "claude-code",
+      "claude-plugin",
+      "claude-skill",
+      "knowledge-management",
+      "llm",
+      "obsidian",
+      "personal-assistant",
+      "productivity",
+      "prompt-engineering",
+      "second-brain",
+      "skill-authoring",
+      "skills",
+      "tdd"
+    ]
+  },
+  {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
     "stars": 199,
@@ -156,36 +183,9 @@
     ]
   },
   {
-    "name": "skill-conductor",
-    "description": "Architecture-first skill lifecycle for AI agents. BinEval binary scoring with threshold-blind, cross-family-calibrated judges, gated self-update loop, pressure testing, 10 authoring principles grounded in empirical research.",
-    "stars": 198,
-    "language": "Python",
-    "homepage": "https://t.me/aimastersme",
-    "url": "https://github.com/smixs/skill-conductor",
-    "pushed": "2026-08-03T10:30:46Z",
-    "topics": [
-      "agent-skills",
-      "ai-agents",
-      "anthropic",
-      "claude-code",
-      "claude-plugin",
-      "claude-skill",
-      "knowledge-management",
-      "llm",
-      "obsidian",
-      "personal-assistant",
-      "productivity",
-      "prompt-engineering",
-      "second-brain",
-      "skill-authoring",
-      "skills",
-      "tdd"
-    ]
-  },
-  {
     "name": "osint-skill",
     "description": "OSINT Skill for AI agents (Claude Code, OpenClaw, Codex, OpenCode) — from a name to a scored dossier with psychoprofile, career map, and confidence grades. 55+ Apify actors, 7 search APIs, swarm mode. Early Beta.",
-    "stars": 150,
+    "stars": 151,
     "language": "Shell",
     "homepage": "https://github.com/smixs/osint-skill#readme",
     "url": "https://github.com/smixs/osint-skill",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 38,
+    "stars": 40,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -525,7 +525,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-29T04:30:50Z",
+    "pushed": "2026-10-30T04:30:38Z",
     "topics": []
   },
   {
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-28T09:46:14Z",
+    "pushed": "2026-10-29T10:04:21Z",
     "topics": [
       "astro",
       "personal-website",
