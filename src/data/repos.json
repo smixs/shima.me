@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1436,
+    "stars": 1439,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 602,
+    "stars": 608,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 286,
+    "stars": 287,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 274,
+    "stars": 276,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-10-26T09:56:15Z",
+    "pushed": "2026-10-31T05:13:56Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "skill-conductor",
     "description": "Architecture-first skill lifecycle for AI agents. BinEval binary scoring with threshold-blind, cross-family-calibrated judges, gated self-update loop, pressure testing, 10 authoring principles grounded in empirical research.",
-    "stars": 200,
+    "stars": 202,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/skill-conductor",
@@ -154,7 +154,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 199,
+    "stars": 200,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -214,7 +214,7 @@
   {
     "name": "awesome-claude-output-styles",
     "description": "Make Claude talk like a human: 17 installable output styles for Claude Code, built on credited methodologies",
-    "stars": 134,
+    "stars": 135,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/awesome-claude-output-styles",
@@ -257,7 +257,7 @@
   {
     "name": "autograph",
     "description": "Schema-as-code memory for AI agents in Obsidian: typed cards, entity dedup, link repair, update-in-place, and Ebbinghaus decay. Plain Markdown you own — a Claude Code skill.",
-    "stars": 76,
+    "stars": 77,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/autograph",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 40,
+    "stars": 43,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -319,7 +319,7 @@
   {
     "name": "code-quality",
     "description": "Deterministic code quality gate for AI coding agents (Claude Code, Codex, pi): git hooks that block test tampering, hold the CRAP bar on changed functions, check diff coverage, secrets and dependencies. 12 languages, one config file. Optional Jev classifier for test hunks.",
-    "stars": 20,
+    "stars": 21,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/code-quality",
@@ -350,7 +350,7 @@
   {
     "name": "disruptor-skills",
     "description": "12 agent skills for AI-driven software development — a gated idea-to-ship pipeline: 7w3 design, build-ready specs, executable architecture, honest review loops, a parallel worker-fleet lane, QA, safe deploy. Works with Claude Code, Codex, Cursor and any skills-capable agent. No vibecode.",
-    "stars": 20,
+    "stars": 19,
     "language": "Python",
     "homepage": "https://t.me/aostrikov_agents_chat",
     "url": "https://github.com/smixs/disruptor-skills",
@@ -378,6 +378,22 @@
     ]
   },
   {
+    "name": "morning-tab",
+    "description": "Скилл для агентов: ежедневная газетная страница-дайджест на любую тему с публикацией по ссылке",
+    "stars": 15,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/morning-tab",
+    "pushed": "2026-10-16T03:41:37Z",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "claude-skill",
+      "digest",
+      "rss"
+    ]
+  },
+  {
     "name": "ZPL-80",
     "description": "Zip Prompt Language - compress heavy system prompts by ≥ 80 % token reduction",
     "stars": 15,
@@ -391,22 +407,6 @@
       "prompt",
       "prompt-engineering",
       "system"
-    ]
-  },
-  {
-    "name": "morning-tab",
-    "description": "Скилл для агентов: ежедневная газетная страница-дайджест на любую тему с публикацией по ссылке",
-    "stars": 12,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/morning-tab",
-    "pushed": "2026-10-16T03:41:37Z",
-    "topics": [
-      "agent-skills",
-      "claude-code",
-      "claude-skill",
-      "digest",
-      "rss"
     ]
   },
   {
@@ -465,7 +465,7 @@
   {
     "name": "claimp",
     "description": "The waveform player for building DJ sets on macOS: spectral waveform, drag the real file into your DAW, on-device BPM and key",
-    "stars": 5,
+    "stars": 6,
     "language": "Swift",
     "homepage": "https://claimp.app",
     "url": "https://github.com/smixs/claimp",
@@ -475,7 +475,7 @@
   {
     "name": "jevchik",
     "description": "Telegram bot for group chats: karma for useful messages, anti-spam for newcomers, a Mini App leaderboard. Judged by the Jev model.",
-    "stars": 4,
+    "stars": 6,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/jevchik",
@@ -525,7 +525,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-30T04:30:38Z",
+    "pushed": "2026-10-31T04:12:27Z",
     "topics": []
   },
   {
@@ -539,29 +539,9 @@
     "topics": []
   },
   {
-    "name": "agent-process",
-    "description": "Интерактивная карта агентского процесса: 5 этапов, 44 узла, React Flow. https://agency-process.com",
-    "stars": 2,
-    "language": "TypeScript",
-    "homepage": "https://agencyprocessmap-smixs-projects.vercel.app",
-    "url": "https://github.com/smixs/agent-process",
-    "pushed": "2026-06-09T13:43:03Z",
-    "topics": []
-  },
-  {
-    "name": "sezish-desktop",
-    "description": "Сборки sezish для macOS и Windows: ссылки и багрепорты тестеров",
-    "stars": 2,
-    "language": "Swift",
-    "homepage": null,
-    "url": "https://github.com/smixs/sezish-desktop",
-    "pushed": "2026-10-06T15:54:47Z",
-    "topics": []
-  },
-  {
     "name": "yandex-taxi-skill",
     "description": "Yandex Taxi (Yandex Go) skill for AI agents: Iva, Claude Code, Codex. Price quote, ride order after your explicit yes, car tracking via browser on taxi.yandex.uz. Яндекс Такси для ИИ-агента: цена, заказ, Telegram. ",
-    "stars": 2,
+    "stars": 3,
     "language": "Shell",
     "homepage": null,
     "url": "https://github.com/smixs/yandex-taxi-skill",
@@ -587,6 +567,26 @@
     ]
   },
   {
+    "name": "agent-process",
+    "description": "Интерактивная карта агентского процесса: 5 этапов, 44 узла, React Flow. https://agency-process.com",
+    "stars": 2,
+    "language": "TypeScript",
+    "homepage": "https://agencyprocessmap-smixs-projects.vercel.app",
+    "url": "https://github.com/smixs/agent-process",
+    "pushed": "2026-06-09T13:43:03Z",
+    "topics": []
+  },
+  {
+    "name": "sezish-desktop",
+    "description": "Сборки sezish для macOS и Windows: ссылки и багрепорты тестеров",
+    "stars": 2,
+    "language": "Swift",
+    "homepage": null,
+    "url": "https://github.com/smixs/sezish-desktop",
+    "pushed": "2026-10-06T15:54:47Z",
+    "topics": []
+  },
+  {
     "name": "didox-skill",
     "description": "CLI + agent skill for Didox.uz (Uzbekistan EDO): list documents, check signing status, look up companies by TIN, file drafts with PDF attachments. Built for AI agents. Дидокс · O'zbekiston elektron hujjat almashinuvi",
     "stars": 1,
@@ -604,6 +604,33 @@
       "eimzo",
       "python",
       "uzbekistan"
+    ]
+  },
+  {
+    "name": "dj-mix",
+    "description": "Spicetify extension: order any Spotify playlist like a DJ set. Harmonic mixing on the Camelot wheel, a two-wave energy arc, smooth BPM steps. Uses Spotify's own Mix keys, saves a new playlist.",
+    "stars": 1,
+    "language": "JavaScript",
+    "homepage": "https://github.com/smixs/dj-mix",
+    "url": "https://github.com/smixs/dj-mix",
+    "pushed": "2026-10-04T04:18:09Z",
+    "topics": [
+      "bpm",
+      "camelot",
+      "camelot-wheel",
+      "dj",
+      "dj-mix",
+      "dj-tools",
+      "energy",
+      "harmonic-mixing",
+      "music-key",
+      "playlist",
+      "playlist-sorter",
+      "sorting",
+      "spicetify",
+      "spicetify-extensions",
+      "spotify",
+      "spotify-playlist"
     ]
   },
   {
@@ -650,33 +677,6 @@
     "url": "https://github.com/smixs/ai_photo_style",
     "pushed": "2025-09-18T09:23:34Z",
     "topics": []
-  },
-  {
-    "name": "dj-mix",
-    "description": "Spicetify extension: order any Spotify playlist like a DJ set. Harmonic mixing on the Camelot wheel, a two-wave energy arc, smooth BPM steps. Uses Spotify's own Mix keys, saves a new playlist.",
-    "stars": 0,
-    "language": "JavaScript",
-    "homepage": "https://github.com/smixs/dj-mix",
-    "url": "https://github.com/smixs/dj-mix",
-    "pushed": "2026-10-04T04:18:09Z",
-    "topics": [
-      "bpm",
-      "camelot",
-      "camelot-wheel",
-      "dj",
-      "dj-mix",
-      "dj-tools",
-      "energy",
-      "harmonic-mixing",
-      "music-key",
-      "playlist",
-      "playlist-sorter",
-      "sorting",
-      "spicetify",
-      "spicetify-extensions",
-      "spotify",
-      "spotify-playlist"
-    ]
   },
   {
     "name": "Eurotorg",
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-29T10:04:21Z",
+    "pushed": "2026-10-30T10:07:35Z",
     "topics": [
       "astro",
       "personal-website",
