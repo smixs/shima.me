@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 608,
+    "stars": 609,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 287,
+    "stars": 289,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -100,7 +100,7 @@
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-10-31T05:13:56Z",
+    "pushed": "2026-11-01T05:57:49Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -214,7 +214,7 @@
   {
     "name": "awesome-claude-output-styles",
     "description": "Make Claude talk like a human: 17 installable output styles for Claude Code, built on credited methodologies",
-    "stars": 135,
+    "stars": 137,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/awesome-claude-output-styles",
@@ -350,7 +350,7 @@
   {
     "name": "disruptor-skills",
     "description": "12 agent skills for AI-driven software development — a gated idea-to-ship pipeline: 7w3 design, build-ready specs, executable architecture, honest review loops, a parallel worker-fleet lane, QA, safe deploy. Works with Claude Code, Codex, Cursor and any skills-capable agent. No vibecode.",
-    "stars": 19,
+    "stars": 20,
     "language": "Python",
     "homepage": "https://t.me/aostrikov_agents_chat",
     "url": "https://github.com/smixs/disruptor-skills",
@@ -509,39 +509,9 @@
     ]
   },
   {
-    "name": "claude-news",
-    "description": "A split-flap news board above the Claude Code prompt: Telegram channels and RSS, clickable, zero tokens",
-    "stars": 3,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/claude-news",
-    "pushed": "2026-09-15T03:58:33Z",
-    "topics": []
-  },
-  {
-    "name": "smixs",
-    "description": null,
-    "stars": 3,
-    "language": null,
-    "homepage": null,
-    "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-10-31T04:12:27Z",
-    "topics": []
-  },
-  {
-    "name": "t-tasker",
-    "description": null,
-    "stars": 3,
-    "language": "Python",
-    "homepage": null,
-    "url": "https://github.com/smixs/t-tasker",
-    "pushed": "2025-10-27T04:21:06Z",
-    "topics": []
-  },
-  {
     "name": "yandex-taxi-skill",
     "description": "Yandex Taxi (Yandex Go) skill for AI agents: Iva, Claude Code, Codex. Price quote, ride order after your explicit yes, car tracking via browser on taxi.yandex.uz. Яндекс Такси для ИИ-агента: цена, заказ, Telegram. ",
-    "stars": 3,
+    "stars": 4,
     "language": "Shell",
     "homepage": null,
     "url": "https://github.com/smixs/yandex-taxi-skill",
@@ -565,6 +535,36 @@
       "yandex-go",
       "yandex-taxi"
     ]
+  },
+  {
+    "name": "claude-news",
+    "description": "A split-flap news board above the Claude Code prompt: Telegram channels and RSS, clickable, zero tokens",
+    "stars": 3,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/claude-news",
+    "pushed": "2026-09-15T03:58:33Z",
+    "topics": []
+  },
+  {
+    "name": "smixs",
+    "description": null,
+    "stars": 3,
+    "language": null,
+    "homepage": null,
+    "url": "https://github.com/smixs/smixs",
+    "pushed": "2026-11-01T05:57:51Z",
+    "topics": []
+  },
+  {
+    "name": "t-tasker",
+    "description": null,
+    "stars": 3,
+    "language": "Python",
+    "homepage": null,
+    "url": "https://github.com/smixs/t-tasker",
+    "pushed": "2025-10-27T04:21:06Z",
+    "topics": []
   },
   {
     "name": "agent-process",
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-10-30T10:07:35Z",
+    "pushed": "2026-10-31T09:43:29Z",
     "topics": [
       "astro",
       "personal-website",
