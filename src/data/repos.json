@@ -12,11 +12,11 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 629,
+    "stars": 633,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
-    "pushed": "2026-09-16T13:21:46Z",
+    "pushed": "2026-11-06T02:24:39Z",
     "topics": [
       "ai-image-generation",
       "ai-prompts",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 413,
+    "stars": 412,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 297,
+    "stars": 299,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 284,
+    "stars": 287,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-03T14:22:43Z",
+    "pushed": "2026-11-06T05:59:37Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 45,
+    "stars": 46,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -314,37 +314,6 @@
       "telegram-bot",
       "typescript",
       "vps"
-    ]
-  },
-  {
-    "name": "code-quality",
-    "description": "Deterministic code quality gate for AI coding agents (Claude Code, Codex, pi): git hooks that block test tampering, hold the CRAP bar on changed functions, check diff coverage, secrets and dependencies. 12 languages, one config file. Optional Jev classifier for test hunks.",
-    "stars": 21,
-    "language": "TypeScript",
-    "homepage": null,
-    "url": "https://github.com/smixs/code-quality",
-    "pushed": "2026-10-04T05:52:36Z",
-    "topics": [
-      "agent-skills",
-      "ai-coding-agents",
-      "ast-grep",
-      "claude-code",
-      "claude-skills",
-      "code-coverage",
-      "code-quality",
-      "codex",
-      "crap-metric",
-      "cyclomatic-complexity",
-      "developer-tools",
-      "git-hooks",
-      "gitleaks",
-      "jscpd",
-      "lizard",
-      "osv-scanner",
-      "pre-commit",
-      "quality-gate",
-      "static-analysis",
-      "test-tampering"
     ]
   },
   {
@@ -378,19 +347,34 @@
     ]
   },
   {
-    "name": "morning-tab",
-    "description": "Скилл для агентов: ежедневная газетная страница-дайджест на любую тему с публикацией по ссылке",
-    "stars": 15,
+    "name": "code-quality",
+    "description": "Deterministic code quality gate for AI coding agents (Claude Code, Codex, pi): git hooks that block test tampering, hold the CRAP bar on changed functions, check diff coverage, secrets and dependencies. 12 languages, one config file. Optional Jev classifier for test hunks.",
+    "stars": 20,
     "language": "TypeScript",
     "homepage": null,
-    "url": "https://github.com/smixs/morning-tab",
-    "pushed": "2026-10-16T03:41:37Z",
+    "url": "https://github.com/smixs/code-quality",
+    "pushed": "2026-10-04T05:52:36Z",
     "topics": [
       "agent-skills",
+      "ai-coding-agents",
+      "ast-grep",
       "claude-code",
-      "claude-skill",
-      "digest",
-      "rss"
+      "claude-skills",
+      "code-coverage",
+      "code-quality",
+      "codex",
+      "crap-metric",
+      "cyclomatic-complexity",
+      "developer-tools",
+      "git-hooks",
+      "gitleaks",
+      "jscpd",
+      "lizard",
+      "osv-scanner",
+      "pre-commit",
+      "quality-gate",
+      "static-analysis",
+      "test-tampering"
     ]
   },
   {
@@ -407,6 +391,22 @@
       "prompt",
       "prompt-engineering",
       "system"
+    ]
+  },
+  {
+    "name": "morning-tab",
+    "description": "Скилл для агентов: ежедневная газетная страница-дайджест на любую тему с публикацией по ссылке",
+    "stars": 14,
+    "language": "TypeScript",
+    "homepage": null,
+    "url": "https://github.com/smixs/morning-tab",
+    "pushed": "2026-10-16T03:41:37Z",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "claude-skill",
+      "digest",
+      "rss"
     ]
   },
   {
@@ -465,7 +465,7 @@
   {
     "name": "claimp",
     "description": "The waveform player for building DJ sets on macOS: spectral waveform, drag the real file into your DAW, on-device BPM and key",
-    "stars": 6,
+    "stars": 5,
     "language": "Swift",
     "homepage": "https://claimp.app",
     "url": "https://github.com/smixs/claimp",
@@ -475,7 +475,7 @@
   {
     "name": "jevchik",
     "description": "Telegram bot for group chats: karma for useful messages, anti-spam for newcomers, a Mini App leaderboard. Judged by the Jev model.",
-    "stars": 6,
+    "stars": 5,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/jevchik",
@@ -553,7 +553,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-05T05:16:03Z",
+    "pushed": "2026-11-06T05:15:38Z",
     "topics": []
   },
   {
@@ -583,7 +583,7 @@
     "language": "Swift",
     "homepage": null,
     "url": "https://github.com/smixs/sezish-desktop",
-    "pushed": "2026-11-05T03:32:46Z",
+    "pushed": "2026-11-06T02:27:36Z",
     "topics": []
   },
   {
@@ -604,33 +604,6 @@
       "eimzo",
       "python",
       "uzbekistan"
-    ]
-  },
-  {
-    "name": "dj-mix",
-    "description": "Spicetify extension: order any Spotify playlist like a DJ set. Harmonic mixing on the Camelot wheel, a two-wave energy arc, smooth BPM steps. Uses Spotify's own Mix keys, saves a new playlist.",
-    "stars": 1,
-    "language": "JavaScript",
-    "homepage": "https://github.com/smixs/dj-mix",
-    "url": "https://github.com/smixs/dj-mix",
-    "pushed": "2026-10-04T04:18:09Z",
-    "topics": [
-      "bpm",
-      "camelot",
-      "camelot-wheel",
-      "dj",
-      "dj-mix",
-      "dj-tools",
-      "energy",
-      "harmonic-mixing",
-      "music-key",
-      "playlist",
-      "playlist-sorter",
-      "sorting",
-      "spicetify",
-      "spicetify-extensions",
-      "spotify",
-      "spotify-playlist"
     ]
   },
   {
@@ -677,6 +650,33 @@
     "url": "https://github.com/smixs/ai_photo_style",
     "pushed": "2025-09-18T09:23:34Z",
     "topics": []
+  },
+  {
+    "name": "dj-mix",
+    "description": "Spicetify extension: order any Spotify playlist like a DJ set. Harmonic mixing on the Camelot wheel, a two-wave energy arc, smooth BPM steps. Uses Spotify's own Mix keys, saves a new playlist.",
+    "stars": 0,
+    "language": "JavaScript",
+    "homepage": "https://github.com/smixs/dj-mix",
+    "url": "https://github.com/smixs/dj-mix",
+    "pushed": "2026-10-04T04:18:09Z",
+    "topics": [
+      "bpm",
+      "camelot",
+      "camelot-wheel",
+      "dj",
+      "dj-mix",
+      "dj-tools",
+      "energy",
+      "harmonic-mixing",
+      "music-key",
+      "playlist",
+      "playlist-sorter",
+      "sorting",
+      "spicetify",
+      "spicetify-extensions",
+      "spotify",
+      "spotify-playlist"
+    ]
   },
   {
     "name": "Eurotorg",
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-03T10:57:40Z",
+    "pushed": "2026-11-05T11:01:36Z",
     "topics": [
       "astro",
       "personal-website",
