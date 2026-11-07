@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1443,
+    "stars": 1445,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 633,
+    "stars": 632,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 299,
+    "stars": 300,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -100,7 +100,7 @@
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-06T05:59:37Z",
+    "pushed": "2026-11-07T03:24:06Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -185,7 +185,7 @@
   {
     "name": "osint-skill",
     "description": "OSINT Skill for AI agents (Claude Code, OpenClaw, Codex, OpenCode) — from a name to a scored dossier with psychoprofile, career map, and confidence grades. 55+ Apify actors, 7 search APIs, swarm mode. Early Beta.",
-    "stars": 157,
+    "stars": 160,
     "language": "Shell",
     "homepage": "https://github.com/smixs/osint-skill#readme",
     "url": "https://github.com/smixs/osint-skill",
@@ -214,7 +214,7 @@
   {
     "name": "awesome-claude-output-styles",
     "description": "Make Claude talk like a human: 17 installable output styles for Claude Code, built on credited methodologies",
-    "stars": 139,
+    "stars": 140,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/awesome-claude-output-styles",
@@ -553,7 +553,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-06T05:15:38Z",
+    "pushed": "2026-11-07T04:46:18Z",
     "topics": []
   },
   {
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-05T11:01:36Z",
+    "pushed": "2026-11-06T10:59:32Z",
     "topics": [
       "astro",
       "personal-website",
