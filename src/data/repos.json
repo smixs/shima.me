@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1445,
+    "stars": 1444,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 632,
+    "stars": 635,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 300,
+    "stars": 301,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 287,
+    "stars": 288,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-07T03:24:06Z",
+    "pushed": "2026-11-08T06:53:38Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -154,7 +154,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 201,
+    "stars": 202,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 46,
+    "stars": 47,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -553,7 +553,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-07T04:46:18Z",
+    "pushed": "2026-11-08T04:36:50Z",
     "topics": []
   },
   {
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-06T10:59:32Z",
+    "pushed": "2026-11-07T10:19:51Z",
     "topics": [
       "astro",
       "personal-website",
