@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1450,
+    "stars": 1452,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 641,
+    "stars": 645,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 423,
+    "stars": 441,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 302,
+    "stars": 303,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -100,7 +100,7 @@
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-08T06:53:38Z",
+    "pushed": "2026-11-10T05:29:21Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -154,7 +154,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 203,
+    "stars": 205,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -185,7 +185,7 @@
   {
     "name": "osint-skill",
     "description": "OSINT Skill for AI agents (Claude Code, OpenClaw, Codex, OpenCode) — from a name to a scored dossier with psychoprofile, career map, and confidence grades. 55+ Apify actors, 7 search APIs, swarm mode. Early Beta.",
-    "stars": 164,
+    "stars": 165,
     "language": "Shell",
     "homepage": "https://github.com/smixs/osint-skill#readme",
     "url": "https://github.com/smixs/osint-skill",
@@ -553,7 +553,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-09T04:47:16Z",
+    "pushed": "2026-11-10T06:01:01Z",
     "topics": []
   },
   {
@@ -577,19 +577,9 @@
     "topics": []
   },
   {
-    "name": "sezish-desktop",
-    "description": "Сборки sezish для macOS и Windows: ссылки и багрепорты тестеров",
-    "stars": 2,
-    "language": "Swift",
-    "homepage": null,
-    "url": "https://github.com/smixs/sezish-desktop",
-    "pushed": "2026-11-06T02:27:36Z",
-    "topics": []
-  },
-  {
     "name": "didox-skill",
     "description": "CLI + agent skill for Didox.uz (Uzbekistan EDO): list documents, check signing status, look up companies by TIN, file drafts with PDF attachments. Built for AI agents. Дидокс · O'zbekiston elektron hujjat almashinuvi",
-    "stars": 1,
+    "stars": 2,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/didox-skill",
@@ -605,6 +595,16 @@
       "python",
       "uzbekistan"
     ]
+  },
+  {
+    "name": "sezish-desktop",
+    "description": "Сборки sezish для macOS и Windows: ссылки и багрепорты тестеров",
+    "stars": 2,
+    "language": "Swift",
+    "homepage": null,
+    "url": "https://github.com/smixs/sezish-desktop",
+    "pushed": "2026-11-06T02:27:36Z",
+    "topics": []
   },
   {
     "name": "iva-plugins",
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-08T10:28:48Z",
+    "pushed": "2026-11-09T11:40:41Z",
     "topics": [
       "astro",
       "personal-website",
