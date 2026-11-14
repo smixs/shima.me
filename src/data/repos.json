@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1465,
+    "stars": 1466,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 666,
+    "stars": 673,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 466,
+    "stars": 471,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 305,
+    "stars": 306,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -100,7 +100,7 @@
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-11T06:06:20Z",
+    "pushed": "2026-11-14T01:49:39Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 48,
+    "stars": 49,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -553,7 +553,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-13T05:13:03Z",
+    "pushed": "2026-11-14T05:02:42Z",
     "topics": []
   },
   {
@@ -765,7 +765,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-12T11:23:06Z",
+    "pushed": "2026-11-13T11:06:23Z",
     "topics": [
       "astro",
       "personal-website",
