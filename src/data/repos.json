@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1472,
+    "stars": 1473,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 712,
+    "stars": 717,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 500,
+    "stars": 501,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 298,
+    "stars": 301,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-18T01:57:13Z",
+    "pushed": "2026-11-20T04:11:41Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 215,
+    "stars": 216,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -553,7 +553,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-19T06:00:02Z",
+    "pushed": "2026-11-20T05:49:29Z",
     "topics": []
   },
   {
@@ -622,6 +622,33 @@
     "topics": []
   },
   {
+    "name": "dj-mix",
+    "description": "Spicetify extension: order any Spotify playlist like a DJ set. Harmonic mixing on the Camelot wheel, a two-wave energy arc, smooth BPM steps. Uses Spotify's own Mix keys, saves a new playlist.",
+    "stars": 1,
+    "language": "JavaScript",
+    "homepage": "https://github.com/smixs/dj-mix",
+    "url": "https://github.com/smixs/dj-mix",
+    "pushed": "2026-10-04T04:18:09Z",
+    "topics": [
+      "bpm",
+      "camelot",
+      "camelot-wheel",
+      "dj",
+      "dj-mix",
+      "dj-tools",
+      "energy",
+      "harmonic-mixing",
+      "music-key",
+      "playlist",
+      "playlist-sorter",
+      "sorting",
+      "spicetify",
+      "spicetify-extensions",
+      "spotify",
+      "spotify-playlist"
+    ]
+  },
+  {
     "name": "nanobot-claude",
     "description": null,
     "stars": 1,
@@ -652,30 +679,18 @@
     "topics": []
   },
   {
-    "name": "dj-mix",
-    "description": "Spicetify extension: order any Spotify playlist like a DJ set. Harmonic mixing on the Camelot wheel, a two-wave energy arc, smooth BPM steps. Uses Spotify's own Mix keys, saves a new playlist.",
+    "name": "bb-plugin-thoughts-open",
+    "description": "bb plugin: show every Thought (reasoning) row expanded and in full, or fold them all from one header button",
     "stars": 0,
-    "language": "JavaScript",
-    "homepage": "https://github.com/smixs/dj-mix",
-    "url": "https://github.com/smixs/dj-mix",
-    "pushed": "2026-10-04T04:18:09Z",
+    "language": "TypeScript",
+    "homepage": "https://getbb.app",
+    "url": "https://github.com/smixs/bb-plugin-thoughts-open",
+    "pushed": "2026-11-20T03:09:41Z",
     "topics": [
-      "bpm",
-      "camelot",
-      "camelot-wheel",
-      "dj",
-      "dj-mix",
-      "dj-tools",
-      "energy",
-      "harmonic-mixing",
-      "music-key",
-      "playlist",
-      "playlist-sorter",
-      "sorting",
-      "spicetify",
-      "spicetify-extensions",
-      "spotify",
-      "spotify-playlist"
+      "ai-agents",
+      "bb",
+      "bb-plugin",
+      "reasoning"
     ]
   },
   {
@@ -765,7 +780,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-18T11:49:50Z",
+    "pushed": "2026-11-19T11:46:56Z",
     "topics": [
       "astro",
       "personal-website",
