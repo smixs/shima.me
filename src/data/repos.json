@@ -2,7 +2,7 @@
   {
     "name": "pohuy",
     "description": "Режим идиоматического русского мата для AI-агентов. Короче, душевнее, эффективнее. 18+",
-    "stars": 1480,
+    "stars": 1483,
     "language": "TypeScript",
     "homepage": null,
     "url": "https://github.com/smixs/pohuy",
@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 753,
+    "stars": 762,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 507,
+    "stars": 510,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -96,11 +96,11 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 311,
+    "stars": 312,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-22T09:19:44Z",
+    "pushed": "2026-11-25T08:42:06Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 220,
+    "stars": 221,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -214,7 +214,7 @@
   {
     "name": "awesome-claude-output-styles",
     "description": "Make Claude talk like a human: 17 installable output styles for Claude Code, built on credited methodologies",
-    "stars": 153,
+    "stars": 154,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/awesome-claude-output-styles",
@@ -230,7 +230,7 @@
   {
     "name": "mentor",
     "description": "mentor — a session-insights skill for AI coding agents. This skill reads your local Claude Code and OpenAI Codex history and writes an /insights-style HTML report on how you work: what you build, where you lose time, and concrete fixes. An agent skill for Claude Code, Codex, and any skills-capable agent.",
-    "stars": 86,
+    "stars": 87,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/mentor",
@@ -257,7 +257,7 @@
   {
     "name": "autograph",
     "description": "Schema-as-code memory for AI agents in Obsidian: typed cards, entity dedup, link repair, update-in-place, and Ebbinghaus decay. Plain Markdown you own — a Claude Code skill.",
-    "stars": 80,
+    "stars": 82,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/autograph",
@@ -288,11 +288,11 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 55,
+    "stars": 56,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
-    "pushed": "2026-11-02T21:33:32Z",
+    "pushed": "2026-11-25T08:37:09Z",
     "topics": [
       "ai-agent",
       "ai-assistant",
@@ -314,6 +314,27 @@
       "telegram-bot",
       "typescript",
       "vps"
+    ]
+  },
+  {
+    "name": "visual-story",
+    "description": "Visual storytelling skill for AI agents: scene films with a camera, interactive system maps, pitch decks with transitions and a PDF — checked frame by frame, shipped to a link",
+    "stars": 23,
+    "language": null,
+    "homepage": "https://memory.iva-agent.com",
+    "url": "https://github.com/smixs/visual-story",
+    "pushed": "2026-11-22T12:34:35Z",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "claude-skills",
+      "codex",
+      "data-visualization",
+      "explainer-video",
+      "gsap",
+      "motion-design",
+      "pitch-deck",
+      "svg-animation"
     ]
   },
   {
@@ -375,27 +396,6 @@
       "skills",
       "software-engineering",
       "spec-driven-development"
-    ]
-  },
-  {
-    "name": "visual-story",
-    "description": "Visual storytelling skill for AI agents: scene films with a camera, interactive system maps, pitch decks with transitions and a PDF — checked frame by frame, shipped to a link",
-    "stars": 16,
-    "language": null,
-    "homepage": "https://memory.iva-agent.com",
-    "url": "https://github.com/smixs/visual-story",
-    "pushed": "2026-11-22T12:34:35Z",
-    "topics": [
-      "agent-skills",
-      "claude-code",
-      "claude-skills",
-      "codex",
-      "data-visualization",
-      "explainer-video",
-      "gsap",
-      "motion-design",
-      "pitch-deck",
-      "svg-animation"
     ]
   },
   {
@@ -575,7 +575,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-24T08:31:52Z",
+    "pushed": "2026-11-25T07:06:34Z",
     "topics": []
   },
   {
@@ -802,7 +802,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-23T12:57:05Z",
+    "pushed": "2026-11-24T13:50:09Z",
     "topics": [
       "astro",
       "personal-website",
