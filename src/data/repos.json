@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 768,
+    "stars": 774,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -43,7 +43,7 @@
   {
     "name": "agent-second-brain",
     "description": "An always-on second brain you talk to. Voice notes in Telegram → typed, linked knowledge in your Obsidian vault. Runs 24/7 on the Claude subscription you already have.",
-    "stars": 510,
+    "stars": 512,
     "language": "Python",
     "homepage": "https://t.me/aimastersme",
     "url": "https://github.com/smixs/agent-second-brain",
@@ -70,7 +70,7 @@
   {
     "name": "creative-director-skill",
     "description": "World-class creative director in a skill. Methodology-driven ideation (SIT, TRIZ, Lateral Thinking, bisociation) + a Cannes Lions evaluation engine, powered by a library of 571 legendary award-winning cases.",
-    "stars": 323,
+    "stars": 325,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/creative-director-skill",
@@ -100,7 +100,7 @@
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
-    "pushed": "2026-11-26T11:52:15Z",
+    "pushed": "2026-11-27T03:36:06Z",
     "topics": [
       "agent",
       "ai-agent",
@@ -127,7 +127,7 @@
   {
     "name": "humanizer-ru",
     "description": "Skill для AI-агентов (Claude Code, Codex, OpenClaw, Hermes): убирает 37 признаков AI-генерации из русского текста и проверяет, писала ли его нейросеть - канцелярит, штампы ChatGPT, артефакты копипаста | Russian AI-text humanizer & detector skill for coding agents",
-    "stars": 221,
+    "stars": 222,
     "language": "Python",
     "homepage": null,
     "url": "https://github.com/smixs/humanizer-ru",
@@ -288,7 +288,7 @@
   {
     "name": "pi-durable-telegram",
     "description": "Always-on durable pi agent on your server that you talk to in Telegram. Survives crashes and restarts, keeps history in SQLite. pi-durable Telegram gateway.",
-    "stars": 56,
+    "stars": 57,
     "language": "TypeScript",
     "homepage": "https://github.com/smixs/pi-durable-telegram#readme",
     "url": "https://github.com/smixs/pi-durable-telegram",
@@ -319,7 +319,7 @@
   {
     "name": "visual-story",
     "description": "Visual storytelling skill for AI agents: scene films with a camera, interactive system maps, pitch decks with transitions and a PDF — checked frame by frame, shipped to a link",
-    "stars": 24,
+    "stars": 25,
     "language": null,
     "homepage": "https://memory.iva-agent.com",
     "url": "https://github.com/smixs/visual-story",
@@ -335,6 +335,36 @@
       "motion-design",
       "pitch-deck",
       "svg-animation"
+    ]
+  },
+  {
+    "name": "disruptor-skills",
+    "description": "12 agent skills for AI-driven software development — a gated idea-to-ship pipeline: 7w3 design, build-ready specs, executable architecture, honest review loops, a parallel worker-fleet lane, QA, safe deploy. Works with Claude Code, Codex, Cursor and any skills-capable agent. No vibecode.",
+    "stars": 22,
+    "language": "Python",
+    "homepage": "https://t.me/aostrikov_agents_chat",
+    "url": "https://github.com/smixs/disruptor-skills",
+    "pushed": "2026-07-06T03:21:29Z",
+    "topics": [
+      "agent-skills",
+      "agentic-ai",
+      "agentic-coding",
+      "agentic-development",
+      "ai-agents",
+      "ai-coding",
+      "claude-code",
+      "code-review",
+      "codex",
+      "coding-agents",
+      "cursor",
+      "developer-tools",
+      "llm",
+      "mvp",
+      "opencode",
+      "prompt-engineering",
+      "skills",
+      "software-engineering",
+      "spec-driven-development"
     ]
   },
   {
@@ -366,36 +396,6 @@
       "quality-gate",
       "static-analysis",
       "test-tampering"
-    ]
-  },
-  {
-    "name": "disruptor-skills",
-    "description": "12 agent skills for AI-driven software development — a gated idea-to-ship pipeline: 7w3 design, build-ready specs, executable architecture, honest review loops, a parallel worker-fleet lane, QA, safe deploy. Works with Claude Code, Codex, Cursor and any skills-capable agent. No vibecode.",
-    "stars": 21,
-    "language": "Python",
-    "homepage": "https://t.me/aostrikov_agents_chat",
-    "url": "https://github.com/smixs/disruptor-skills",
-    "pushed": "2026-07-06T03:21:29Z",
-    "topics": [
-      "agent-skills",
-      "agentic-ai",
-      "agentic-coding",
-      "agentic-development",
-      "ai-agents",
-      "ai-coding",
-      "claude-code",
-      "code-review",
-      "codex",
-      "coding-agents",
-      "cursor",
-      "developer-tools",
-      "llm",
-      "mvp",
-      "opencode",
-      "prompt-engineering",
-      "skills",
-      "software-engineering",
-      "spec-driven-development"
     ]
   },
   {
@@ -575,7 +575,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-26T06:57:29Z",
+    "pushed": "2026-11-27T06:51:37Z",
     "topics": []
   },
   {
@@ -802,7 +802,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-25T13:03:22Z",
+    "pushed": "2026-11-26T12:43:30Z",
     "topics": [
       "astro",
       "personal-website",
