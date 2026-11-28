@@ -12,7 +12,7 @@
   {
     "name": "visual-skills",
     "description": "AI film director skills for agents: cinematic dramaturgy (Murch, blocking, montage) + exact prompt syntax for Seedance 2.5, Kling 3.0 Turbo/Omni, Veo 3.1, Nano Banana 2, GPT Image 2.5.",
-    "stars": 774,
+    "stars": 780,
     "language": null,
     "homepage": "https://github.com/smixs/visual-skills",
     "url": "https://github.com/smixs/visual-skills",
@@ -96,7 +96,7 @@
   {
     "name": "iva-agent",
     "description": "AI assistant in Telegram that remembers everything and helps you run your life. Self-hosted in one command.",
-    "stars": 312,
+    "stars": 314,
     "language": "TypeScript",
     "homepage": "https://iva-agent.com",
     "url": "https://github.com/smixs/iva-agent",
@@ -185,7 +185,7 @@
   {
     "name": "osint-skill",
     "description": "OSINT Skill for AI agents (Claude Code, OpenClaw, Codex, OpenCode) — from a name to a scored dossier with psychoprofile, career map, and confidence grades. 55+ Apify actors, 7 search APIs, swarm mode. Early Beta.",
-    "stars": 172,
+    "stars": 174,
     "language": "Shell",
     "homepage": "https://github.com/smixs/osint-skill#readme",
     "url": "https://github.com/smixs/osint-skill",
@@ -575,7 +575,7 @@
     "language": null,
     "homepage": null,
     "url": "https://github.com/smixs/smixs",
-    "pushed": "2026-11-27T06:51:37Z",
+    "pushed": "2026-11-28T06:25:20Z",
     "topics": []
   },
   {
@@ -802,7 +802,7 @@
     "language": "Astro",
     "homepage": "https://www.shima.me",
     "url": "https://github.com/smixs/shima.me",
-    "pushed": "2026-11-26T12:43:30Z",
+    "pushed": "2026-11-27T12:33:03Z",
     "topics": [
       "astro",
       "personal-website",
